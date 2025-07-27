@@ -1,5 +1,65 @@
 /* Additional styles to complement Tailwind CSS for ICECODING */
 
+/* Enhanced Navbar Styles */
+.navbar-glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 31, 63, 0.1);
+}
+
+/* Mobile menu hamburger animation */
+.mobile-menu-button div {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Logo hover effect */
+.logo-container:hover .logo-text {
+    transform: translateX(2px);
+}
+
+/* Navigation link active state */
+.nav-link.active {
+    color: #007BFF;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Mobile menu backdrop */
+.mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Enhanced mobile menu */
+.mobile-menu {
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.show {
+    transform: translateY(0);
+}
+
 /* Custom animations */
 @keyframes fadeInUp {
     from {
@@ -34,6 +94,17 @@
     }
 }
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Scroll animations */
 .animate-on-scroll {
     opacity: 0;
@@ -60,39 +131,6 @@
 
 .nav-link:hover::after {
     width: 100%;
-}
-
-/* Mobile menu styles */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        background-color: white;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem 0;
-        box-shadow: 0 2px 10px rgba(0, 31, 63, 0.1);
-        z-index: 999;
-        transition: all 0.3s ease;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
 }
 
 /* Loading states */
@@ -182,11 +220,23 @@ a:focus {
     outline-offset: 2px;
 }
 
+/* Responsive design improvements */
+@media (max-width: 640px) {
+    .mobile-menu {
+        padding: 1.5rem;
+    }
+    
+    .mobile-menu a {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
 /* Print styles */
 @media print {
     nav,
     footer,
-    .hamburger {
+    .mobile-menu-button {
         display: none !important;
     }
     

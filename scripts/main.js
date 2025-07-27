@@ -19,43 +19,109 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Mobile Menu Functionality
 function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const hamburgerIcon = hamburger?.querySelector('i');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
     
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
+    if (mobileMenuButton && mobileMenu) {
+        let isMenuOpen = false;
+        
+        mobileMenuButton.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
             
-            // Toggle mobile menu visibility
-            if (navMenu.classList.contains('hidden')) {
-                navMenu.classList.remove('hidden');
-                navMenu.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'shadow-lg', 'py-4', 'gap-4');
-                // Change icon to X
-                if (hamburgerIcon) {
-                    hamburgerIcon.className = 'fas fa-times text-deep-navy text-xl';
+            if (isMenuOpen) {
+                // Show menu
+                mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
+                mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+                
+                // Transform hamburger to X
+                const lines = mobileMenuButton.querySelectorAll('div > div');
+                if (lines.length >= 3) {
+                    lines[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    lines[1].style.opacity = '0';
+                    lines[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
                 }
+                
+                // Prevent body scroll
+                document.body.style.overflow = 'hidden';
             } else {
-                navMenu.classList.add('hidden');
-                navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'shadow-lg', 'py-4', 'gap-4');
-                // Change icon back to hamburger
-                if (hamburgerIcon) {
-                    hamburgerIcon.className = 'fas fa-bars text-deep-navy text-xl';
+                // Hide menu
+                mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                
+                // Reset hamburger
+                const lines = mobileMenuButton.querySelectorAll('div > div');
+                if (lines.length >= 3) {
+                    lines[0].style.transform = '';
+                    lines[1].style.opacity = '';
+                    lines[2].style.transform = '';
                 }
+                
+                // Restore body scroll
+                document.body.style.overflow = '';
             }
         });
         
         // Close menu when clicking on nav links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.add('hidden');
-                navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'shadow-lg', 'py-4', 'gap-4');
-                // Reset icon
-                if (hamburgerIcon) {
-                    hamburgerIcon.className = 'fas fa-bars text-deep-navy text-xl';
-                }
+        if (mobileMenuLinks) {
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    isMenuOpen = false;
+                    mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                    mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                    
+                    // Reset hamburger
+                    const lines = mobileMenuButton.querySelectorAll('div > div');
+                    if (lines.length >= 3) {
+                        lines[0].style.transform = '';
+                        lines[1].style.opacity = '';
+                        lines[2].style.transform = '';
+                    }
+                    
+                    // Restore body scroll
+                    document.body.style.overflow = '';
+                });
             });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (isMenuOpen && !mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                isMenuOpen = false;
+                mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                
+                // Reset hamburger
+                const lines = mobileMenuButton.querySelectorAll('div > div');
+                if (lines.length >= 3) {
+                    lines[0].style.transform = '';
+                    lines[1].style.opacity = '';
+                    lines[2].style.transform = '';
+                }
+                
+                // Restore body scroll
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && isMenuOpen) {
+                isMenuOpen = false;
+                mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                
+                // Reset hamburger
+                const lines = mobileMenuButton.querySelectorAll('div > div');
+                if (lines.length >= 3) {
+                    lines[0].style.transform = '';
+                    lines[1].style.opacity = '';
+                    lines[2].style.transform = '';
+                }
+                
+                // Restore body scroll
+                document.body.style.overflow = '';
+            }
         });
     }
 }

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></link>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -18,307 +18,747 @@
                         'deep-navy': '#001F3F',
                         'electric-blue': '#007BFF',
                         'charcoal': '#2D2D2D',
+                        'white': '#FFFFFF',
                     },
                     fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
                         'poppins': ['Poppins', 'sans-serif'],
                     },
                     maxWidth: {
                         'container': '1200px',
-                    }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'slide-in-up': 'slideInUp 0.8s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out infinite 2s',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 5px rgba(0, 123, 255, 0.5)' },
+                            '50%': { boxShadow: '0 0 20px rgba(0, 123, 255, 0.8)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    },
+                    animationDelay: {
+                        '100': '100ms',
+                        '200': '200ms',
+                        '300': '300ms',
+                        '400': '400ms',
+                        '500': '500ms',
+                    },
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="styles/components.css">
 </head>
-<body>
+<body class="font-poppins">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg py-4">
-        <div class="max-w-container mx-auto px-5 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto">
-                <span class="text-2xl font-bold text-deep-navy">ICECODING</span>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Section -->
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto transition-transform duration-300 hover:scale-105">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-deep-navy leading-tight">ICECODING</span>
+                        <span class="text-xs text-electric-blue font-medium leading-tight">Innovative Minds, Smart Tech</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex items-center gap-1">
+                    <li>
+                        <a href="#home" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
+                            <span class="relative z-10">Home</span>
+                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
+                            <span class="relative z-10">About</span>
+                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
+                            <span class="relative z-10">Services</span>
+                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#solutions" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
+                            <span class="relative z-10">Solutions</span>
+                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </a>
+                    </li>
+                    <li class="ml-4">
+                        <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-lg hover:scale-105 transform">
+                            <i class="fas fa-comments mr-2 text-xs"></i>
+                            Get Started
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-electric-blue/10 hover:border-electric-blue/30 group" id="mobile-menu-button">
+                    <div class="space-y-1.5">
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                    </div>
+                </button>
             </div>
-            <ul class="hidden md:flex gap-8">
-                <li><a href="#home" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Home</a></li>
-                <li><a href="#about" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">About</a></li>
-                <li><a href="#services" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Services</a></li>
-                <li><a href="#solutions" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Solutions</a></li>
-                <li><a href="#contact" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Contact</a></li>
-            </ul>
-            <div class="md:hidden flex flex-col cursor-pointer hamburger">
-                <i class="fas fa-bars text-deep-navy text-xl"></i>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
+                <div class="px-6 py-6 space-y-4">
+                    <a href="#home" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
+                        <i class="fas fa-home mr-3 text-sm w-5"></i>
+                        Home
+                    </a>
+                    <a href="#about" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
+                        <i class="fas fa-users mr-3 text-sm w-5"></i>
+                        About
+                    </a>
+                    <a href="#services" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
+                        <i class="fas fa-cogs mr-3 text-sm w-5"></i>
+                        Services
+                    </a>
+                    <a href="#solutions" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
+                        <i class="fas fa-industry mr-3 text-sm w-5"></i>
+                        Solutions
+                    </a>
+                    <div class="pt-4 border-t border-gray-200/50">
+                        <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-xl transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
+                            <i class="fas fa-comments mr-2 text-sm"></i>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 bg-gradient-to-br from-white to-blue-50">
-        <div class="max-w-container mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
-            <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-6xl font-semibold mb-6">
+    <section id="home" class="relative min-h-screen pt-24 pb-20 overflow-hidden bg-white">
+        
+        <div class="relative max-w-container mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center min-h-screen">
+            <div class="text-center lg:text-left animate-slide-in-left">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-8">
+                    <i class="fas fa-sparkles mr-2"></i>
+                    Leading Tech Innovation Since 2025
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
                     <span class="block text-deep-navy">Innovative Minds,</span>
                     <span class="block text-electric-blue">Smart Tech</span>
                 </h1>
-                <p class="text-xl mb-8 text-charcoal leading-relaxed">
-                    Empowering individuals and businesses with cutting-edge technology solutions. 
+                
+                <p class="text-xl md:text-2xl mb-10 text-charcoal/80 leading-relaxed max-w-2xl">
+                    Empowering individuals and businesses with <span class="font-semibold text-electric-blue">cutting-edge technology solutions</span>. 
                     From tech education to scalable software development, we drive transformation and success.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#services" class="inline-block px-8 py-4 bg-electric-blue text-white rounded-lg font-medium text-center transition-all duration-300 hover:bg-deep-navy">Our Services</a>
-                    <a href="#contact" class="inline-block px-8 py-4 bg-transparent text-deep-navy border-2 border-deep-navy rounded-lg font-medium text-center transition-all duration-300 hover:bg-deep-navy hover:text-white">Get Started</a>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-12">
+                    <a href="#services" class="group relative inline-flex items-center justify-center px-8 py-4 bg-electric-blue text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-2xl hover:scale-105 transform overflow-hidden">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-rocket mr-3"></i>
+                            Explore Services
+                        </span>
+                    </a>
+                    <a href="#contact" class="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-deep-navy border-2 border-electric-blue rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-electric-blue hover:text-white hover:shadow-xl hover:scale-105 transform">
+                        <i class="fas fa-comments mr-3"></i>
+                        Start Project
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200/50">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-electric-blue mb-2">500+</div>
+                        <div class="text-sm text-charcoal/70">Projects Delivered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-electric-blue mb-2">50+</div>
+                        <div class="text-sm text-charcoal/70">Happy Clients</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-electric-blue mb-2">99%</div>
+                        <div class="text-sm text-charcoal/70">Success Rate</div>
+                    </div>
                 </div>
             </div>
-            <div class="text-center">
-                <img src="assets/images/brand_on_laptop.png" alt="ICECODING Technology Solutions" class="max-w-full h-auto rounded-lg shadow-2xl">
+            
+            <div class="text-center lg:text-right animate-slide-in-right">
+                <div class="relative group">
+                    <img src="assets/images/brand_on_laptop.png" alt="ICECODING Technology Solutions" class="relative max-w-full h-auto rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-blue-50">
-        <div class="max-w-container mx-auto px-5">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">About ICECODING</h2>
-                <p class="text-xl text-charcoal">Dedicated to empowering individuals with technology skills</p>
+    <section id="about" class="relative py-32 bg-gray-50 overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 25% 25%, #007BFF 2px, transparent 2px), radial-gradient(circle at 75% 75%, #667eea 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+        
+        <div class="relative max-w-container mx-auto px-5">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in-up">
+                <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
+                    <i class="fas fa-users mr-2"></i>
+                    About Our Company
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-deep-navy mb-6">About ICECODING</h2>
+                <p class="text-2xl text-charcoal/70 max-w-3xl mx-auto">Dedicated to empowering individuals with technology skills and driving digital transformation</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h3 class="text-3xl font-semibold text-deep-navy mb-4">Our Mission</h3>
-                    <p class="text-lg mb-8 text-charcoal">Our mission is to utilize technology to develop solutions that foster transformation and success for our clients. We are dedicated to providing innovative, dependable, and scalable software products and services that surpass our customers' expectations and lead them towards future growth.</p>
+            
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <!-- Content -->
+                <div class="animate-slide-in-left">
+                    <div class="space-y-8">
+                        <div class="relative">
+                            <div class="absolute -left-4 top-0 w-1 h-full bg-electric-blue rounded-full"></div>
+                            <h3 class="text-4xl font-bold text-deep-navy mb-6 pl-8">Our Mission</h3>
+                            <p class="text-xl text-charcoal/80 leading-relaxed pl-8">Our mission is to utilize technology to develop solutions that foster transformation and success for our clients. We are dedicated to providing innovative, dependable, and scalable software products and services that surpass our customers' expectations and lead them towards future growth.</p>
+                        </div>
+                        
+                        <!-- Statistics -->
+                        <div class="grid grid-cols-2 gap-6 pl-8 pt-8">
+                            <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-electric-blue/10">
+                                <div class="text-3xl font-bold text-electric-blue mb-2">5+</div>
+                                <div class="text-sm text-charcoal/70">Years Experience</div>
+                            </div>
+                            <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-electric-blue/10">
+                                <div class="text-3xl font-bold text-electric-blue mb-2">24/7</div>
+                                <div class="text-sm text-charcoal/70">Support Available</div>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-deep-navy mb-6">Our Core Values</h4>
+                    <!-- Core Values -->
+                    <div class="mt-12">
+                        <h4 class="text-3xl font-bold text-deep-navy mb-8">Our Core Values</h4>
                         <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
-                                <div class="text-4xl mb-4 text-electric-blue">
-                                    <i class="fas fa-lightbulb"></i>
+                            <div class="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-r from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div class="relative">
+                                    <div class="text-5xl mb-6 text-electric-blue transform group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h5 class="text-2xl font-bold text-deep-navy mb-3">Innovation</h5>
+                                    <p class="text-charcoal/70">Pushing boundaries with creative solutions and cutting-edge technology</p>
                                 </div>
-                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Innovation</h5>
-                                <p class="text-charcoal">Pushing boundaries with creative solutions</p>
                             </div>
-                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
-                                <div class="text-4xl mb-4 text-electric-blue">
-                                    <i class="fas fa-bullseye"></i>
+                            
+                            <div class="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-r from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div class="relative">
+                                    <div class="text-5xl mb-6 text-electric-blue transform group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h5 class="text-2xl font-bold text-deep-navy mb-3">Customer-Centricity</h5>
+                                    <p class="text-charcoal/70">Your success is our priority in everything we do</p>
                                 </div>
-                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Customer-Centricity</h5>
-                                <p class="text-charcoal">Your success is our priority</p>
                             </div>
-                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
-                                <div class="text-4xl mb-4 text-electric-blue">
-                                    <i class="fas fa-handshake"></i>
+                            
+                            <div class="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-r from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div class="relative">
+                                    <div class="text-5xl mb-6 text-electric-blue transform group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <h5 class="text-2xl font-bold text-deep-navy mb-3">Integrity</h5>
+                                    <p class="text-charcoal/70">Building honest, transparent relationships with our clients</p>
                                 </div>
-                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Integrity</h5>
-                                <p class="text-charcoal">Honest, transparent relationships</p>
                             </div>
-                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
-                                <div class="text-4xl mb-4 text-electric-blue">
-                                    <i class="fas fa-award"></i>
+                            
+                            <div class="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-r from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div class="relative">
+                                    <div class="text-5xl mb-6 text-electric-blue transform group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <h5 class="text-2xl font-bold text-deep-navy mb-3">Excellence</h5>
+                                    <p class="text-charcoal/70">Delivering quality and exceeding expectations consistently</p>
                                 </div>
-                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Excellence</h5>
-                                <p class="text-charcoal">Delivering quality in everything we do</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <img src="assets/images/billboard.png" alt="ICECODING Brand Solutions" class="max-w-full h-auto rounded-lg shadow-2xl">
+                
+                <!-- Image -->
+                <div class="animate-slide-in-right">
+                    <div class="relative group">
+                        <div class="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                            <img src="assets/images/billboard.png" alt="ICECODING Brand Solutions" class="w-full h-auto rounded-2xl shadow-2xl">
+                        </div>
+                        
+                        <!-- Floating badge -->
+                        <div class="absolute -top-6 -right-6 bg-electric-blue text-white p-6 rounded-2xl shadow-2xl">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold">2025</div>
+                                <div class="text-sm">Established</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-container mx-auto px-5">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">Our Services</h2>
-                <p class="text-xl text-charcoal">Comprehensive technology solutions for your business</p>
+    <section id="services" class="relative py-32 bg-deep-navy text-white overflow-hidden">
+        
+        <div class="relative max-w-container mx-auto px-5">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in-up">
+                <div class="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-medium text-sm mb-6">
+                    <i class="fas fa-cogs mr-2"></i>
+                    Our Expertise
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6">Our Services</h2>
+                <p class="text-2xl text-white/80 max-w-3xl mx-auto">Comprehensive technology solutions tailored to transform your business and drive success</p>
             </div>
+            
+            <!-- Services Grid -->
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-lg shadow-xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                    <div class="text-5xl mb-6 text-electric-blue">
-                        <i class="fas fa-graduation-cap"></i>
+                <!-- Tech Education Service -->
+                <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl animate-slide-in-up">
+                    <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-blue-gradient-end/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative text-center">
+                        <div class="text-6xl mb-6 text-electric-blue transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Tech Education</h3>
+                        <p class="text-white/80 mb-6 leading-relaxed">From beginners to professionals, we provide comprehensive tech training programs that equip individuals with industry-relevant skills.</p>
+                        <ul class="text-left space-y-3 text-white/70 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Programming Bootcamps
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Professional Development
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Corporate Training
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <button class="bg-electric-blue px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-white hover:text-electric-blue hover:shadow-lg hover:scale-105">
+                                Learn More
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold text-deep-navy mb-4">Tech Education</h3>
-                    <p class="text-charcoal mb-6">From beginners to professionals, we provide comprehensive tech training programs that equip individuals with industry-relevant skills.</p>
-                    <ul class="text-left space-y-2">
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Programming Bootcamps
-                        </li>
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Professional Development
-                        </li>
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Corporate Training
-                        </li>
-                    </ul>
                 </div>
-                <div class="bg-white p-10 rounded-lg shadow-xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                    <div class="text-5xl mb-6 text-electric-blue">
-                        <i class="fas fa-code"></i>
+                
+                <!-- Software Development Service -->
+                <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl animate-slide-in-up animation-delay-100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-blue-gradient-end/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative text-center">
+                        <div class="text-6xl mb-6 text-electric-blue transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Software Development</h3>
+                        <p class="text-white/80 mb-6 leading-relaxed">Custom software solutions designed to meet your specific business needs and drive digital transformation.</p>
+                        <ul class="text-left space-y-3 text-white/70 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Web Applications
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Mobile Apps
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Enterprise Solutions
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <button class="bg-electric-blue px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-white hover:text-electric-blue hover:shadow-lg hover:scale-105">
+                                Learn More
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold text-deep-navy mb-4">Software Development</h3>
-                    <p class="text-charcoal mb-6">Custom software solutions designed to meet your specific business needs and drive digital transformation.</p>
-                    <ul class="text-left space-y-2">
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Web Applications
-                        </li>
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Mobile Apps
-                        </li>
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Enterprise Solutions
-                        </li>
-                    </ul>
                 </div>
-                <div class="bg-white p-10 rounded-lg shadow-xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                    <div class="text-5xl mb-6 text-electric-blue">
-                        <i class="fas fa-cogs"></i>
+                
+                <!-- Tech Consulting Service -->
+                <div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl animate-slide-in-up animation-delay-200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-blue-gradient-end/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative text-center">
+                        <div class="text-6xl mb-6 text-electric-blue transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Tech Consulting</h3>
+                        <p class="text-white/80 mb-6 leading-relaxed">Strategic technology guidance to help you make informed decisions and optimize your digital infrastructure.</p>
+                        <ul class="text-left space-y-3 text-white/70 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Digital Strategy
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Technology Audits
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-electric-blue mr-3"></i>
+                                Implementation Support
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <button class="bg-electric-blue px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-white hover:text-electric-blue hover:shadow-lg hover:scale-105">
+                                Learn More
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold text-deep-navy mb-4">Tech Consulting</h3>
-                    <p class="text-charcoal mb-6">Strategic technology guidance to help you make informed decisions and optimize your digital infrastructure.</p>
-                    <ul class="text-left space-y-2">
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Digital Strategy
-                        </li>
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Technology Audits
-                        </li>
-                        <li class="flex items-center text-charcoal">
-                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
-                            Implementation Support
-                        </li>
-                    </ul>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-20 animate-fade-in-up">
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-12 max-w-4xl mx-auto">
+                    <h3 class="text-4xl font-bold mb-6">Ready to Transform Your Business?</h3>
+                    <p class="text-xl text-white/80 mb-8">Let's discuss how our services can help you achieve your technology goals</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-electric-blue px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-electric-blue hover:shadow-2xl hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>
+                            Schedule Consultation
+                        </button>
+                        <button class="bg-white/10 border border-white/30 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-deep-navy hover:scale-105">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Brochure
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="py-20 bg-blue-50">
-        <div class="max-w-container mx-auto px-5">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">Solutions for Every Business</h2>
-                <p class="text-xl text-charcoal">Tailored technology solutions for diverse industries</p>
+    <section id="solutions" class="relative py-32 bg-white overflow-hidden">
+        
+        <div class="relative max-w-container mx-auto px-5">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in-up">
+                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-electric-blue/10 to-blue-gradient-end/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
+                    <i class="fas fa-industry mr-2"></i>
+                    Industry Solutions
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-deep-navy mb-6">Solutions for Every Business</h2>
+                <p class="text-2xl text-charcoal/70 max-w-3xl mx-auto">Tailored technology solutions for diverse industries and organizations</p>
             </div>
+            
+            <!-- Solutions Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="text-4xl mb-4 text-electric-blue text-center">
-                        <i class="fas fa-rocket"></i>
+                <!-- SMEs & Startups -->
+                <div class="group relative bg-white/80 backdrop-blur-sm border border-electric-blue/10 rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 animate-slide-in-up">
+                    <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative text-center">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-electric-blue rounded-2xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-rocket text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-deep-navy mb-4">SMEs & Startups</h3>
+                        <p class="text-charcoal/80 leading-relaxed">Scalable solutions that grow with your business, from MVP development to enterprise scaling.</p>
+                        
+                        <!-- Features list -->
+                        <div class="mt-6 space-y-2 text-sm">
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                MVP Development
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Growth Strategy
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Tech Consulting
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-deep-navy mb-4">SMEs & Startups</h3>
-                    <p class="text-charcoal">Scalable solutions that grow with your business, from MVP development to enterprise scaling.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="text-4xl mb-4 text-electric-blue text-center">
-                        <i class="fas fa-university"></i>
+                
+                <!-- Government Agencies -->
+                <div class="group relative bg-white/80 backdrop-blur-sm border border-electric-blue/10 rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 animate-slide-in-up animation-delay-100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative text-center">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-electric-blue rounded-2xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-university text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-deep-navy mb-4">Government Agencies</h3>
+                        <p class="text-charcoal/80 leading-relaxed">Secure, compliant digital solutions for public sector modernization and citizen services.</p>
+                        
+                        <!-- Features list -->
+                        <div class="mt-6 space-y-2 text-sm">
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Secure Platforms
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Compliance Ready
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Citizen Services
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-deep-navy mb-4">Government Agencies</h3>
-                    <p class="text-charcoal">Secure, compliant digital solutions for public sector modernization and citizen services.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="text-4xl mb-4 text-electric-blue text-center">
-                        <i class="fas fa-heart"></i>
+                
+                <!-- Non-Profits & NGOs -->
+                <div class="group relative bg-white/80 backdrop-blur-sm border border-electric-blue/10 rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 animate-slide-in-up animation-delay-200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative text-center">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-electric-blue rounded-2xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-heart text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-deep-navy mb-4">Non-Profits & NGOs</h3>
+                        <p class="text-charcoal/80 leading-relaxed">Cost-effective technology solutions to amplify your impact and streamline operations.</p>
+                        
+                        <!-- Features list -->
+                        <div class="mt-6 space-y-2 text-sm">
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Impact Tracking
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Donor Management
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Volunteer Platforms
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-deep-navy mb-4">Non-Profits & NGOs</h3>
-                    <p class="text-charcoal">Cost-effective technology solutions to amplify your impact and streamline operations.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="text-4xl mb-4 text-electric-blue text-center">
-                        <i class="fas fa-shopping-cart"></i>
+                
+                <!-- Retail & E-commerce -->
+                <div class="group relative bg-white/80 backdrop-blur-sm border border-electric-blue/10 rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 animate-slide-in-up animation-delay-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/5 to-blue-gradient-end/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative text-center">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-electric-blue rounded-2xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shopping-cart text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-deep-navy mb-4">Retail & E-commerce</h3>
+                        <p class="text-charcoal/80 leading-relaxed">Digital commerce platforms and retail technology to enhance customer experience.</p>
+                        
+                        <!-- Features list -->
+                        <div class="mt-6 space-y-2 text-sm">
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                E-commerce Platforms
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Inventory Management
+                            </div>
+                            <div class="flex items-center text-charcoal/70">
+                                <i class="fas fa-check-circle text-electric-blue mr-2"></i>
+                                Customer Analytics
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-deep-navy mb-4">Retail & E-commerce</h3>
-                    <p class="text-charcoal">Digital commerce platforms and retail technology to enhance customer experience.</p>
+                </div>
+            </div>
+            
+            <!-- Success Stories Section -->
+            <div class="mt-24">
+                <div class="text-center mb-16">
+                    <h3 class="text-4xl font-bold text-deep-navy mb-4">Success Stories</h3>
+                    <p class="text-xl text-charcoal/70">Real results from our partnerships</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-electric-blue text-white p-8 rounded-2xl">
+                        <div class="text-4xl font-bold mb-2">150%</div>
+                        <div class="text-xl font-semibold mb-2">Revenue Growth</div>
+                        <div class="text-white/80">Average increase for our e-commerce clients</div>
+                    </div>
+                    <div class="bg-deep-navy text-white p-8 rounded-2xl">
+                        <div class="text-4xl font-bold mb-2">90%</div>
+                        <div class="text-xl font-semibold mb-2">Process Efficiency</div>
+                        <div class="text-white/80">Improvement in operational workflows</div>
+                    </div>
+                    <div class="bg-electric-blue text-white p-8 rounded-2xl">
+                        <div class="text-4xl font-bold mb-2">500+</div>
+                        <div class="text-xl font-semibold mb-2">Professionals Trained</div>
+                        <div class="text-white/80">Through our education programs</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-container mx-auto px-5">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">Get In Touch</h2>
-                <p class="text-xl text-charcoal">Ready to transform your business with technology?</p>
-            </div>
-            <div class="grid lg:grid-cols-3 gap-16">
-                <div class="lg:col-span-2">
-                    <form id="contactForm" class="bg-blue-50 p-10 rounded-lg">
-                        <div class="mb-6">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required 
-                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
-                        </div>
-                        <div class="mb-6">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required 
-                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
-                        </div>
-                        <div class="mb-6">
-                            <input type="text" id="company" name="company" placeholder="Company Name"
-                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
-                        </div>
-                        <div class="mb-6">
-                            <select id="service" name="service" required 
-                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
-                                <option value="">Select a Service</option>
-                                <option value="education">Tech Education</option>
-                                <option value="development">Software Development</option>
-                                <option value="consulting">Tech Consulting</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required
-                                      class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="w-full px-8 py-4 bg-electric-blue text-white rounded-lg font-medium text-base transition-all duration-300 hover:bg-deep-navy">Send Message</button>
-                    </form>
+    <section id="contact" class="relative py-32 bg-deep-navy text-white overflow-hidden">
+        
+        <div class="relative max-w-container mx-auto px-5">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in-up">
+                <div class="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-medium text-sm mb-6">
+                    <i class="fas fa-comments mr-2"></i>
+                    Let's Connect
                 </div>
-                <div class="space-y-8">
-                    <div class="flex items-start space-x-4">
-                        <div class="text-2xl text-electric-blue mt-1">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold text-deep-navy mb-2">Email Us</h4>
-                            <p class="text-charcoal">hello@icecoding.com</p>
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6">Get In Touch</h2>
+                <p class="text-2xl text-white/80 max-w-3xl mx-auto">Ready to transform your business with technology? Let's discuss your vision and create something amazing together.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-16">
+                <!-- Contact Form -->
+                <div class="lg:col-span-2 animate-slide-in-left">
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-10">
+                        <h3 class="text-3xl font-bold mb-8 text-center">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="relative group">
+                                    <input type="text" id="name" name="name" placeholder="Your Name" required 
+                                           class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl font-poppins text-base text-white placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-electric-blue focus:bg-white/20 focus:shadow-lg group-hover:border-white/50">
+                                </div>
+                                <div class="relative group">
+                                    <input type="email" id="email" name="email" placeholder="Your Email" required 
+                                           class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl font-poppins text-base text-white placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-electric-blue focus:bg-white/20 focus:shadow-lg group-hover:border-white/50">
+                                </div>
+                            </div>
+                            <div class="relative group">
+                                <input type="text" id="company" name="company" placeholder="Company Name"
+                                       class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl font-poppins text-base text-white placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-electric-blue focus:bg-white/20 focus:shadow-lg group-hover:border-white/50">
+                            </div>
+                            <div class="relative group">
+                                <select id="service" name="service" required 
+                                        class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl font-poppins text-base text-white transition-all duration-300 focus:outline-none focus:border-electric-blue focus:bg-white/20 focus:shadow-lg group-hover:border-white/50">
+                                    <option value="" class="text-charcoal">Select a Service</option>
+                                    <option value="education" class="text-charcoal">Tech Education</option>
+                                    <option value="development" class="text-charcoal">Software Development</option>
+                                    <option value="consulting" class="text-charcoal">Tech Consulting</option>
+                                    <option value="other" class="text-charcoal">Other</option>
+                                </select>
+                            </div>
+                            <div class="relative group">
+                                <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required
+                                          class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl font-poppins text-base text-white placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-electric-blue focus:bg-white/20 focus:shadow-lg resize-none group-hover:border-white/50"></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-8 py-4 bg-electric-blue text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-electric-blue hover:shadow-2xl hover:scale-105 transform active:scale-95">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8 animate-slide-in-right">
+                    <!-- Email -->
+                    <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 transition-all duration-300 hover:bg-white/15 hover:scale-105">
+                        <div class="relative flex items-center space-x-6">
+                            <div class="flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl transform group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-envelope text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-2">Email Us</h4>
+                                <p class="text-white/80 text-lg">hello@icecoding.com</p>
+                                <p class="text-white/60 text-sm mt-1">We'll respond within 24 hours</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="text-2xl text-electric-blue mt-1">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold text-deep-navy mb-2">Call Us</h4>
-                            <p class="text-charcoal">+1 (555) 123-4567</p>
+                    
+                    <!-- Phone -->
+                    <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 transition-all duration-300 hover:bg-white/15 hover:scale-105">
+                        <div class="relative flex items-center space-x-6">
+                            <div class="flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl transform group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-phone text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-2">Call Us</h4>
+                                <p class="text-white/80 text-lg">+1 (555) 123-4567</p>
+                                <p class="text-white/60 text-sm mt-1">Mon-Fri: 9AM-6PM EST</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="text-2xl text-electric-blue mt-1">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold text-deep-navy mb-2">Follow Us</h4>
-                            <div class="flex gap-4">
-                                <a href="#" class="text-electric-blue hover:text-deep-navy transition-colors duration-300 flex items-center gap-2">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                    
+                    <!-- Social Media -->
+                    <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 transition-all duration-300 hover:bg-white/15 hover:scale-105">
+                        <div class="relative">
+                            <div class="flex items-center space-x-6 mb-6">
+                                <div class="flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl transform group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-share-alt text-2xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold mb-2">Follow Us</h4>
+                                    <p class="text-white/60 text-sm">Stay connected and updated</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <a href="#" class="flex items-center gap-3 text-white/80 hover:text-electric-blue transition-colors duration-300 group/link">
+                                    <i class="fab fa-linkedin text-xl w-6 text-center"></i>
+                                    <span class="group-hover/link:translate-x-1 transition-transform duration-300">LinkedIn</span>
                                 </a>
-                                <a href="#" class="text-electric-blue hover:text-deep-navy transition-colors duration-300 flex items-center gap-2">
-                                    <i class="fab fa-twitter"></i> Twitter
+                                <a href="#" class="flex items-center gap-3 text-white/80 hover:text-electric-blue transition-colors duration-300 group/link">
+                                    <i class="fab fa-twitter text-xl w-6 text-center"></i>
+                                    <span class="group-hover/link:translate-x-1 transition-transform duration-300">Twitter</span>
                                 </a>
-                                <a href="#" class="text-electric-blue hover:text-deep-navy transition-colors duration-300 flex items-center gap-2">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="#" class="flex items-center gap-3 text-white/80 hover:text-electric-blue transition-colors duration-300 group/link">
+                                    <i class="fab fa-github text-xl w-6 text-center"></i>
+                                    <span class="group-hover/link:translate-x-1 transition-transform duration-300">GitHub</span>
                                 </a>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- Quick Info -->
+                    <div class="bg-electric-blue rounded-2xl p-8 text-center">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h4 class="text-2xl font-bold mb-4">Free Consultation</h4>
+                        <p class="text-white/90 mb-6">Book a 30-minute strategy session with our experts</p>
+                        <button class="bg-white/20 border border-white/30 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-white/30 hover:scale-105">
+                            Schedule Now
+                        </button>
                     </div>
                 </div>
             </div>
@@ -326,42 +766,170 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-deep-navy text-white py-12">
-        <div class="max-w-container mx-auto px-5">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-1">
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="assets/images/logo_name_slogan.png" alt="ICECODING - Innovative Minds, Smart Tech" class="h-16 w-auto">
+    <footer class="relative bg-deep-navy text-white overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full" style="background-image: linear-gradient(45deg, #007BFF 1px, transparent 1px), linear-gradient(-45deg, #007BFF 1px, transparent 1px); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="relative">
+            <!-- Main Footer Content -->
+            <div class="py-20">
+                <div class="max-w-container mx-auto px-5">
+                    <div class="grid md:grid-cols-4 gap-12 mb-16">
+                        <!-- Brand Section -->
+                        <div class="md:col-span-1 animate-fade-in-up">
+                            <div class="mb-8">
+                                <img src="assets/images/logo_name_slogan.png" alt="ICECODING - Innovative Minds, Smart Tech" class="h-20 w-auto mb-6">
+                                <p class="text-white/80 leading-relaxed text-lg">Empowering businesses through innovative technology solutions and comprehensive training programs.</p>
+                            </div>
+                            
+                            <!-- Social Links -->
+                            <div class="flex gap-4">
+                                <a href="#" class="group flex items-center justify-center w-12 h-12 bg-white/10 border border-white/20 rounded-xl transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue hover:scale-110">
+                                    <i class="fab fa-linkedin text-lg group-hover:text-white transition-colors duration-300"></i>
+                                </a>
+                                <a href="#" class="group flex items-center justify-center w-12 h-12 bg-white/10 border border-white/20 rounded-xl transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue hover:scale-110">
+                                    <i class="fab fa-twitter text-lg group-hover:text-white transition-colors duration-300"></i>
+                                </a>
+                                <a href="#" class="group flex items-center justify-center w-12 h-12 bg-white/10 border border-white/20 rounded-xl transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue hover:scale-110">
+                                    <i class="fab fa-github text-lg group-hover:text-white transition-colors duration-300"></i>
+                                </a>
+                                <a href="#" class="group flex items-center justify-center w-12 h-12 bg-white/10 border border-white/20 rounded-xl transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue hover:scale-110">
+                                    <i class="fab fa-instagram text-lg group-hover:text-white transition-colors duration-300"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Services -->
+                        <div class="animate-fade-in-up animation-delay-100">
+                            <h4 class="text-2xl font-bold mb-8 text-white">Services</h4>
+                            <ul class="space-y-4">
+                                <li>
+                                    <a href="#services" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-graduation-cap mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        Tech Education & Training
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#services" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-code mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        Software Development
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#services" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-cogs mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        Technology Consulting
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#services" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-mobile-alt mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        Mobile App Development
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Solutions -->
+                        <div class="animate-fade-in-up animation-delay-200">
+                            <h4 class="text-2xl font-bold mb-8 text-white">Solutions</h4>
+                            <ul class="space-y-4">
+                                <li>
+                                    <a href="#solutions" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-rocket mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        SMEs & Startups
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#solutions" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-university mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        Government Agencies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#solutions" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-heart mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        Non-Profits & NGOs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#solutions" class="group flex items-center text-white/80 hover:text-electric-blue transition-all duration-300">
+                                        <i class="fas fa-shopping-cart mr-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                        Retail & E-commerce
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Company & Contact -->
+                        <div class="animate-fade-in-up animation-delay-300">
+                            <h4 class="text-2xl font-bold mb-8 text-white">Get In Touch</h4>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center justify-center w-10 h-10 bg-electric-blue/20 rounded-lg">
+                                        <i class="fas fa-envelope text-electric-blue"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white/60 text-sm">Email</p>
+                                        <p class="text-white text-lg">hello@icecoding.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center justify-center w-10 h-10 bg-electric-blue/20 rounded-lg">
+                                        <i class="fas fa-phone text-electric-blue"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white/60 text-sm">Phone</p>
+                                        <p class="text-white text-lg">+1 (555) 123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center justify-center w-10 h-10 bg-electric-blue/20 rounded-lg">
+                                        <i class="fas fa-clock text-electric-blue"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white/60 text-sm">Hours</p>
+                                        <p class="text-white text-lg">Mon-Fri: 9AM-6PM EST</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Newsletter -->
+                            <div class="mt-8 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
+                                <h5 class="text-lg font-semibold mb-4">Stay Updated</h5>
+                                <p class="text-white/70 text-sm mb-4">Get the latest tech insights and updates</p>
+                                <div class="flex gap-2">
+                                    <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 text-sm focus:outline-none focus:border-electric-blue">
+                                    <button class="bg-electric-blue px-4 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white hover:text-electric-blue hover:scale-105 transition-all duration-300">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Tech Education</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Software Development</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Tech Consulting</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For SMEs</a></li>
-                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For Government</a></li>
-                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For Non-Profits</a></li>
-                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For Retail</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Privacy Policy</a></li>
-                    </ul>
-                </div>
             </div>
-            <div class="border-t border-gray-600 pt-4 text-center">
-                <p class="text-gray-300">&copy; 2025 ICECODING. All rights reserved.</p>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 bg-deep-navy/50 backdrop-blur-sm">
+                <div class="max-w-container mx-auto px-5 py-8">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-8">
+                            <p class="text-white/70">&copy; 2025 ICECODING. All rights reserved.</p>
+                            <div class="flex items-center gap-6 text-sm">
+                                <a href="#" class="text-white/60 hover:text-electric-blue transition-colors duration-300">Privacy Policy</a>
+                                <a href="#" class="text-white/60 hover:text-electric-blue transition-colors duration-300">Terms of Service</a>
+                                <a href="#" class="text-white/60 hover:text-electric-blue transition-colors duration-300">Cookie Policy</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <span class="text-white/70 text-sm">Powered by innovative minds</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
