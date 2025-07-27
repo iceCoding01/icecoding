@@ -1,5 +1,102 @@
 /* Additional styles to complement Tailwind CSS for ICECODING */
 
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 20rem; /* 320px fixed height */
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-btn {
+    opacity: 0.8;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-dot {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-dot.active,
+.carousel-dot:hover {
+    background-color: #007BFF !important;
+    transform: scale(1.2);
+}
+
+/* Carousel responsive adjustments */
+@media (min-width: 768px) {
+    .carousel-slide img {
+        height: 24rem; /* 384px for medium screens and up */
+    }
+}
+
+@media (max-width: 640px) {
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        left: 8px;
+        right: 8px;
+    }
+    
+    .carousel-btn i {
+        font-size: 14px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Carousel loading state */
+.carousel-loading {
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 123, 255, 0.1), 
+        transparent
+    );
+    animation: carousel-shimmer 1.5s infinite;
+}
+
+@keyframes carousel-shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
 /* Enhanced Navbar Styles */
 .navbar-glass {
     background: rgba(255, 255, 255, 0.95);
