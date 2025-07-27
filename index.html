@@ -106,53 +106,41 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                <ul class="hidden lg:flex items-center gap-1">
+                <ul class="hidden lg:flex items-center gap-2">
                     <li>
-                        <a href="#home" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
-                            <div class="flex items-center">
-                                <i class="fas fa-home mr-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></i>
-                                <span class="relative z-10">Home</span>
-                            </div>
-                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <a href="#home" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Home</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#about" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
-                            <div class="flex items-center">
-                                <i class="fas fa-building mr-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></i>
-                                <span class="relative z-10">About</span>
-                            </div>
-                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <a href="#about" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">About</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#services" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
-                            <div class="flex items-center">
-                                <i class="fas fa-cogs mr-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></i>
-                                <span class="relative z-10">Services</span>
-                            </div>
-                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <a href="#services" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Services</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#solutions" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group">
-                            <div class="flex items-center">
-                                <i class="fas fa-lightbulb mr-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></i>
-                                <span class="relative z-10">Solutions</span>
-                            </div>
-                            <div class="absolute inset-0 bg-electric-blue/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <a href="#solutions" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Solutions</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
                         </a>
                     </li>
                     <li class="ml-4">
-                        <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-lg hover:scale-105 transform">
-                            <i class="fas fa-rocket mr-2 text-sm"></i>
+                        <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="material-icons mr-2 text-sm">rocket_launch</span>
                             Get Started
                         </a>
                     </li>
                 </ul>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-electric-blue/10 hover:border-electric-blue/30 group" id="mobile-menu-button">
+                <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100 group focus:outline-none" id="mobile-menu-button">
                     <div class="space-y-1.5">
                         <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
                         <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
@@ -163,26 +151,26 @@
 
             <!-- Mobile Navigation Menu -->
             <div class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
-                <div class="px-6 py-6 space-y-4">
-                    <a href="#home" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
-                        <i class="fas fa-home mr-3 text-lg w-6 text-electric-blue/70"></i>
-                        Home
+                <div class="px-6 py-6 space-y-2">
+                    <a href="#home" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Home</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-10"></div>
                     </a>
-                    <a href="#about" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
-                        <i class="fas fa-building mr-3 text-lg w-6 text-electric-blue/70"></i>
-                        About
+                    <a href="#about" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">About</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
                     </a>
-                    <a href="#services" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
-                        <i class="fas fa-cogs mr-3 text-lg w-6 text-electric-blue/70"></i>
-                        Services
+                    <a href="#services" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Services</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-16"></div>
                     </a>
-                    <a href="#solutions" class="flex items-center px-4 py-3 text-charcoal font-medium rounded-xl transition-all duration-300 hover:bg-electric-blue/10 hover:text-electric-blue">
-                        <i class="fas fa-lightbulb mr-3 text-lg w-6 text-electric-blue/70"></i>
-                        Solutions
+                    <a href="#solutions" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Solutions</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-18"></div>
                     </a>
                     <div class="pt-4 border-t border-gray-200/50">
-                        <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-xl transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
-                            <i class="fas fa-rocket mr-2 text-lg"></i>
+                        <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none">
+                            <span class="material-icons mr-2 text-lg">rocket_launch</span>
                             Get Started
                         </a>
                     </div>
@@ -996,6 +984,272 @@
         </div>
     </section>
 
+    <!-- Media Gallery Section -->
+    <section id="gallery" class="relative py-32 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <div class="relative max-w-container mx-auto px-5">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
+                    <span class="material-icons mr-2 text-lg">photo_library</span>
+                    Our Work in Action
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-6">Visual Portfolio</h2>
+                <p class="text-xl text-charcoal/70 max-w-3xl mx-auto leading-relaxed">
+                    Explore our comprehensive portfolio showcasing innovative technology solutions, project highlights, and behind-the-scenes insights into our development process.
+                </p>
+            </div>
+
+            <!-- Media Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button class="media-filter-btn active px-6 py-3 bg-electric-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg" data-filter="all">
+                    All Media
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="projects">
+                    Project Showcases
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="process">
+                    Development Process
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="team">
+                    Team & Culture
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="videos">
+                    Video Content
+                </button>
+            </div>
+
+            <!-- Media Grid -->
+            <div class="media-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Featured Video Item -->
+                <div class="media-item lg:col-span-2 lg:row-span-2" data-category="videos projects">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+                        <div class="relative h-96 lg:h-full bg-gradient-to-br from-electric-blue/20 to-deep-navy/20 flex items-center justify-center">
+                            <!-- Video Thumbnail/Placeholder -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/10 to-deep-navy/10"></div>
+                            <div class="relative z-10 text-center">
+                                <div class="inline-flex items-center justify-center w-20 h-20 bg-electric-blue rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-icons text-3xl text-white">play_arrow</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-deep-navy mb-2">Company Overview</h3>
+                                <p class="text-charcoal/70">Watch our journey and mission</p>
+                            </div>
+                            <!-- Play overlay -->
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <span class="material-icons text-6xl mb-2">play_circle</span>
+                                    <p class="text-lg font-medium">Play Video</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Featured</span>
+                                    <span class="text-charcoal/60 text-sm">5:42 min</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons">fullscreen</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Showcase 1 -->
+                <div class="media-item" data-category="projects">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/20 to-deep-navy/10 overflow-hidden">
+                            <img src="assets/images/brand_on_laptop.png" alt="E-commerce Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-electric-blue text-sm font-medium rounded-full">Web App</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">E-commerce Platform</h4>
+                                <p class="text-sm text-white/90">Modern shopping experience</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Modern E-commerce Solution</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Full-stack e-commerce platform with advanced analytics and seamless user experience.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-electric-blue/10 text-electric-blue text-xs rounded">React</span>
+                                    <span class="px-2 py-1 bg-electric-blue/10 text-electric-blue text-xs rounded">Node.js</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">launch</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development Process -->
+                <div class="media-item" data-category="process">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-deep-navy/20 to-electric-blue/10 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-icons text-2xl text-white">code</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-deep-navy">Development Workflow</h4>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Agile Development Process</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Behind-the-scenes look at our collaborative development methodology and quality assurance.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-sm font-medium rounded-full">Process</span>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">visibility</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Culture -->
+                <div class="media-item" data-category="team">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/10 to-deep-navy/20 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-icons text-2xl text-white">groups</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-deep-navy">Team Collaboration</h4>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Innovation Culture</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Discover how our diverse team collaborates to create cutting-edge technology solutions.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Culture</span>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">people</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Project -->
+                <div class="media-item" data-category="projects">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-deep-navy/20 to-electric-blue/20 overflow-hidden">
+                            <img src="assets/images/billboard.png" alt="Mobile Application" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-deep-navy text-sm font-medium rounded-full">Mobile</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Mobile Application</h4>
+                                <p class="text-sm text-white/90">Cross-platform solution</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Cross-Platform Mobile App</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Native performance with React Native, delivering seamless user experience across platforms.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">React Native</span>
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Firebase</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">smartphone</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Tutorial -->
+                <div class="media-item" data-category="videos process">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/20 to-deep-navy/20 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/10 to-deep-navy/10"></div>
+                            <div class="relative z-10 text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-icons text-2xl text-white">play_arrow</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-deep-navy">Tech Tutorial</h4>
+                            </div>
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <span class="material-icons text-4xl mb-2">play_circle</span>
+                                    <p class="text-sm font-medium">Watch Tutorial</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Development Tutorial</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Step-by-step guide to modern web development practices and best coding standards.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Tutorial</span>
+                                    <span class="text-charcoal/60 text-sm">12:34 min</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">play_circle</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center">
+                <button class="inline-flex items-center px-8 py-4 bg-electric-blue text-white font-semibold rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-lg hover:-translate-y-1 transform">
+                    <span class="material-icons mr-2">expand_more</span>
+                    Load More Content
+                </button>
+            </div>
+
+            <!-- Media Statistics -->
+            <div class="mt-20 bg-white border border-electric-blue/10 rounded-3xl p-12">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-deep-navy mb-4">Our Digital Footprint</h3>
+                    <p class="text-charcoal/70 text-lg">Comprehensive documentation of our journey and achievements</p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
+                            <span class="material-icons text-2xl text-electric-blue">photo_library</span>
+                        </div>
+                        <div class="text-3xl font-bold text-electric-blue mb-2">500+</div>
+                        <div class="text-charcoal/70 font-medium">Project Images</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy/10 rounded-2xl mb-4">
+                            <span class="material-icons text-2xl text-deep-navy">videocam</span>
+                        </div>
+                        <div class="text-3xl font-bold text-deep-navy mb-2">50+</div>
+                        <div class="text-charcoal/70 font-medium">Video Tutorials</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
+                            <span class="material-icons text-2xl text-electric-blue">timeline</span>
+                        </div>
+                        <div class="text-3xl font-bold text-electric-blue mb-2">100+</div>
+                        <div class="text-charcoal/70 font-medium">Process Docs</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy/10 rounded-2xl mb-4">
+                            <span class="material-icons text-2xl text-deep-navy">insights</span>
+                        </div>
+                        <div class="text-3xl font-bold text-deep-navy mb-2">1M+</div>
+                        <div class="text-charcoal/70 font-medium">Views Generated</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="relative py-32 bg-deep-navy text-white">
         <div class="relative max-w-container mx-auto px-5">
@@ -1309,6 +1563,185 @@
             </div>
         </div>
     </footer>
+
+    <!-- Media Gallery JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Media Filter Functionality
+            const filterButtons = document.querySelectorAll('.media-filter-btn');
+            const mediaItems = document.querySelectorAll('.media-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-electric-blue', 'text-white');
+                        btn.classList.add('bg-white', 'border', 'border-electric-blue/30', 'text-electric-blue');
+                    });
+                    
+                    this.classList.remove('bg-white', 'border', 'border-electric-blue/30', 'text-electric-blue');
+                    this.classList.add('active', 'bg-electric-blue', 'text-white');
+                    
+                    // Filter media items with animation
+                    mediaItems.forEach((item, index) => {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        
+                        if (filter === 'all' || categories.includes(filter)) {
+                            // Show item with staggered animation
+                            setTimeout(() => {
+                                item.style.display = 'block';
+                                item.style.opacity = '0';
+                                item.style.transform = 'translateY(20px) scale(0.95)';
+                                
+                                setTimeout(() => {
+                                    item.style.transition = 'all 0.5s ease';
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'translateY(0) scale(1)';
+                                }, 50);
+                            }, index * 100);
+                        } else {
+                            // Hide item
+                            item.style.transition = 'all 0.3s ease';
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(-20px) scale(0.95)';
+                            
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Media Item Hover Effects
+            const mediaItemsClickable = document.querySelectorAll('.media-item');
+            
+            mediaItemsClickable.forEach(item => {
+                // Enhanced hover effects
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+                
+                // Click handlers for different media types
+                item.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    if (category.includes('videos')) {
+                        // Add loading state
+                        const playIcon = this.querySelector('.material-icons');
+                        if (playIcon && playIcon.textContent === 'play_arrow') {
+                            playIcon.textContent = 'play_circle';
+                            playIcon.classList.add('animate-pulse');
+                            
+                            setTimeout(() => {
+                                playIcon.classList.remove('animate-pulse');
+                                playIcon.textContent = 'play_arrow';
+                            }, 2000);
+                        }
+                        
+                        console.log('Playing video...');
+                        // Integration point for video player
+                    } else {
+                        // Handle project/image view
+                        console.log('Viewing project details...');
+                        // Integration point for lightbox or modal
+                    }
+                });
+            });
+
+            // Load More Functionality with Enhanced UX
+            const loadMoreBtn = document.querySelector('button:has(.material-icons[class*="expand_more"])');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    const originalContent = this.innerHTML;
+                    
+                    // Show loading state
+                    this.innerHTML = '<span class="material-icons mr-2 animate-spin">refresh</span>Loading More Content...';
+                    this.disabled = true;
+                    this.classList.add('opacity-75');
+                    
+                    // Simulate content loading
+                    setTimeout(() => {
+                        this.innerHTML = originalContent;
+                        this.disabled = false;
+                        this.classList.remove('opacity-75');
+                        
+                        // Show success feedback
+                        this.innerHTML = '<span class="material-icons mr-2 text-green-400">check_circle</span>Content Loaded!';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalContent;
+                        }, 1500);
+                    }, 2000);
+                });
+            }
+
+            // Advanced Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Staggered animation based on element position
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0) scale(1)';
+                        }, index * 100);
+                    }
+                });
+            }, observerOptions);
+
+            // Initialize scroll animations
+            mediaItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(40px) scale(0.95)';
+                item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(item);
+            });
+
+            // Statistics Counter Animation
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.text-3xl');
+                        
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                            const suffix = counter.textContent.replace(/[\d\s]/g, '');
+                            let current = 0;
+                            const increment = target / 50;
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    counter.textContent = target + suffix;
+                                    clearInterval(timer);
+                                } else {
+                                    counter.textContent = Math.floor(current) + suffix;
+                                }
+                            }, 30);
+                        });
+                        
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            // Observe stats section
+            const statsSection = document.querySelector('.grid.md\\:grid-cols-4');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+    </script>
 
     <script src="scripts/main.js"></script>
 </body>
