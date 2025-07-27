@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom ICECODING Components */
+@layer components {
+  .container {
+    @apply max-w-container mx-auto px-5;
+  }
+
+  .btn {
+    @apply inline-block px-8 py-4 rounded-default font-medium text-base text-center cursor-pointer border-2 border-transparent transition-all duration-300 no-underline;
+  }
+
+  .btn-primary {
+    @apply bg-electric-blue text-white border-electric-blue hover:bg-deep-navy hover:border-deep-navy;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-deep-navy border-deep-navy hover:bg-deep-navy hover:text-white;
+  }
+
+  .section-padding {
+    @apply py-section;
+  }
+
+  .section-header {
+    @apply text-center mb-16;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-semibold text-deep-navy mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-charcoal;
+  }
+
+  .card {
+    @apply bg-white p-10 rounded-default shadow-brand transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-brand-hover;
+  }
+
+  .nav-link {
+    @apply text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-poppins leading-relaxed text-charcoal bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight text-deep-navy;
+  }
+
+  h1 { @apply text-5xl; }
+  h2 { @apply text-4xl; }
+  h3 { @apply text-3xl; }
+  h4 { @apply text-2xl; }
+  h5 { @apply text-xl; }
+  h6 { @apply text-lg; }
+
+  p {
+    @apply text-lg mb-4 text-charcoal;
+  }
+
+  a {
+    @apply no-underline text-electric-blue transition-all duration-300 hover:text-deep-navy;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-on-scroll {
+  @apply opacity-0 translate-y-8 transition-all duration-700;
+}
+
+.animate-on-scroll.animated {
+  @apply opacity-100 translate-y-0;
+}

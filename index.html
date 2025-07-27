@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICECODING - Innovative Minds, Smart Tech</title>
+    <meta name="description" content="ICECODING is a tech company dedicated to empowering individuals with the skills they need to thrive in technology. We provide innovative software solutions and tech education.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></link>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-navy': '#001F3F',
+                        'electric-blue': '#007BFF',
+                        'charcoal': '#2D2D2D',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        'container': '1200px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg py-4">
+        <div class="max-w-container mx-auto px-5 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto">
+                <span class="text-2xl font-bold text-deep-navy">ICECODING</span>
+            </div>
+            <ul class="hidden md:flex gap-8">
+                <li><a href="#home" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Home</a></li>
+                <li><a href="#about" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">About</a></li>
+                <li><a href="#services" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Services</a></li>
+                <li><a href="#solutions" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Solutions</a></li>
+                <li><a href="#contact" class="text-charcoal font-medium relative transition-all duration-300 hover:text-electric-blue nav-link">Contact</a></li>
+            </ul>
+            <div class="md:hidden flex flex-col cursor-pointer hamburger">
+                <i class="fas fa-bars text-deep-navy text-xl"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 bg-gradient-to-br from-white to-blue-50">
+        <div class="max-w-container mx-auto px-5 grid md:grid-cols-2 gap-16 items-center">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-semibold mb-6">
+                    <span class="block text-deep-navy">Innovative Minds,</span>
+                    <span class="block text-electric-blue">Smart Tech</span>
+                </h1>
+                <p class="text-xl mb-8 text-charcoal leading-relaxed">
+                    Empowering individuals and businesses with cutting-edge technology solutions. 
+                    From tech education to scalable software development, we drive transformation and success.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#services" class="inline-block px-8 py-4 bg-electric-blue text-white rounded-lg font-medium text-center transition-all duration-300 hover:bg-deep-navy">Our Services</a>
+                    <a href="#contact" class="inline-block px-8 py-4 bg-transparent text-deep-navy border-2 border-deep-navy rounded-lg font-medium text-center transition-all duration-300 hover:bg-deep-navy hover:text-white">Get Started</a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="assets/images/brand_on_laptop.png" alt="ICECODING Technology Solutions" class="max-w-full h-auto rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-blue-50">
+        <div class="max-w-container mx-auto px-5">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">About ICECODING</h2>
+                <p class="text-xl text-charcoal">Dedicated to empowering individuals with technology skills</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-3xl font-semibold text-deep-navy mb-4">Our Mission</h3>
+                    <p class="text-lg mb-8 text-charcoal">Our mission is to utilize technology to develop solutions that foster transformation and success for our clients. We are dedicated to providing innovative, dependable, and scalable software products and services that surpass our customers' expectations and lead them towards future growth.</p>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-2xl font-semibold text-deep-navy mb-6">Our Core Values</h4>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                                <div class="text-4xl mb-4 text-electric-blue">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Innovation</h5>
+                                <p class="text-charcoal">Pushing boundaries with creative solutions</p>
+                            </div>
+                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                                <div class="text-4xl mb-4 text-electric-blue">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Customer-Centricity</h5>
+                                <p class="text-charcoal">Your success is our priority</p>
+                            </div>
+                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                                <div class="text-4xl mb-4 text-electric-blue">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Integrity</h5>
+                                <p class="text-charcoal">Honest, transparent relationships</p>
+                            </div>
+                            <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                                <div class="text-4xl mb-4 text-electric-blue">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <h5 class="text-xl font-semibold text-deep-navy mb-2">Excellence</h5>
+                                <p class="text-charcoal">Delivering quality in everything we do</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/images/billboard.png" alt="ICECODING Brand Solutions" class="max-w-full h-auto rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-container mx-auto px-5">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">Our Services</h2>
+                <p class="text-xl text-charcoal">Comprehensive technology solutions for your business</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-lg shadow-xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="text-5xl mb-6 text-electric-blue">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-deep-navy mb-4">Tech Education</h3>
+                    <p class="text-charcoal mb-6">From beginners to professionals, we provide comprehensive tech training programs that equip individuals with industry-relevant skills.</p>
+                    <ul class="text-left space-y-2">
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Programming Bootcamps
+                        </li>
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Professional Development
+                        </li>
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Corporate Training
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-lg shadow-xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="text-5xl mb-6 text-electric-blue">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-deep-navy mb-4">Software Development</h3>
+                    <p class="text-charcoal mb-6">Custom software solutions designed to meet your specific business needs and drive digital transformation.</p>
+                    <ul class="text-left space-y-2">
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Web Applications
+                        </li>
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Mobile Apps
+                        </li>
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Enterprise Solutions
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-lg shadow-xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="text-5xl mb-6 text-electric-blue">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-deep-navy mb-4">Tech Consulting</h3>
+                    <p class="text-charcoal mb-6">Strategic technology guidance to help you make informed decisions and optimize your digital infrastructure.</p>
+                    <ul class="text-left space-y-2">
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Digital Strategy
+                        </li>
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Technology Audits
+                        </li>
+                        <li class="flex items-center text-charcoal">
+                            <i class="fas fa-check text-electric-blue font-bold mr-3"></i>
+                            Implementation Support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-blue-50">
+        <div class="max-w-container mx-auto px-5">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">Solutions for Every Business</h2>
+                <p class="text-xl text-charcoal">Tailored technology solutions for diverse industries</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div class="text-4xl mb-4 text-electric-blue text-center">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-deep-navy mb-4">SMEs & Startups</h3>
+                    <p class="text-charcoal">Scalable solutions that grow with your business, from MVP development to enterprise scaling.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div class="text-4xl mb-4 text-electric-blue text-center">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-deep-navy mb-4">Government Agencies</h3>
+                    <p class="text-charcoal">Secure, compliant digital solutions for public sector modernization and citizen services.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div class="text-4xl mb-4 text-electric-blue text-center">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-deep-navy mb-4">Non-Profits & NGOs</h3>
+                    <p class="text-charcoal">Cost-effective technology solutions to amplify your impact and streamline operations.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div class="text-4xl mb-4 text-electric-blue text-center">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-deep-navy mb-4">Retail & E-commerce</h3>
+                    <p class="text-charcoal">Digital commerce platforms and retail technology to enhance customer experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-container mx-auto px-5">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-deep-navy mb-4">Get In Touch</h2>
+                <p class="text-xl text-charcoal">Ready to transform your business with technology?</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-16">
+                <div class="lg:col-span-2">
+                    <form id="contactForm" class="bg-blue-50 p-10 rounded-lg">
+                        <div class="mb-6">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required 
+                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
+                        </div>
+                        <div class="mb-6">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required 
+                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
+                        </div>
+                        <div class="mb-6">
+                            <input type="text" id="company" name="company" placeholder="Company Name"
+                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
+                        </div>
+                        <div class="mb-6">
+                            <select id="service" name="service" required 
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue">
+                                <option value="">Select a Service</option>
+                                <option value="education">Tech Education</option>
+                                <option value="development">Software Development</option>
+                                <option value="consulting">Tech Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required
+                                      class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-poppins text-base transition-all duration-300 focus:outline-none focus:border-electric-blue resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 bg-electric-blue text-white rounded-lg font-medium text-base transition-all duration-300 hover:bg-deep-navy">Send Message</button>
+                    </form>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl text-electric-blue mt-1">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-deep-navy mb-2">Email Us</h4>
+                            <p class="text-charcoal">hello@icecoding.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl text-electric-blue mt-1">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-deep-navy mb-2">Call Us</h4>
+                            <p class="text-charcoal">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-2xl text-electric-blue mt-1">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-deep-navy mb-2">Follow Us</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-electric-blue hover:text-deep-navy transition-colors duration-300 flex items-center gap-2">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="#" class="text-electric-blue hover:text-deep-navy transition-colors duration-300 flex items-center gap-2">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <a href="#" class="text-electric-blue hover:text-deep-navy transition-colors duration-300 flex items-center gap-2">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy text-white py-12">
+        <div class="max-w-container mx-auto px-5">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="assets/images/logo_name_slogan.png" alt="ICECODING - Innovative Minds, Smart Tech" class="h-16 w-auto">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Tech Education</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Software Development</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Tech Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For SMEs</a></li>
+                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For Government</a></li>
+                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For Non-Profits</a></li>
+                        <li><a href="#solutions" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">For Retail</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-electric-blue transition-colors duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 pt-4 text-center">
+                <p class="text-gray-300">&copy; 2025 ICECODING. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
