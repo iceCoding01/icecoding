@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize carousel
     initCarousel();
+    
+    // Initialize animated counters
+    initAnimatedCounters();
 });
 
 // Mobile Menu Functionality
@@ -600,3 +603,95 @@ const mobileMenuCSS = `
 const style = document.createElement('style');
 style.textContent = mobileMenuCSS;
 document.head.appendChild(style);
+
+// Animated Counters for Success Stories
+function initAnimatedCounters() {
+    const counters = document.querySelectorAll('.counter');
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                
+                // Reset counter
+                counter.textContent = '0';
+                
+                // Animate counter
+                animateCounter(counter, target);
+                
+                // Stop observing this counter
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+function animateCounter(element, target) {
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        
+        element.textContent = Math.floor(current);
+    }, 16);
+}
+
+// Enhanced scroll animations for Success Stories section
+function initSuccessStoriesAnimations() {
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add staggered animation delays
+                const cards = entry.target.querySelectorAll('.group');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 150);
+                });
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe success stories section
+    const successSection = document.querySelector('.mt-32');
+    if (successSection) {
+        const cards = successSection.querySelectorAll('.group');
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+        
+        observer.observe(successSection);
+    }
+}
+
+// Call the new animation function
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+    initSuccessStoriesAnimations();
+});
