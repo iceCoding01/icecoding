@@ -321,6 +321,285 @@
                 });
             }
         });
+
+        // Team Section Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Team Member Card Interactions
+            const teamCards = document.querySelectorAll('#team .group');
+            
+            teamCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    // Enhanced hover effects for team cards
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                    
+                    // Add subtle glow effect
+                    const img = this.querySelector('img');
+                    if (img) {
+                        img.style.transform = 'scale(1.1)';
+                        img.style.filter = 'brightness(1.1)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    
+                    const img = this.querySelector('img');
+                    if (img) {
+                        img.style.transform = 'scale(1)';
+                        img.style.filter = 'brightness(1)';
+                    }
+                });
+            });
+
+            // Video Player Functionality
+            const videoCards = document.querySelectorAll('#team .group.relative');
+            
+            videoCards.forEach(card => {
+                const playButton = card.querySelector('button');
+                if (playButton) {
+                    playButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Get video information
+                        const videoTitle = card.querySelector('h4').textContent;
+                        const videoDescription = card.querySelector('p').textContent;
+                        
+                        // Create modal for video player
+                        createVideoModal(videoTitle, videoDescription, card);
+                        
+                        // Track video engagement (for analytics)
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'video_play', {
+                                event_category: 'engagement',
+                                event_label: videoTitle,
+                                video_title: videoTitle
+                            });
+                        }
+                    });
+                }
+                
+                // Enhanced hover effects for video cards
+                card.addEventListener('mouseenter', function() {
+                    const overlay = this.querySelector('.absolute.inset-0');
+                    if (overlay && overlay.classList.contains('bg-black/30')) {
+                        overlay.style.opacity = '1';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const overlay = this.querySelector('.absolute.inset-0');
+                    if (overlay && overlay.classList.contains('bg-black/30')) {
+                        overlay.style.opacity = '0';
+                    }
+                });
+            });
+
+            // Video Modal Creation Function
+            function createVideoModal(title, description, cardElement) {
+                // Remove existing modal if any
+                const existingModal = document.getElementById('video-modal');
+                if (existingModal) {
+                    existingModal.remove();
+                }
+                
+                // Create modal HTML
+                const modal = document.createElement('div');
+                modal.id = 'video-modal';
+                modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm';
+                modal.innerHTML = `
+                    <div class="relative bg-white rounded-2xl max-w-4xl mx-4 overflow-hidden shadow-2xl">
+                        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                            <div>
+                                <h3 class="text-xl font-bold text-deep-navy">${title}</h3>
+                                <p class="text-charcoal/70 text-sm mt-1">${description}</p>
+                            </div>
+                            <button id="close-modal" class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors duration-200">
+                                <i class="fas fa-times text-charcoal"></i>
+                            </button>
+                        </div>
+                        <div class="aspect-video bg-gray-900 flex items-center justify-center">
+                            <!-- Video player will be embedded here -->
+                            <div class="text-center text-white">
+                                <div class="w-20 h-20 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-play text-3xl text-electric-blue"></i>
+                                </div>
+                                <p class="text-lg font-medium mb-2">Video Player Integration</p>
+                                <p class="text-sm text-white/70 max-w-md">
+                                    This is where your video content will be embedded.<br>
+                                    Supports YouTube, Vimeo, or self-hosted videos.
+                                </p>
+                                <div class="mt-6 space-y-2 text-xs text-white/60">
+                                    <p>• Add your video URL to the data-video attribute</p>
+                                    <p>• Supports autoplay and custom controls</p>
+                                    <p>• Optimized for mobile and desktop</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4 text-sm text-charcoal/60">
+                                    <span><i class="fas fa-calendar mr-1"></i>Published: Jan 2025</span>
+                                    <span><i class="fas fa-eye mr-1"></i>Views: 2.5K</span>
+                                    <span><i class="fas fa-thumbs-up mr-1"></i>95% liked</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button class="px-4 py-2 bg-electric-blue text-white rounded-lg font-medium hover:bg-deep-navy transition-colors duration-200">
+                                        <i class="fas fa-share mr-2"></i>Share
+                                    </button>
+                                    <button class="px-4 py-2 bg-gray-200 text-charcoal rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
+                                        <i class="fas fa-download mr-2"></i>Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add modal to page
+                document.body.appendChild(modal);
+                
+                // Add close functionality
+                const closeButton = modal.querySelector('#close-modal');
+                closeButton.addEventListener('click', () => modal.remove());
+                
+                // Close on backdrop click
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                });
+                
+                // Close on Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        modal.remove();
+                    }
+                });
+                
+                // Animate modal entrance
+                modal.style.opacity = '0';
+                setTimeout(() => {
+                    modal.style.transition = 'opacity 0.3s ease';
+                    modal.style.opacity = '1';
+                }, 10);
+            }
+
+            // Social Media Links Functionality
+            const socialLinks = document.querySelectorAll('#team a[href="#"]');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the social platform from the icon
+                    const icon = this.querySelector('i');
+                    let platform = 'social';
+                    
+                    if (icon.classList.contains('fa-linkedin')) platform = 'LinkedIn';
+                    else if (icon.classList.contains('fa-github')) platform = 'GitHub';
+                    else if (icon.classList.contains('fa-twitter')) platform = 'Twitter';
+                    else if (icon.classList.contains('fa-dribbble')) platform = 'Dribbble';
+                    else if (icon.classList.contains('fa-envelope')) platform = 'Email';
+                    
+                    // Show connection message
+                    const message = document.createElement('div');
+                    message.className = 'fixed bottom-4 right-4 bg-electric-blue text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300';
+                    message.innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <i class="${icon.className}"></i>
+                            <span>Connect on ${platform}</span>
+                            <button class="ml-2 opacity-70 hover:opacity-100">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(message);
+                    
+                    // Auto-remove after 3 seconds
+                    setTimeout(() => {
+                        message.style.transform = 'translateX(100%)';
+                        setTimeout(() => message.remove(), 300);
+                    }, 3000);
+                    
+                    // Manual close
+                    message.querySelector('button').addEventListener('click', () => {
+                        message.style.transform = 'translateX(100%)';
+                        setTimeout(() => message.remove(), 300);
+                    });
+                    
+                    // Track social media engagement
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'social_click', {
+                            event_category: 'engagement',
+                            event_label: platform,
+                            social_platform: platform
+                        });
+                    }
+                });
+            });
+
+            // Team Statistics Counter Animation
+            const teamStatsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.text-3xl');
+                        
+                        counters.forEach(counter => {
+                            const text = counter.textContent;
+                            const hasPercent = text.includes('%');
+                            const hasPlus = text.includes('+');
+                            const target = parseInt(text.replace(/\D/g, ''));
+                            
+                            let current = 0;
+                            const increment = target / 60; // Animation duration in frames
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    let finalText = target.toString();
+                                    if (hasPercent) finalText += '%';
+                                    if (hasPlus) finalText += '+';
+                                    counter.textContent = finalText;
+                                    clearInterval(timer);
+                                } else {
+                                    let currentText = Math.round(current).toString();
+                                    if (hasPercent) currentText += '%';
+                                    if (hasPlus) currentText += '+';
+                                    counter.textContent = currentText;
+                                }
+                            }, 16); // ~60fps
+                        });
+                        
+                        teamStatsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('#team .bg-white.border.border-electric-blue\\/10');
+            if (statsSection) {
+                teamStatsObserver.observe(statsSection);
+            }
+
+            // Enhanced scroll animations for team section
+            const teamObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0) scale(1)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            // Initialize scroll animations for team cards
+            const teamElements = document.querySelectorAll('#team .group, #team .grid > div');
+            teamElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px) scale(0.95)';
+                element.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                teamObserver.observe(element);
+            });
+        });
     </script>
 </head>
 <body class="font-poppins">
@@ -365,6 +644,12 @@
                             <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
                         </a>
                     </li>
+                    <li>
+                        <a href="#team" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Team</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
                     <li class="ml-4">
                         <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
                             <span class="material-icons mr-2 text-sm">rocket_launch</span>
@@ -401,6 +686,10 @@
                     <a href="#solutions" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
                         <span class="relative">Solutions</span>
                         <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-18"></div>
+                    </a>
+                    <a href="#team" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Team</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
                     </a>
                     <div class="pt-4 border-t border-gray-200/50">
                         <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none">
@@ -1692,6 +1981,411 @@
                         </div>
                         <div class="text-3xl font-bold text-deep-navy mb-2">1M+</div>
                         <div class="text-charcoal/70 font-medium">Views Generated</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="relative py-32 bg-gray-50">
+        <div class="relative max-w-container mx-auto px-5">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
+                    <i class="fas fa-users mr-2 text-lg"></i>
+                    Meet Our Team
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-6">The Minds Behind Innovation</h2>
+                <p class="text-xl text-charcoal/70 max-w-3xl mx-auto leading-relaxed">
+                    Our diverse team of technology experts, innovators, and educators are passionate about empowering businesses through cutting-edge solutions
+                </p>
+            </div>
+
+            <!-- Team Leadership -->
+            <div class="mb-20">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-deep-navy mb-4">Leadership Team</h3>
+                    <p class="text-charcoal/70 max-w-2xl mx-auto">
+                        Visionary leaders driving ICECODING's mission to transform businesses through technology
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- CEO/Founder -->
+                    <div class="group bg-white rounded-2xl p-8 shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
+                        <div class="text-center">
+                            <div class="relative mb-6">
+                                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-electric-blue to-deep-navy p-1">
+                                    <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                        <i class="fas fa-user text-4xl text-electric-blue"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-electric-blue rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-crown text-white text-sm"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-deep-navy mb-2">John Smith</h4>
+                            <p class="text-electric-blue font-semibold mb-3">CEO & Founder</p>
+                            <p class="text-charcoal/70 text-sm mb-6 leading-relaxed">
+                                Visionary leader with 15+ years in tech innovation, driving digital transformation across industries
+                            </p>
+                            <div class="flex justify-center gap-3">
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-linkedin text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-twitter text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTO -->
+                    <div class="group bg-white rounded-2xl p-8 shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
+                        <div class="text-center">
+                            <div class="relative mb-6">
+                                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-deep-navy to-electric-blue p-1">
+                                    <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                        <i class="fas fa-code text-4xl text-deep-navy"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-deep-navy rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-code text-white text-sm"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-deep-navy mb-2">Sarah Johnson</h4>
+                            <p class="text-electric-blue font-semibold mb-3">Chief Technology Officer</p>
+                            <p class="text-charcoal/70 text-sm mb-6 leading-relaxed">
+                                Technology architect specializing in scalable cloud solutions and enterprise-grade development
+                            </p>
+                            <div class="flex justify-center gap-3">
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-linkedin text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Head of Education -->
+                    <div class="group bg-white rounded-2xl p-8 shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
+                        <div class="text-center">
+                            <div class="relative mb-6">
+                                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-electric-blue via-deep-navy to-electric-blue p-1">
+                                    <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                        <i class="fas fa-graduation-cap text-4xl text-electric-blue"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-electric-blue rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-graduation-cap text-white text-sm"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-deep-navy mb-2">Dr. Michael Chen</h4>
+                            <p class="text-electric-blue font-semibold mb-3">Head of Education</p>
+                            <p class="text-charcoal/70 text-sm mb-6 leading-relaxed">
+                                Educational innovator creating transformative learning experiences in technology and programming
+                            </p>
+                            <div class="flex justify-center gap-3">
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-linkedin text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fas fa-book text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Team -->
+            <div class="mb-20">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-deep-navy mb-4">Development Team</h3>
+                    <p class="text-charcoal/70 max-w-2xl mx-auto">
+                        Expert developers and engineers building tomorrow's technology solutions today
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Senior Developer 1 -->
+                    <div class="group bg-white rounded-xl p-6 shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-lg hover:border-electric-blue/30">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-electric-blue to-deep-navy p-0.5 mb-4">
+                                <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                    <i class="fas fa-laptop-code text-2xl text-electric-blue"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-bold text-deep-navy mb-1">Emily Rodriguez</h4>
+                            <p class="text-electric-blue font-medium text-sm mb-2">Senior Full-Stack Developer</p>
+                            <p class="text-charcoal/70 text-xs mb-4">React, Node.js, Cloud Architecture</p>
+                            <div class="flex justify-center gap-2">
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-github text-xs"></i>
+                                </a>
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-linkedin text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Senior Developer 2 -->
+                    <div class="group bg-white rounded-xl p-6 shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-lg hover:border-electric-blue/30">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-deep-navy to-electric-blue p-0.5 mb-4">
+                                <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                    <i class="fas fa-mobile-alt text-2xl text-deep-navy"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-bold text-deep-navy mb-1">David Kim</h4>
+                            <p class="text-electric-blue font-medium text-sm mb-2">Senior Mobile Developer</p>
+                            <p class="text-charcoal/70 text-xs mb-4">React Native, Flutter, iOS/Android</p>
+                            <div class="flex justify-center gap-2">
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-github text-xs"></i>
+                                </a>
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-linkedin text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UI/UX Designer -->
+                    <div class="group bg-white rounded-xl p-6 shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-lg hover:border-electric-blue/30">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-electric-blue via-deep-navy to-electric-blue p-0.5 mb-4">
+                                <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                    <i class="fas fa-palette text-2xl text-electric-blue"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-bold text-deep-navy mb-1">Lisa Thompson</h4>
+                            <p class="text-electric-blue font-medium text-sm mb-2">Senior UI/UX Designer</p>
+                            <p class="text-charcoal/70 text-xs mb-4">Design Systems, User Research</p>
+                            <div class="flex justify-center gap-2">
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-dribbble text-xs"></i>
+                                </a>
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-linkedin text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps Engineer -->
+                    <div class="group bg-white rounded-xl p-6 shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-lg hover:border-electric-blue/30">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-deep-navy to-electric-blue p-0.5 mb-4">
+                                <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                    <i class="fas fa-server text-2xl text-deep-navy"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-bold text-deep-navy mb-1">Alex Martinez</h4>
+                            <p class="text-electric-blue font-medium text-sm mb-2">DevOps Engineer</p>
+                            <p class="text-charcoal/70 text-xs mb-4">AWS, Docker, Kubernetes, CI/CD</p>
+                            <div class="flex justify-center gap-2">
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-github text-xs"></i>
+                                </a>
+                                <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                    <i class="fab fa-linkedin text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Videos Section -->
+            <div class="mb-20">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-deep-navy mb-4">Behind the Scenes</h3>
+                    <p class="text-charcoal/70 max-w-2xl mx-auto">
+                        Get an inside look at our company culture, development process, and the passionate team driving innovation
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Company Culture Video -->
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
+                        <div class="relative">
+                            <div class="aspect-video bg-gradient-to-br from-electric-blue/20 to-deep-navy/20 flex items-center justify-center relative">
+                                <div class="text-center text-electric-blue">
+                                    <div class="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <i class="fas fa-users text-2xl text-electric-blue"></i>
+                                    </div>
+                                    <p class="text-sm font-medium">Company Culture Video</p>
+                                    <p class="text-xs opacity-70">Our Team in Action</p>
+                                </div>
+                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    <button class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-play text-xl text-electric-blue ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-electric-blue text-white px-3 py-1 rounded-full text-xs font-medium">Company Culture</span>
+                            </div>
+                            <div class="absolute bottom-4 right-4">
+                                <span class="bg-black/50 text-white px-2 py-1 rounded text-xs">3:45</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-deep-navy mb-2">Our Team in Action</h4>
+                            <p class="text-charcoal/70 text-sm mb-4">
+                                Discover the collaborative spirit and innovative culture that drives ICECODING's success
+                            </p>
+                            <div class="flex items-center justify-between text-xs text-charcoal/60">
+                                <span><i class="fas fa-eye mr-1"></i>2.5K views</span>
+                                <span><i class="fas fa-calendar mr-1"></i>Jan 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Development Process Video -->
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
+                        <div class="relative">
+                            <div class="aspect-video bg-gradient-to-br from-deep-navy/20 to-electric-blue/20 flex items-center justify-center relative">
+                                <div class="text-center text-deep-navy">
+                                    <div class="w-16 h-16 bg-deep-navy/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <i class="fas fa-code text-2xl text-deep-navy"></i>
+                                    </div>
+                                    <p class="text-sm font-medium">Development Process</p>
+                                    <p class="text-xs opacity-70">Behind the Scenes</p>
+                                </div>
+                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    <button class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-play text-xl text-electric-blue ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-deep-navy text-white px-3 py-1 rounded-full text-xs font-medium">Development</span>
+                            </div>
+                            <div class="absolute bottom-4 right-4">
+                                <span class="bg-black/50 text-white px-2 py-1 rounded text-xs">5:20</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-deep-navy mb-2">Our Development Process</h4>
+                            <p class="text-charcoal/70 text-sm mb-4">
+                                Take a deep dive into our agile development methodology and quality assurance practices
+                            </p>
+                            <div class="flex items-center justify-between text-xs text-charcoal/60">
+                                <span><i class="fas fa-eye mr-1"></i>1.8K views</span>
+                                <span><i class="fas fa-calendar mr-1"></i>Dec 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client Success Stories Video -->
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
+                        <div class="relative">
+                            <div class="aspect-video bg-gradient-to-br from-electric-blue/20 via-deep-navy/20 to-electric-blue/20 flex items-center justify-center relative">
+                                <div class="text-center text-electric-blue">
+                                    <div class="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <i class="fas fa-trophy text-2xl text-electric-blue"></i>
+                                    </div>
+                                    <p class="text-sm font-medium">Success Stories</p>
+                                    <p class="text-xs opacity-70">Client Transformations</p>
+                                </div>
+                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    <button class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-play text-xl text-electric-blue ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-electric-blue text-white px-3 py-1 rounded-full text-xs font-medium">Success Stories</span>
+                            </div>
+                            <div class="absolute bottom-4 right-4">
+                                <span class="bg-black/50 text-white px-2 py-1 rounded text-xs">4:15</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-deep-navy mb-2">Client Transformations</h4>
+                            <p class="text-charcoal/70 text-sm mb-4">
+                                Hear directly from our clients about how ICECODING transformed their business operations
+                            </p>
+                            <div class="flex items-center justify-between text-xs text-charcoal/60">
+                                <span><i class="fas fa-eye mr-1"></i>3.2K views</span>
+                                <span><i class="fas fa-calendar mr-1"></i>Nov 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Statistics -->
+            <div class="bg-white border border-electric-blue/10 rounded-3xl p-12">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-deep-navy mb-4">Team Excellence</h3>
+                    <p class="text-charcoal/70 text-lg">Our diverse, talented team delivers exceptional results through collaboration and expertise</p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
+                            <i class="fas fa-users text-2xl text-electric-blue"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-electric-blue mb-2">25+</div>
+                        <div class="text-charcoal/70 font-medium">Team Members</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy/10 rounded-2xl mb-4">
+                            <i class="fas fa-graduation-cap text-2xl text-deep-navy"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-deep-navy mb-2">95%</div>
+                        <div class="text-charcoal/70 font-medium">Advanced Degrees</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
+                            <i class="fas fa-globe text-2xl text-electric-blue"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-electric-blue mb-2">12</div>
+                        <div class="text-charcoal/70 font-medium">Countries Represented</div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy/10 rounded-2xl mb-4">
+                            <i class="fas fa-award text-2xl text-deep-navy"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-deep-navy mb-2">50+</div>
+                        <div class="text-charcoal/70 font-medium">Certifications Held</div>
+                    </div>
+                </div>
+
+                <!-- Join Our Team CTA -->
+                <div class="mt-12 pt-8 border-t border-gray-200/50 text-center">
+                    <h4 class="text-2xl font-bold text-deep-navy mb-4">Join Our Team</h4>
+                    <p class="text-charcoal/70 mb-6 max-w-2xl mx-auto">
+                        Ready to be part of a team that's shaping the future of technology? We're always looking for passionate innovators to join our mission.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 bg-electric-blue text-white font-semibold rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            View Open Positions
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 bg-white border-2 border-electric-blue text-electric-blue font-semibold rounded-lg transition-all duration-300 hover:bg-electric-blue hover:text-white">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Your Resume
+                        </a>
                     </div>
                 </div>
             </div>
