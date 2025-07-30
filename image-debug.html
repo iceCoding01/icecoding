@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Debug Test - ICECODING</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+        }
+        .image-card img.error {
+            border-color: #ff4444;
+            background: #ffe6e6;
+        }
+        .image-card img.success {
+            border-color: #44ff44;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success { background: #e6ffe6; color: #006600; }
+        .error { background: #ffe6e6; color: #cc0000; }
+        h1 { color: #001F3F; }
+        h2 { color: #007BFF; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>ICECODING Image Loading Test</h1>
+    <p>This page tests which images are loading correctly in your browser.</p>
+
+    <h2>Original/Old Images (Should be working)</h2>
+    <div class="image-container">
+        <div class="image-card">
+            <h3>Logo</h3>
+            <img src="assets/images/logo.png" alt="Logo" id="logo">
+            <div class="status" id="logo-status">Testing...</div>
+        </div>
+        
+        <div class="image-card">
+            <h3>Brand on Laptop</h3>
+            <img src="assets/images/brand_on_laptop.png" alt="Brand on Laptop" id="brand-laptop">
+            <div class="status" id="brand-laptop-status">Testing...</div>
+        </div>
+        
+        <div class="image-card">
+            <h3>Billboard</h3>
+            <img src="assets/images/billboard.png" alt="Billboard" id="billboard">
+            <div class="status" id="billboard-status">Testing...</div>
+        </div>
+        
+        <div class="image-card">
+            <h3>Brand Pattern</h3>
+            <img src="assets/images/brand_pattern.png" alt="Brand Pattern" id="brand-pattern">
+            <div class="status" id="brand-pattern-status">Testing...</div>
+        </div>
+    </div>
+
+    <h2>New Team Images (Recently Added)</h2>
+    <div class="image-container">
+        <div class="image-card">
+            <h3>Gentleman Smiling</h3>
+            <img src="assets/images/gentlemansmiling.jpg" alt="Gentleman Smiling" id="gentleman-smiling">
+            <div class="status" id="gentleman-smiling-status">Testing...</div>
+        </div>
+        
+        <div class="image-card">
+            <h3>Gentleman Talking with Mike</h3>
+            <img src="assets/images/gentlemantalkingwith_themike.jpg" alt="Gentleman Talking with Mike" id="gentleman-talking">
+            <div class="status" id="gentleman-talking-status">Testing...</div>
+        </div>
+        
+        <div class="image-card">
+            <h3>Two Team Members Smiling</h3>
+            <img src="assets/images/two_team_members_smiling.jpg" alt="Two Team Members Smiling" id="two-members">
+            <div class="status" id="two-members-status">Testing...</div>
+        </div>
+    </div>
+
+    <h2>Debug Information</h2>
+    <div id="debug-info" style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+        <p><strong>Current URL:</strong> <span id="current-url"></span></p>
+        <p><strong>Base Directory:</strong> <span id="base-dir"></span></p>
+        <p><strong>Assets Path:</strong> <span id="assets-path"></span></p>
+    </div>
+
+    <script>
+        // Display current location info
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('base-dir').textContent = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        document.getElementById('assets-path').textContent = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/assets/images/';
+
+        // Test each image
+        const images = [
+            'logo',
+            'brand-laptop', 
+            'billboard',
+            'brand-pattern',
+            'gentleman-smiling',
+            'gentleman-talking',
+            'two-members'
+        ];
+
+        images.forEach(imageId => {
+            const img = document.getElementById(imageId);
+            const status = document.getElementById(imageId + '-status');
+            
+            img.onload = function() {
+                this.classList.add('success');
+                status.textContent = '✅ LOADED SUCCESSFULLY';
+                status.className = 'status success';
+            };
+            
+            img.onerror = function() {
+                this.classList.add('error');
+                status.textContent = '❌ FAILED TO LOAD';
+                status.className = 'status error';
+            };
+            
+            // Force reload to trigger events
+            img.src = img.src;
+        });
+
+        // Additional debugging
+        setTimeout(() => {
+            let summary = '\n\nIMAGE LOADING SUMMARY:\n';
+            images.forEach(imageId => {
+                const img = document.getElementById(imageId);
+                const isLoaded = img.complete && img.naturalHeight !== 0;
+                summary += `${imageId}: ${isLoaded ? 'SUCCESS' : 'FAILED'}\n`;
+            });
+            console.log(summary);
+        }, 3000);
+    </script>
+</body>
+</html>

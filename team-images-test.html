@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Images Test - ICECODING</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 3px solid #007BFF;
+        }
+        .image-card h3 {
+            color: #001F3F;
+            margin-bottom: 10px;
+        }
+        .image-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        .header {
+            text-align: center;
+            color: #001F3F;
+            margin-bottom: 30px;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .success { background: #e6ffe6; color: #006600; }
+        .error { background: #ffe6e6; color: #cc0000; }
+        .loading { background: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ICECODING Team Images Test</h1>
+            <p>Testing the display of team member images in the media gallery</p>
+        </div>
+
+        <div class="images-grid">
+            <div class="image-card">
+                <h3>Team Collaboration</h3>
+                <img src="assets/images/two_team_members_smiling.jpg" 
+                     alt="Two Team Members Smiling" 
+                     id="img1"
+                     onload="updateStatus('status1', 'success', '✅ Image loaded successfully!')"
+                     onerror="updateStatus('status1', 'error', '❌ Failed to load image')">
+                <p>Two team members working together with enthusiasm</p>
+                <div id="status1" class="status loading">🔄 Loading...</div>
+            </div>
+
+            <div class="image-card">
+                <h3>Professional Presentation</h3>
+                <img src="assets/images/gentlemantalkingwith_themike.jpg" 
+                     alt="Gentleman Talking with Microphone" 
+                     id="img2"
+                     onload="updateStatus('status2', 'success', '✅ Image loaded successfully!')"
+                     onerror="updateStatus('status2', 'error', '❌ Failed to load image')">
+                <p>Team leader sharing knowledge and expertise</p>
+                <div id="status2" class="status loading">🔄 Loading...</div>
+            </div>
+
+            <div class="image-card">
+                <h3>Professional Excellence</h3>
+                <img src="assets/images/gentlemansmiling.jpg" 
+                     alt="Gentleman Smiling" 
+                     id="img3"
+                     onload="updateStatus('status3', 'success', '✅ Image loaded successfully!')"
+                     onerror="updateStatus('status3', 'error', '❌ Failed to load image')">
+                <p>Dedicated professional representing our team values</p>
+                <div id="status3" class="status loading">🔄 Loading...</div>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 20px; border-radius: 15px; margin-top: 30px;">
+            <h3>Debug Information</h3>
+            <p><strong>Page URL:</strong> <span id="page-url"></span></p>
+            <p><strong>Base Path:</strong> <span id="base-path"></span></p>
+            <p><strong>Images Directory:</strong> <span id="images-dir"></span></p>
+            
+            <h4>Direct Image Links (click to test):</h4>
+            <ul>
+                <li><a href="assets/images/two_team_members_smiling.jpg" target="_blank">two_team_members_smiling.jpg</a></li>
+                <li><a href="assets/images/gentlemantalkingwith_themike.jpg" target="_blank">gentlemantalkingwith_themike.jpg</a></li>
+                <li><a href="assets/images/gentlemansmiling.jpg" target="_blank">gentlemansmiling.jpg</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Update debug information
+        document.getElementById('page-url').textContent = window.location.href;
+        document.getElementById('base-path').textContent = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        document.getElementById('images-dir').textContent = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/assets/images/';
+
+        function updateStatus(statusId, statusClass, message) {
+            const statusElement = document.getElementById(statusId);
+            statusElement.className = 'status ' + statusClass;
+            statusElement.textContent = message;
+        }
+
+        // Log image loading attempts
+        console.log('=== ICECODING Team Images Test ===');
+        console.log('Base URL:', window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')));
+        
+        // Test image paths
+        const images = [
+            'assets/images/two_team_members_smiling.jpg',
+            'assets/images/gentlemantalkingwith_themike.jpg',
+            'assets/images/gentlemansmiling.jpg'
+        ];
+        
+        images.forEach((imagePath, index) => {
+            console.log(`Testing image ${index + 1}: ${imagePath}`);
+        });
+    </script>
+</body>
+</html>
