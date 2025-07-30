@@ -1,19 +1,61 @@
 {
-  "name": "icecoding",
+  "name": "icecoding-website",
   "version": "1.0.0",
-  "description": "A modern, professional static website for ICECODING - a tech company dedicated to empowering individuals with technology skills and providing innovative software solutions.",
-  "main": "index.js",
+  "description": "ICECODING - Innovative Technology Solutions Website. A modern, professional static website for ICECODING - a tech company dedicated to empowering individuals with technology skills and providing innovative software solutions.",
+  "main": "index.html",
   "scripts": {
     "build-css": "tailwindcss -i ./styles/tailwind.css -o ./styles/main.css --watch",
     "build-css-prod": "tailwindcss -i ./styles/tailwind.css -o ./styles/main.css --minify",
-    "dev": "tailwindcss -i ./styles/tailwind.css -o ./styles/main.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server --port=3000 --host=localhost --open=/",
+    "build": "npm run build-css-prod && npm run build:js && npm run optimize:images",
+    "build:js": "terser scripts/main.js -o dist/scripts/main.min.js --compress --mangle",
+    "optimize:images": "echo 'Image optimization coming soon'",
+    "test": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
+    "audit": "npm run test && npm run validate",
+    "validate": "echo 'HTML validation coming soon'",
+    "deploy": "npm run build && npm run audit",
+    "serve": "http-server . -p 8080 -c-1",
+    "lint:css": "echo 'CSS linting coming soon'",
+    "lint:js": "echo 'JS linting coming soon'",
+    "lint": "npm run lint:css && npm run lint:js",
+    "clean": "echo 'Clean command coming soon'",
+    "start": "npm run dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "technology",
+    "software-development",
+    "education",
+    "consulting",
+    "innovation",
+    "website",
+    "responsive",
+    "performance",
+    "icecoding"
+  ],
+  "author": "ICECODING Team",
+  "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
     "tailwindcss": "^4.1.11"
+  },
+  "dependencies": {
+    "web-vitals": "^3.5.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/icecoding/website.git"
+  },
+  "homepage": "https://www.icecoding.com",
+  "bugs": {
+    "url": "https://github.com/icecoding/website/issues"
   }
 }

@@ -1,0 +1,186 @@
+/* Performance Optimization CSS for ICECODING */
+
+/* Font optimization */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Critical CSS for Above-the-Fold Content */
+.hero-critical {
+    display: block;
+    visibility: visible;
+}
+
+/* Image Performance Optimizations */
+img {
+    max-width: 100%;
+    height: auto;
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Lazy loading support for older browsers */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Reduce paint and layout thrashing */
+.will-change {
+    will-change: transform, opacity;
+}
+
+/* Optimize animations for performance */
+.gpu-accelerated {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+/* Memory-efficient shadows */
+.optimized-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Reduce CLS (Cumulative Layout Shift) */
+.aspect-ratio-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-ratio-4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+.aspect-ratio-1-1 {
+    aspect-ratio: 1 / 1;
+}
+
+/* Performance-optimized carousel */
+.carousel-track-optimized {
+    contain: layout style paint;
+    will-change: transform;
+}
+
+/* Intersection Observer optimizations */
+.fade-in-observer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-observer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optimize expensive operations */
+.backdrop-blur-optimized {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Fallback for unsupported browsers */
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Memory-efficient shadows */
+.optimized-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.optimized-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* CPU-friendly gradients */
+.optimized-gradient {
+    background: linear-gradient(135deg, #001F3F 0%, #007BFF 100%);
+}
+
+/* Reduce layout calculations */
+.contain-layout {
+    contain: layout;
+}
+
+.contain-paint {
+    contain: paint;
+}
+
+.contain-strict {
+    contain: strict;
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+    /* Reduce animations on mobile for better performance */
+    .reduce-motion {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    /* Disable complex effects on mobile */
+    .mobile-simplified {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Resource hints for critical resources */
+.critical-resource {
+    display: block;
+}
+
+/* Optimize text rendering */
+body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Service Worker compatibility */
+.sw-update-available {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.sw-update-available.show {
+    display: block;
+    animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /index.html
+Allow: /assets/
+Allow: /styles/
+Allow: /scripts/
+
+# Block unnecessary files
+Disallow: /sw.js
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /temp/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.icecoding.com/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+# Block problematic bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
