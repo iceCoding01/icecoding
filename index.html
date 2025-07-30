@@ -706,7 +706,7 @@
     <section id="home" class="relative py-32 bg-white overflow-hidden">
         <!-- Brand Pattern Background -->
         <div class="absolute inset-0 opacity-5 pointer-events-none">
-            <img src="assets/images/brand pattern.png" alt="" class="w-full h-full object-cover object-center" loading="lazy" decoding="async">
+            <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center" loading="lazy" decoding="async">
         </div>
         
         <div class="relative max-w-container mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center z-10">
@@ -1849,12 +1849,15 @@
                 <!-- Team Culture -->
                 <div class="media-item" data-category="team">
                     <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/10 to-deep-navy/20 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                                    <span class="material-icons text-2xl text-white">groups</span>
-                                </div>
-                                <h4 class="text-lg font-bold text-deep-navy">Team Collaboration</h4>
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/10 to-deep-navy/20 overflow-hidden">
+                            <img src="assets/images/two_team_members_smiling.jpg" alt="Team Collaboration - Two Team Members" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-electric-blue text-sm font-medium rounded-full">Team</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Team Collaboration</h4>
+                                <p class="text-sm text-white/90">Working together towards innovation</p>
                             </div>
                         </div>
                         <div class="p-6">
@@ -1923,6 +1926,73 @@
                             <p class="text-charcoal/70 text-sm mb-4">Step-by-step guide to modern web development practices and best coding standards.</p>
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Tutorial</span>
+                                    <span class="text-charcoal/60 text-sm">12:30 min</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">play_circle</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Presentation -->
+                <div class="media-item" data-category="team process">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-deep-navy/20 to-electric-blue/10 overflow-hidden">
+                            <img src="assets/images/gentlemantalkingwith_themike.jpg" alt="Team Presentation - Professional Speaking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-deep-navy text-sm font-medium rounded-full">Presentation</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Knowledge Sharing</h4>
+                                <p class="text-sm text-white/90">Educating through expertise</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Technical Presentation</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Our team leaders sharing insights on cutting-edge technology and innovative solutions.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Leadership</span>
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Education</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">mic</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member Profile -->
+                <div class="media-item" data-category="team">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/10 to-deep-navy/10 overflow-hidden">
+                            <img src="assets/images/gentlemansmiling.jpg" alt="Team Member - Professional Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-electric-blue text-sm font-medium rounded-full">Team Member</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Professional Excellence</h4>
+                                <p class="text-sm text-white/90">Dedicated to innovation</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Team Excellence</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Meet our dedicated professionals who bring passion and expertise to every project.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Professional</span>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <span class="material-icons text-lg">person</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                                     <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Tutorial</span>
                                     <span class="text-charcoal/60 text-sm">12:34 min</span>
                                 </div>
@@ -2681,7 +2751,7 @@
     <footer class="relative bg-deep-navy text-white overflow-hidden">
         <!-- Brand Pattern Background -->
         <div class="absolute inset-0 opacity-5 pointer-events-none">
-            <img src="assets/images/brand pattern.png" alt="" class="w-full h-full object-cover object-center">
+            <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center">
         </div>
         
         <div class="relative z-10">
