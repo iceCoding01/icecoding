@@ -1,0 +1,163 @@
+    <!-- Footer -->
+    <footer class="relative bg-deep-navy text-white py-20">
+        <!-- Brand Pattern Background -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center">
+        </div>
+        
+        <div class="relative max-w-container mx-auto px-5">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Section -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-12 w-auto">
+                        <div>
+                            <div class="text-2xl font-bold">ICECODING</div>
+                            <div class="text-electric-blue text-sm font-medium">Innovative Minds, Smart Tech</div>
+                        </div>
+                    </div>
+                    <p class="text-white/80 leading-relaxed mb-8 max-w-md">
+                        Empowering individuals and businesses with cutting-edge technology solutions. From tech education to scalable software development, we drive transformation and success.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Services</a></li>
+                        <li><a href="solutions.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Solutions</a></li>
+                        <li><a href="team.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Team</a></li>
+                        <li><a href="gallery.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-electric-blue mt-1"></i>
+                            <div class="text-white/80">
+                                <div>123 Tech Innovation Drive</div>
+                                <div>Silicon Valley, CA 94025</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-electric-blue"></i>
+                            <a href="tel:+1234567890" class="text-white/80 hover:text-electric-blue transition-colors duration-300">+1 (234) 567-8900</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-electric-blue"></i>
+                            <a href="mailto:hello@icecoding.com" class="text-white/80 hover:text-electric-blue transition-colors duration-300">hello@icecoding.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-white/20 text-center">
+                <p class="text-white/60">
+                    © 2025 ICECODING. All rights reserved. | 
+                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" onclick="closeContactModal()"></div>
+            <div class="relative bg-white rounded-2xl max-w-2xl w-full mx-auto shadow-2xl">
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-3xl font-bold text-deep-navy">Get Started Today</h3>
+                        <button onclick="closeContactModal()" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors duration-300">
+                            <i class="fas fa-times text-charcoal"></i>
+                        </button>
+                    </div>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-charcoal font-medium mb-2">First Name</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-charcoal font-medium mb-2">Last Name</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-charcoal font-medium mb-2">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-charcoal font-medium mb-2">Service Interest</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <option>Technology Education</option>
+                                <option>Software Development</option>
+                                <option>Technology Consulting</option>
+                                <option>Digital Transformation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-charcoal font-medium mb-2">Project Details</label>
+                            <textarea rows="4" placeholder="Tell us about your project requirements..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-electric-blue text-white py-4 rounded-lg font-semibold hover:bg-deep-navy transition-all duration-300 hover:shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openContactModal() {
+            document.getElementById('contact-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Open contact modal when clicking Get Started buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactButtons = document.querySelectorAll('a[href="#contact"]');
+            contactButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openContactModal();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

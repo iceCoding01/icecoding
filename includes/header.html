@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="author" content="ICECODING">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:image" content="https://www.icecoding.com/assets/images/brand_on_laptop.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ICECODING">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.icecoding.com/assets/images/brand_on_laptop.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/icon" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-navy': '#001F3F',
+                        'electric-blue': '#007BFF',
+                        'charcoal': '#2D2D2D',
+                        'white': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        'container': '1200px',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'slide-in-up': 'slideInUp 0.8s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out infinite 2s',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 5px rgba(0, 123, 255, 0.5)' },
+                            '50%': { boxShadow: '0 0 20px rgba(0, 123, 255, 0.8)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    },
+                    animationDelay: {
+                        '100': '100ms',
+                        '200': '200ms',
+                        '300': '300ms',
+                        '400': '400ms',
+                        '500': '500ms',
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/performance.css">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Section -->
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto transition-transform duration-300 hover:scale-105" loading="eager" width="60" height="40">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-deep-navy leading-tight">ICECODING</span>
+                        <span class="text-xs text-electric-blue font-medium leading-tight">Innovative Minds, Smart Tech</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex items-center gap-2">
+                    <li>
+                        <a href="index.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Home</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">About</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Services</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="solutions.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Solutions</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Team</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gallery.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="relative">Gallery</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li class="ml-4">
+                        <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
+                            <span class="material-icons mr-2 text-sm">rocket_launch</span>
+                            Get Started
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100 group focus:outline-none" id="mobile-menu-button">
+                    <div class="space-y-1.5">
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
+                <div class="px-6 py-6 space-y-2">
+                    <a href="index.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Home</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-10"></div>
+                    </a>
+                    <a href="about.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">About</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    </a>
+                    <a href="services.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Services</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-16"></div>
+                    </a>
+                    <a href="solutions.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Solutions</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-18"></div>
+                    </a>
+                    <a href="team.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Team</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    </a>
+                    <a href="gallery.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Gallery</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-14"></div>
+                    </a>
+                    <div class="pt-4 border-t border-gray-200/50">
+                        <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none">
+                            <span class="material-icons mr-2 text-lg">rocket_launch</span>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isVisible = mobileMenu.classList.contains('opacity-100');
+                    
+                    if (isVisible) {
+                        mobileMenu.classList.remove('opacity-100', 'visible');
+                        mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                    } else {
+                        mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
+                        mobileMenu.classList.add('opacity-100', 'visible');
+                    }
+                });
+            }
+        });
+    </script>

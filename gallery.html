@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ICECODING | Visual Portfolio & Media Showcase</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore ICECODING's comprehensive portfolio showcasing innovative technology solutions, project highlights, team culture, and behind-the-scenes insights into our development process.">
+    <meta name="keywords" content="ICECODING portfolio, technology showcase, project gallery, team photos, development process, innovation gallery, tech solutions portfolio">
+    <meta name="author" content="ICECODING">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.icecoding.com/gallery.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Visual Portfolio & Media Gallery - ICECODING">
+    <meta property="og:description" content="Explore our comprehensive portfolio showcasing innovative technology solutions, project highlights, and behind-the-scenes insights.">
+    <meta property="og:image" content="https://www.icecoding.com/assets/images/brand_on_laptop.png">
+    <meta property="og:url" content="https://www.icecoding.com/gallery.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-navy': '#001F3F',
+                        'electric-blue': '#007BFF',
+                        'charcoal': '#2D2D2D',
+                        'white': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        'container': '1200px',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Section -->
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto transition-transform duration-300 hover:scale-105" loading="eager" width="60" height="40">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-deep-navy leading-tight">ICECODING</span>
+                        <span class="text-xs text-electric-blue font-medium leading-tight">Innovative Minds, Smart Tech</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex items-center gap-2">
+                    <li>
+                        <a href="index.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none">
+                            <span class="relative">Home</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none">
+                            <span class="relative">About</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none">
+                            <span class="relative">Services</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="solutions.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none">
+                            <span class="relative">Solutions</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="team.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none">
+                            <span class="relative">Team</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gallery.html" class="relative px-4 py-2 text-electric-blue font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none">
+                            <span class="relative">Gallery</span>
+                            <div class="absolute bottom-0 left-0 w-full h-0.5 bg-electric-blue transition-all duration-300"></div>
+                        </a>
+                    </li>
+                    <li class="ml-4">
+                        <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none">
+                            <i class="fas fa-rocket mr-2 text-sm"></i>
+                            Get Started
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100 group focus:outline-none" id="mobile-menu-button">
+                    <div class="space-y-1.5">
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
+                <div class="px-6 py-6 space-y-2">
+                    <a href="index.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Home</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    </a>
+                    <a href="about.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">About</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    </a>
+                    <a href="services.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Services</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-16"></div>
+                    </a>
+                    <a href="solutions.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Solutions</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-18"></div>
+                    </a>
+                    <a href="team.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Team</span>
+                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    </a>
+                    <a href="gallery.html" class="group relative inline-block px-4 py-3 text-electric-blue font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                        <span class="relative">Gallery</span>
+                        <div class="absolute bottom-2 left-4 w-14 h-0.5 bg-electric-blue transition-all duration-300"></div>
+                    </a>
+                    <div class="pt-4 border-t border-gray-200/50">
+                        <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none">
+                            <i class="fas fa-rocket mr-2 text-lg"></i>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center" loading="lazy" decoding="async">
+        </div>
+        
+        <div class="relative max-w-container mx-auto px-5">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-8">
+                    <i class="fas fa-images mr-2 text-lg"></i>
+                    Our Work in Action
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-deep-navy mb-6">Visual Portfolio</h1>
+                <p class="text-xl text-charcoal/70 max-w-3xl mx-auto leading-relaxed">
+                    Explore our comprehensive portfolio showcasing innovative technology solutions, project highlights, and behind-the-scenes insights into our development process.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Filter Tabs -->
+    <section class="relative py-8 bg-white border-b border-gray-100">
+        <div class="relative max-w-container mx-auto px-5">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="media-filter-btn active px-6 py-3 bg-electric-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg" data-filter="all">
+                    All Media
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="projects">
+                    Project Showcases
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="process">
+                    Development Process
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="team">
+                    Team & Culture
+                </button>
+                <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="videos">
+                    Video Content
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Grid -->
+    <section class="relative py-20 bg-white">
+        <div class="relative max-w-container mx-auto px-5">
+            <div class="media-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Featured Video Item -->
+                <div class="media-item lg:col-span-2 lg:row-span-2" data-category="videos projects">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+                        <div class="relative h-96 lg:h-full bg-gradient-to-br from-electric-blue/20 to-deep-navy/20 flex items-center justify-center">
+                            <!-- Video Thumbnail/Placeholder -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/10 to-deep-navy/10"></div>
+                            <div class="relative z-10 text-center">
+                                <div class="inline-flex items-center justify-center w-20 h-20 bg-electric-blue rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-play text-3xl text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-deep-navy mb-2">Company Overview</h3>
+                                <p class="text-charcoal/70">Watch our journey and mission</p>
+                            </div>
+                            <!-- Play overlay -->
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <i class="fas fa-play-circle text-6xl mb-2"></i>
+                                    <p class="text-lg font-medium">Play Video</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Featured</span>
+                                    <span class="text-charcoal/60 text-sm">5:42 min</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-expand text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Showcase 1 -->
+                <div class="media-item" data-category="projects">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/20 to-deep-navy/10 overflow-hidden">
+                            <img src="assets/images/brand_on_laptop.png" alt="E-commerce Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-electric-blue text-sm font-medium rounded-full">Web App</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">E-commerce Platform</h4>
+                                <p class="text-sm text-white/90">Modern shopping experience</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Modern E-commerce Solution</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Full-stack e-commerce platform with advanced analytics and seamless user experience.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-electric-blue/10 text-electric-blue text-xs rounded">React</span>
+                                    <span class="px-2 py-1 bg-electric-blue/10 text-electric-blue text-xs rounded">Node.js</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development Process -->
+                <div class="media-item" data-category="process">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-deep-navy/20 to-electric-blue/10 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-code text-2xl text-white"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-deep-navy">Development Workflow</h4>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Agile Development Process</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Behind-the-scenes look at our collaborative development methodology and quality assurance.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-sm font-medium rounded-full">Process</span>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-eye text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Culture -->
+                <div class="media-item" data-category="team">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/10 to-deep-navy/20 overflow-hidden">
+                            <img src="assets/images/two_team_members_smiling.jpg" alt="Team Collaboration - Two Team Members" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-electric-blue text-sm font-medium rounded-full">Team</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Team Collaboration</h4>
+                                <p class="text-sm text-white/90">Working together towards innovation</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Innovation Culture</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Discover how our diverse team collaborates to create cutting-edge technology solutions.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Culture</span>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-users text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Project -->
+                <div class="media-item" data-category="projects">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-deep-navy/20 to-electric-blue/20 overflow-hidden">
+                            <img src="assets/images/billboard.png" alt="Mobile Application" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-deep-navy text-sm font-medium rounded-full">Mobile</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Mobile Application</h4>
+                                <p class="text-sm text-white/90">Cross-platform solution</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Cross-Platform Mobile App</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Native performance with React Native, delivering seamless user experience across platforms.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">React Native</span>
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Firebase</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-mobile-alt text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Tutorial -->
+                <div class="media-item" data-category="videos process">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/20 to-deep-navy/20 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/10 to-deep-navy/10"></div>
+                            <div class="relative z-10 text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-play text-2xl text-white"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-deep-navy">Tech Tutorial</h4>
+                            </div>
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <i class="fas fa-play-circle text-4xl mb-2"></i>
+                                    <p class="text-sm font-medium">Watch Tutorial</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Development Tutorial</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Step-by-step guide to modern web development practices and best coding standards.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Tutorial</span>
+                                    <span class="text-charcoal/60 text-sm">12:30 min</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-play-circle text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Presentation -->
+                <div class="media-item" data-category="team process">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-deep-navy/20 to-electric-blue/10 overflow-hidden">
+                            <img src="assets/images/gentlemantalkingwith_themike.jpg" alt="Team Presentation - Professional Speaking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-deep-navy text-sm font-medium rounded-full">Presentation</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Knowledge Sharing</h4>
+                                <p class="text-sm text-white/90">Educating through expertise</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Technical Presentation</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Our team leaders sharing insights on cutting-edge technology and innovative solutions.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Leadership</span>
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Education</span>
+                                </div>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-microphone text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member Profile -->
+                <div class="media-item" data-category="team">
+                    <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-64 bg-gradient-to-br from-electric-blue/10 to-deep-navy/10 overflow-hidden">
+                            <img src="assets/images/gentlemansmiling.jpg" alt="Team Member - Professional Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-white/90 text-electric-blue text-sm font-medium rounded-full">Team Member</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 class="font-bold text-lg mb-1">Professional Excellence</h4>
+                                <p class="text-sm text-white/90">Dedicated to innovation</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Team Excellence</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Meet our dedicated professionals who bring passion and expertise to every project.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-sm font-medium rounded-full">Professional</span>
+                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
+                                    <i class="fas fa-user text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center">
+                <button class="inline-flex items-center px-8 py-4 bg-electric-blue text-white font-semibold rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-lg hover:-translate-y-1 transform">
+                    <i class="fas fa-plus mr-2"></i>
+                    Load More Content
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Statistics -->
+    <section class="relative py-20 bg-gray-50">
+        <div class="relative max-w-container mx-auto px-5">
+            <div class="bg-white border border-electric-blue/10 rounded-3xl p-12">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-deep-navy mb-4">Our Digital Footprint</h3>
+                    <p class="text-charcoal/70 text-lg">Comprehensive documentation of our journey and achievements</p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-electric-blue mb-2">150+</div>
+                        <div class="text-sm text-charcoal/70 font-medium">Project Photos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-deep-navy mb-2">50+</div>
+                        <div class="text-sm text-charcoal/70 font-medium">Video Content</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-electric-blue mb-2">25+</div>
+                        <div class="text-sm text-charcoal/70 font-medium">Team Spotlights</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-deep-navy mb-2">5K+</div>
+                        <div class="text-sm text-charcoal/70 font-medium">Total Views</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20 bg-deep-navy text-white">
+        <div class="relative max-w-container mx-auto px-5">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Create Something Amazing?</h2>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto">
+                    Let's collaborate and add your project to our growing portfolio of successful solutions.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Start Your Project</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-electric-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-lightbulb text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Free Consultation</h4>
+                                <p class="text-white/80">Discuss your ideas and get expert advice on implementation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-electric-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-rocket text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Fast Delivery</h4>
+                                <p class="text-white/80">Quick turnaround with enterprise-grade quality</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-electric-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-award text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Proven Results</h4>
+                                <p class="text-white/80">Join our portfolio of successful digital transformations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white/10 rounded-2xl p-8">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white font-medium mb-2">First Name</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-white font-medium mb-2">Last Name</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Project Type</label>
+                            <select class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <option value="">Select project type</option>
+                                <option value="web-app">Web Application</option>
+                                <option value="mobile-app">Mobile Application</option>
+                                <option value="ecommerce">E-commerce Platform</option>
+                                <option value="consulting">Technology Consulting</option>
+                                <option value="training">Technology Training</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Project Vision</label>
+                            <textarea rows="4" placeholder="Describe your project vision, goals, and requirements..." class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-electric-blue text-white py-4 rounded-lg font-semibold hover:bg-white hover:text-electric-blue transition-all duration-300 hover:shadow-lg">
+                            Start Your Project Journey
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-deep-navy text-white py-20 border-t border-white/10">
+        <div class="relative max-w-container mx-auto px-5">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Section -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-12 w-auto">
+                        <div>
+                            <div class="text-2xl font-bold">ICECODING</div>
+                            <div class="text-electric-blue text-sm font-medium">Innovative Minds, Smart Tech</div>
+                        </div>
+                    </div>
+                    <p class="text-white/80 leading-relaxed mb-8 max-w-md">
+                        Empowering individuals and businesses with cutting-edge technology solutions. From tech education to scalable software development, we drive transformation and success.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Services</a></li>
+                        <li><a href="solutions.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Solutions</a></li>
+                        <li><a href="team.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Team</a></li>
+                        <li><a href="gallery.html" class="text-electric-blue hover:text-white transition-colors duration-300">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-electric-blue mt-1"></i>
+                            <div class="text-white/80">
+                                <div>123 Tech Innovation Drive</div>
+                                <div>Silicon Valley, CA 94025</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-electric-blue"></i>
+                            <a href="tel:+1234567890" class="text-white/80 hover:text-electric-blue transition-colors duration-300">+1 (234) 567-8900</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-electric-blue"></i>
+                            <a href="mailto:hello@icecoding.com" class="text-white/80 hover:text-electric-blue transition-colors duration-300">hello@icecoding.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-white/20 text-center">
+                <p class="text-white/60">
+                    © 2025 ICECODING. All rights reserved. | 
+                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isVisible = mobileMenu.classList.contains('opacity-100');
+                    
+                    if (isVisible) {
+                        mobileMenu.classList.remove('opacity-100', 'visible');
+                        mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                    } else {
+                        mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
+                        mobileMenu.classList.add('opacity-100', 'visible');
+                    }
+                });
+            }
+
+            // Media Filter Functionality
+            const filterButtons = document.querySelectorAll('.media-filter-btn');
+            const mediaItems = document.querySelectorAll('.media-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-electric-blue', 'text-white');
+                        btn.classList.add('bg-white', 'border', 'border-electric-blue/30', 'text-electric-blue');
+                    });
+                    
+                    this.classList.add('active', 'bg-electric-blue', 'text-white');
+                    this.classList.remove('bg-white', 'border', 'border-electric-blue/30', 'text-electric-blue');
+                    
+                    // Filter media items
+                    mediaItems.forEach(item => {
+                        const categories = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || categories.includes(filter)) {
+                            item.style.display = 'block';
+                            item.style.animation = 'fadeIn 0.5s ease-in';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>
