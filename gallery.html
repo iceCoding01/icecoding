@@ -390,31 +390,52 @@
                     </div>
                 </div>
 
-                <!-- Team Presentation -->
-                <div class="media-item" data-category="team process">
+                <!-- Team Presentation Video -->
+                <div class="media-item" data-category="team process videos">
                     <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
                         <div class="relative h-64 bg-gradient-to-br from-deep-navy/20 to-electric-blue/10 overflow-hidden">
-                            <img src="assets/images/gentlemantalkingwith_themike.jpg" alt="Team Presentation - Professional Speaking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="256">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <!-- Video Element -->
+                            <video 
+                                class="w-full h-full object-cover" 
+                                poster="assets/images/gentlemantalkingwith_themike.jpg"
+                                controls
+                                preload="metadata"
+                                width="400" 
+                                height="256">
+                                <source src="assets/images/videos/presentation_1.mp4" type="video/mp4">
+                                <p class="text-center text-charcoal/70 p-4">Your browser does not support the video tag. Please update your browser or try a different one.</p>
+                            </video>
+                            
+                            <!-- Video Overlay -->
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                            
+                            <!-- Badge -->
                             <div class="absolute top-4 right-4">
-                                <span class="px-3 py-1 bg-white/90 text-deep-navy text-sm font-medium rounded-full">Presentation</span>
+                                <span class="px-3 py-1 bg-white/90 text-deep-navy text-sm font-medium rounded-full flex items-center gap-1">
+                                    <i class="fas fa-video text-xs"></i>
+                                    Live Presentation
+                                </span>
                             </div>
+                            
+                            <!-- Video Info Overlay -->
                             <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h4 class="font-bold text-lg mb-1">Knowledge Sharing</h4>
-                                <p class="text-sm text-white/90">Educating through expertise</p>
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-deep-navy mb-2">Technical Presentation</h3>
-                            <p class="text-charcoal/70 text-sm mb-4">Our team leaders sharing insights on cutting-edge technology and innovative solutions.</p>
+                            <h3 class="text-xl font-bold text-deep-navy mb-2">Live Technical Presentation</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">Watch our team leaders present cutting-edge technology solutions and share insights on innovative development practices.</p>
                             <div class="flex items-center justify-between">
                                 <div class="flex gap-2">
+                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Video</span>
                                     <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Leadership</span>
-                                    <span class="px-2 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded">Education</span>
+                                    <span class="px-2 py-1 bg-electric-blue/10 text-electric-blue text-xs rounded">Live Demo</span>
                                 </div>
-                                <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300">
-                                    <i class="fas fa-microphone text-lg"></i>
-                                </button>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-charcoal/60 text-xs">HD Quality</span>
+                                    <button class="text-electric-blue hover:text-deep-navy transition-colors duration-300" title="Expand video">
+                                        <i class="fas fa-expand text-lg"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
