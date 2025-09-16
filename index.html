@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICECODING - Innovative Technology Solutions | Software Development & Tech Education</title>
+    <title>ICECODING | Enterprise Technology Solutions & Digital Innovation</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="ICECODING delivers innovative technology solutions including software development, tech education, and digital transformation services. Empowering businesses with cutting-edge technology since 2025.">
-    <meta name="keywords" content="software development, technology education, digital transformation, web development, mobile apps, tech consulting, programming bootcamps, enterprise solutions">
+    <meta name="description" content="ICECODING delivers enterprise-grade technology solutions driving digital transformation for Fortune 500 companies and innovative startups. Accelerate your business with our custom software development, AI integration, and strategic tech consulting.">
+    <meta name="keywords" content="enterprise software development, digital transformation, AI solutions, cloud architecture, tech consulting, enterprise applications, innovation partner, custom software, agile development, tech strategy">
     <meta name="author" content="ICECODING">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.icecoding.com/">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="ICECODING - Innovative Technology Solutions">
-    <meta property="og:description" content="Empowering individuals and businesses with cutting-edge technology solutions. From tech education to scalable software development.">
+    <meta property="og:title" content="ICECODING | Enterprise Technology Solutions & Digital Innovation">
+    <meta property="og:description" content="Your strategic technology partner for enterprise-grade solutions that drive measurable business outcomes and accelerate digital transformation.">
     <meta property="og:image" content="https://www.icecoding.com/assets/images/brand_on_laptop.png">
     <meta property="og:url" content="https://www.icecoding.com/">
     <meta property="og:type" content="website">
@@ -22,8 +22,8 @@
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ICECODING - Innovative Technology Solutions">
-    <meta name="twitter:description" content="Empowering individuals and businesses with cutting-edge technology solutions.">
+    <meta name="twitter:title" content="ICECODING | Enterprise Technology Solutions">
+    <meta name="twitter:description" content="Your strategic technology partner for enterprise-grade solutions.">
     <meta name="twitter:image" content="https://www.icecoding.com/assets/images/brand_on_laptop.png">
     
     <!-- Favicon -->
@@ -48,18 +48,116 @@
                         'electric-blue': '#007BFF',
                         'charcoal': '#2D2D2D',
                         'white': '#FFFFFF',
+                        'light-gray': '#F7F9FC',
+                        'navy-dark': '#001228',
+                        'success-green': '#0CAF60',
+                        'warning-orange': '#FF9500',
                     },
                     fontFamily: {
                         'sans': ['Poppins', 'sans-serif'],
                         'poppins': ['Poppins', 'sans-serif'],
                     },
                     maxWidth: {
-                        'container': '1200px',
+                        'container': '1300px',
+                    },
+                    boxShadow: {
+                        'card': '0 10px 40px -12px rgba(0,0,0,0.1)',
+                        'card-hover': '0 20px 40px -12px rgba(0,0,0,0.15)',
+                        'nav': '0 4px 20px rgba(0,0,0,0.05)',
+                    },
+                    backgroundImage: {
+                        'gradient-tech': 'linear-gradient(135deg, #001F3F 0%, #007BFF 100%)',
+                        'gradient-light': 'linear-gradient(135deg, #F7F9FC 0%, #E9F3FF 100%)',
+                    },
+                    height: {
+                        '128': '32rem',
+                    },
+                    zIndex: {
+                        '-10': '-10',
                     }
                 }
             }
         }
     </script>
+    
+    <!-- Additional CSS -->
+    <style>
+        /* Custom Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #F7F9FC;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 123, 255, 0.5);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 31, 63, 0.8);
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Text Selection */
+        ::selection {
+            background: rgba(0, 123, 255, 0.3);
+            color: #001F3F;
+        }
+        
+        /* Focus State */
+        .focus-ring:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, #001F3F, #007BFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Custom Layer Style */
+        .layer-effect::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 60%;
+            height: 80%;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 31, 63, 0.1) 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: -1;
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            height: 5px;
+            background: linear-gradient(90deg, transparent, #007BFF, transparent);
+            margin: 0 auto;
+            width: 50%;
+            opacity: 0.3;
+        }
+    </style>
     
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -70,353 +168,859 @@
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
 </head>
-<body class="font-poppins">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo Section -->
-                <div class="flex items-center gap-3">
-                    <div class="relative">
-                        <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto transition-transform duration-300 hover:scale-105" loading="eager" width="60" height="40">
+<body class="font-poppins text-charcoal bg-white antialiased">
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-nav">
+            <div class="max-w-container mx-auto px-5 md:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo Section -->
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto transition-all duration-300 hover:scale-105" loading="eager" width="60" height="40">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold text-deep-navy leading-none tracking-tight">ICECODING</span>
+                            <span class="text-xs text-electric-blue font-medium leading-tight">Innovative Minds, Smart Tech</span>
+                        </div>
                     </div>
-                    <div class="flex flex-col">
-                        <span class="text-xl font-bold text-deep-navy leading-tight">ICECODING</span>
-                        <span class="text-xs text-electric-blue font-medium leading-tight">Innovative Minds, Smart Tech</span>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center">
+                        <ul class="flex items-center gap-1">
+                            <li>
+                                <a href="index.html" class="relative px-4 py-2 text-electric-blue font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
+                                    <span class="relative">Home</span>
+                                    <div class="absolute bottom-0 left-0 w-full h-0.5 bg-electric-blue transition-all duration-300"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
+                                    <span class="relative">About</span>
+                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
+                                    <span class="relative">Services</span>
+                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="solutions.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
+                                    <span class="relative">Solutions</span>
+                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="team.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
+                                    <span class="relative">Team</span>
+                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="gallery.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
+                                    <span class="relative">Gallery</span>
+                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <div class="ml-6 flex items-center gap-3">
+                            <a href="#contact" class="inline-flex items-center px-5 py-2 bg-electric-blue/10 text-electric-blue font-medium text-sm rounded-full transition-all duration-300 hover:bg-electric-blue/20 focus-ring">
+                                <i class="fas fa-headset mr-2 text-sm"></i>
+                                Support
+                            </a>
+                            <a href="#contact" class="inline-flex items-center px-5 py-2 bg-gradient-tech text-white font-medium text-sm rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform focus-ring">
+                                <i class="fas fa-rocket mr-2 text-sm"></i>
+                                Get Started
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100 group focus-ring" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                        <div class="space-y-1.5">
+                            <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                            <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                            <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                        </div>
+                    </button>
                 </div>
-
-                <!-- Desktop Navigation -->
-                <ul class="hidden lg:flex items-center gap-2">
-                    <li>
-                        <a href="index.html" class="relative px-4 py-2 text-electric-blue font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Home</span>
-                            <div class="absolute bottom-0 left-0 w-full h-0.5 bg-electric-blue transition-all duration-300"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">About</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="services.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Services</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="solutions.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Solutions</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="team.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Team</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="gallery.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Gallery</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li class="ml-4">
-                        <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="material-icons mr-2 text-sm">rocket_launch</span>
-                            Get Started
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100 group focus:outline-none" id="mobile-menu-button">
-                    <div class="space-y-1.5">
-                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
-                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
-                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
-                    </div>
-                </button>
             </div>
 
             <!-- Mobile Navigation Menu -->
             <div class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
                 <div class="px-6 py-6 space-y-2">
-                    <a href="index.html" class="group relative inline-block px-4 py-3 text-electric-blue font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                    <a href="index.html" class="group relative inline-block px-4 py-3 text-electric-blue font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
                         <span class="relative">Home</span>
                         <div class="absolute bottom-2 left-4 w-10 h-0.5 bg-electric-blue transition-all duration-300"></div>
                     </a>
-                    <a href="about.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                    <a href="about.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
                         <span class="relative">About</span>
                         <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
                     </a>
-                    <a href="services.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                    <a href="services.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
                         <span class="relative">Services</span>
                         <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-16"></div>
                     </a>
-                    <a href="solutions.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                    <a href="solutions.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
                         <span class="relative">Solutions</span>
                         <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-18"></div>
                     </a>
-                    <a href="team.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                    <a href="team.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
                         <span class="relative">Team</span>
                         <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
                     </a>
-                    <a href="gallery.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
+                    <a href="gallery.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
                         <span class="relative">Gallery</span>
                         <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-14"></div>
                     </a>
-                    <div class="pt-4 border-t border-gray-200/50">
-                        <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none">
-                            <span class="material-icons mr-2 text-lg">rocket_launch</span>
+                    <div class="pt-4 border-t border-gray-200/50 flex flex-col gap-3">
+                        <a href="#contact" class="flex items-center justify-center px-6 py-2.5 bg-electric-blue/10 text-electric-blue font-medium rounded-lg transition-all duration-300 hover:bg-electric-blue/20 focus-ring">
+                            <i class="fas fa-headset mr-2 text-sm"></i>
+                            Support
+                        </a>
+                        <a href="#contact" class="flex items-center justify-center px-6 py-2.5 bg-gradient-tech text-white font-medium rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform focus-ring">
+                            <i class="fas fa-rocket mr-2 text-sm"></i>
                             Get Started
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative py-32 bg-white overflow-hidden">
-        <!-- Brand Pattern Background -->
-        <div class="absolute inset-0 opacity-5 pointer-events-none">
-            <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center" loading="lazy" decoding="async">
+    <section id="hero" class="pt-32 pb-20 md:pb-32 md:pt-40 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute right-0 top-1/4 w-1/2 h-1/2 bg-gradient-to-br from-electric-blue/5 to-deep-navy/5 rounded-[40%] filter blur-3xl"></div>
+            <div class="absolute left-0 bottom-1/4 w-1/3 h-1/3 bg-gradient-to-tl from-electric-blue/5 to-deep-navy/5 rounded-[40%] filter blur-3xl"></div>
+            <div class="absolute left-1/4 top-1/4 w-12 h-12 border-2 border-electric-blue/10 rounded-full"></div>
+            <div class="absolute right-1/3 bottom-1/4 w-20 h-20 border border-deep-navy/10 rounded-full"></div>
+            <div class="hidden md:block absolute left-1/2 top-1/3 w-4 h-20 bg-gradient-to-b from-electric-blue/10 to-transparent rounded-full"></div>
         </div>
         
-        <div class="relative max-w-container mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center z-10">
-            <div class="text-center lg:text-left">
-                <!-- Badge -->
-                <div class="inline-flex items-center px-4 py-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-8">
-                    <i class="fas fa-medal mr-2 text-lg"></i>
-                    Leading Tech Innovation Since 2025
-                </div>
-                
-                <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-                    <span class="block text-deep-navy">Innovative Minds,</span>
-                    <span class="block text-electric-blue">Smart Tech</span>
-                </h1>
-                
-                <p class="text-lg md:text-xl mb-10 text-charcoal/80 leading-relaxed max-w-2xl">
-                    Empowering individuals and businesses with <span class="font-semibold text-electric-blue">cutting-edge technology solutions</span>. 
-                    From tech education to scalable software development, we drive transformation and success.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                    <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 bg-electric-blue text-white rounded-lg font-semibold transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
-                        <i class="fas fa-rocket mr-3 text-lg"></i>
-                        Explore Services
-                    </a>
-                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-deep-navy border-2 border-electric-blue rounded-lg font-semibold transition-all duration-300 hover:bg-electric-blue hover:text-white">
-                        <i class="fas fa-paper-plane mr-3 text-lg"></i>
-                        Start Project
-                    </a>
-                </div>
-                
-                <!-- Stats -->
-                <div class="grid grid-cols-3 gap-8 pt-8 border-t border-electric-blue/20">
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-electric-blue mb-2">500+</div>
-                        <div class="text-sm text-charcoal/70 font-medium">Projects Delivered</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-electric-blue mb-2">50+</div>
-                        <div class="text-sm text-charcoal/70 font-medium">Happy Clients</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-electric-blue mb-2">99%</div>
-                        <div class="text-sm text-charcoal/70 font-medium">Success Rate</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center lg:text-right">
-                <!-- Professional Image Display -->
-                <div class="relative max-w-2xl mx-auto">
-                    <!-- Main Image Container -->
-                    <div class="bg-white border border-electric-blue/20 rounded-2xl p-8 shadow-lg">
-                        <img src="assets/images/brand_on_laptop.png" alt="ICECODING Technology Solutions" class="w-full h-80 md:h-96 object-cover rounded-xl" loading="lazy" decoding="async" width="600" height="400">
+        <div class="relative container mx-auto px-5 z-10">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+                <!-- Hero Content -->
+                <div class="text-center md:text-left">
+                    <!-- Tag Badge -->
+                    <div class="inline-flex items-center mb-8 px-4 py-2 bg-gradient-light border border-electric-blue/10 rounded-full">
+                        <div class="w-2 h-2 rounded-full bg-success-green animate-pulse mr-2"></div>
+                        <span class="text-deep-navy/80 font-medium text-sm">Innovation Partner Since 2025</span>
                     </div>
                     
-                    <!-- Professional Info Cards -->
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="bg-electric-blue text-white p-4 rounded-xl text-center shadow-md">
-                            <div class="text-lg font-bold mb-1">Enterprise</div>
-                            <div class="text-xs opacity-90">Grade Solutions</div>
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                        <span class="text-deep-navy block">Accelerate Your</span>
+                        <span class="gradient-text block">Digital Transformation</span>
+                    </h1>
+                    
+                    <!-- Subheading -->
+                    <p class="text-lg md:text-xl mb-8 text-charcoal/80 leading-relaxed">
+                        We partner with forward-thinking organizations to deliver <span class="font-semibold text-electric-blue">enterprise-grade technology solutions</span> that drive measurable business outcomes.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+                        <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-tech text-white rounded-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transform focus-ring">
+                            <i class="fas fa-rocket mr-3 text-lg"></i>
+                            Explore Solutions
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-deep-navy border-2 border-electric-blue rounded-lg font-semibold transition-all duration-300 hover:bg-electric-blue hover:text-white hover:shadow-lg focus-ring">
+                            <i class="fas fa-calendar-check mr-3 text-lg"></i>
+                            Schedule Consultation
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap gap-6 justify-center md:justify-start items-center pt-6 border-t border-gray-200/60">
+                        <!-- Rating -->
+                        <div class="flex items-center gap-2">
+                            <div class="flex">
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                            </div>
+                            <span class="text-sm font-medium text-charcoal/60">Rated 4.9/5</span>
                         </div>
-                        <div class="bg-deep-navy text-white p-4 rounded-xl text-center shadow-md">
-                            <div class="text-lg font-bold mb-1">24/7</div>
-                            <div class="text-xs opacity-90">Support Available</div>
+                        
+                        <!-- Clients -->
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-building text-electric-blue"></i>
+                            <span class="text-sm font-medium text-charcoal/60">500+ Enterprise Clients</span>
+                        </div>
+                        
+                        <!-- Support -->
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-headset text-electric-blue"></i>
+                            <span class="text-sm font-medium text-charcoal/60">24/7 Expert Support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative">
+                    <div class="relative z-10 bg-white p-4 sm:p-6 md:p-8 border border-gray-100 rounded-2xl shadow-card overflow-hidden">
+                        <!-- Main Image with Frame -->
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="assets/images/brand_on_laptop.png" alt="ICECODING Enterprise Technology Solutions" class="w-full h-auto object-cover shadow-sm" loading="eager" decoding="async" width="600" height="400">
+                            
+                            <!-- Overlapping Card 1 - Enterprise Metrics -->
+                            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-card transform rotate-6 animate-float">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-success-green/10 rounded-lg flex items-center justify-center text-success-green">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-charcoal/60">ROI Increase</div>
+                                        <div class="text-deep-navy font-bold">+147%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Overlapping Card 2 - Time Savings -->
+                            <div class="absolute -top-4 -right-4 bg-white p-4 rounded-lg shadow-card transform -rotate-3 animate-float" style="animation-delay: 1s;">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-charcoal/60">Time-to-Market</div>
+                                        <div class="text-deep-navy font-bold">-62%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Client Logos Strip -->
+                        <div class="mt-6 py-3 px-4 bg-light-gray rounded-lg border border-gray-100/80">
+                            <div class="text-xs text-center text-charcoal/50 mb-3 uppercase tracking-wider font-medium">Trusted by Industry Leaders</div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center justify-center">
+                                    <i class="fas fa-building text-xl text-electric-blue/70"></i>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <i class="fas fa-store text-xl text-deep-navy/70"></i>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <i class="fas fa-landmark text-xl text-electric-blue/70"></i>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <i class="fas fa-hands-helping text-xl text-deep-navy/70"></i>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <i class="fas fa-rocket text-xl text-electric-blue/70"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Additional Portfolio Images -->
-                    <div class="grid grid-cols-2 gap-4 mt-6">
-                        <div class="bg-gray-50 border border-electric-blue/10 rounded-xl p-4">
-                            <img src="assets/images/billboard.png" alt="ICECODING Brand Display" class="w-full h-20 object-cover rounded-lg">
-                        </div>
-                        <div class="bg-gray-50 border border-electric-blue/10 rounded-xl p-4">
-                            <img src="assets/images/logo_name_slogan.png" alt="ICECODING Brand Identity" class="w-full h-20 object-contain rounded-lg">
-                        </div>
-                    </div>
+                    <!-- Background Design Element -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-electric-blue/10 to-deep-navy/10 rounded-full blur-3xl -z-10"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="relative py-16 bg-gray-50">
-        <div class="max-w-container mx-auto px-5">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-deep-navy mb-4">Our Core Services</h2>
-                <p class="text-charcoal/70 max-w-2xl mx-auto">
-                    Comprehensive technology solutions to transform your business
+    <!-- What We Do Section -->
+    <section class="py-20 bg-light-gray relative">
+        <!-- Background Accents -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -right-40 -top-40 w-80 h-80 bg-electric-blue/5 rounded-full"></div>
+            <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-deep-navy/5 rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto px-5 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div class="inline-flex items-center px-4 py-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
+                    <i class="fas fa-code mr-2"></i>
+                    Enterprise Solutions
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-navy mb-6">Transformative Technology Solutions</h2>
+                
+                <p class="text-lg text-charcoal/70">
+                    We deliver enterprise-grade solutions that help organizations innovate faster, operate more efficiently, and scale with confidence.
                 </p>
             </div>
             
+            <!-- Service Cards -->
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-xl mb-6">
-                        <i class="fas fa-chalkboard-teacher text-2xl text-electric-blue"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-deep-navy mb-4">Technology Education</h3>
-                    <p class="text-charcoal/70 mb-6">Professional training programs and bootcamps to elevate technical skills.</p>
-                    <a href="services.html#education" class="text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300">Learn More →</a>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-xl mb-6">
-                        <i class="fas fa-laptop-code text-2xl text-electric-blue"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-deep-navy mb-4">Software Development</h3>
-                    <p class="text-charcoal/70 mb-6">Custom enterprise solutions built with modern technologies.</p>
-                    <a href="services.html#development" class="text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300">Learn More →</a>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-xl mb-6">
+                <!-- Service 1: Digital Transformation -->
+                <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 group border border-gray-100 relative overflow-hidden">
+                    <!-- Card Background Accent -->
+                    <div class="absolute right-0 bottom-0 w-32 h-32 bg-electric-blue/5 rounded-tl-[80px] -z-10 transition-all duration-500 group-hover:bg-electric-blue/10"></div>
+                    
+                    <!-- Icon -->
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric-blue/10 to-electric-blue/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
                         <i class="fas fa-chart-network text-2xl text-electric-blue"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-deep-navy mb-4">Technology Consulting</h3>
-                    <p class="text-charcoal/70 mb-6">Strategic advisory services for digital transformation.</p>
-                    <a href="services.html#consulting" class="text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300">Learn More →</a>
+                    
+                    <!-- Content -->
+                    <h3 class="text-xl font-bold text-deep-navy mb-4 group-hover:text-electric-blue transition-colors duration-300">Digital Transformation</h3>
+                    
+                    <p class="text-charcoal/70 mb-6">
+                        Strategic roadmapping and implementation services to modernize legacy systems and enable new business capabilities.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Legacy System Modernization</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Cloud Migration & Strategy</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Digital Process Automation</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="services.html#transformation" class="inline-flex items-center text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300 mt-auto">
+                        Learn More
+                        <i class="fas fa-arrow-right ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Customer Logos Section -->
-    <section class="relative py-16 bg-white border-b border-gray-100">
-        <div class="max-w-container mx-auto px-5">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
-                    <i class="fas fa-handshake mr-2 text-lg"></i>
-                    Trusted by Industry Leaders
+                
+                <!-- Service 2: Enterprise Software -->
+                <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 group border border-gray-100 relative overflow-hidden">
+                    <!-- Card Background Accent -->
+                    <div class="absolute right-0 bottom-0 w-32 h-32 bg-electric-blue/5 rounded-tl-[80px] -z-10 transition-all duration-500 group-hover:bg-electric-blue/10"></div>
+                    
+                    <!-- Icon -->
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric-blue/10 to-electric-blue/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-laptop-code text-2xl text-electric-blue"></i>
+                    </div>
+                    
+                    <!-- Content -->
+                    <h3 class="text-xl font-bold text-deep-navy mb-4 group-hover:text-electric-blue transition-colors duration-300">Enterprise Software</h3>
+                    
+                    <p class="text-charcoal/70 mb-6">
+                        Custom enterprise software development that aligns with your business strategy and delivers measurable outcomes.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Scalable Architecture Design</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">API Development & Integration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Enterprise Mobile Solutions</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="services.html#development" class="inline-flex items-center text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300 mt-auto">
+                        Learn More
+                        <i class="fas fa-arrow-right ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-deep-navy mb-4">Powering Success Across Industries</h3>
-                <p class="text-charcoal/70 max-w-2xl mx-auto">
-                    Join the growing number of organizations that trust ICECODING for their technology transformation
-                </p>
+                
+                <!-- Service 3: AI & Data Solutions -->
+                <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 group border border-gray-100 relative overflow-hidden">
+                    <!-- Card Background Accent -->
+                    <div class="absolute right-0 bottom-0 w-32 h-32 bg-electric-blue/5 rounded-tl-[80px] -z-10 transition-all duration-500 group-hover:bg-electric-blue/10"></div>
+                    
+                    <!-- Icon -->
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric-blue/10 to-electric-blue/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-brain text-2xl text-electric-blue"></i>
+                    </div>
+                    
+                    <!-- Content -->
+                    <h3 class="text-xl font-bold text-deep-navy mb-4 group-hover:text-electric-blue transition-colors duration-300">AI & Data Solutions</h3>
+                    
+                    <p class="text-charcoal/70 mb-6">
+                        Advanced analytics and AI integration to unlock the value of your data and drive predictive decision-making.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Predictive Analytics</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Machine Learning Integration</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check-circle text-success-green"></i>
+                            </div>
+                            <span class="text-sm text-charcoal/80">Big Data Architecture</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="services.html#ai" class="inline-flex items-center text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300 mt-auto">
+                        Learn More
+                        <i class="fas fa-arrow-right ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
             </div>
             
-            <!-- Customer Logos Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-                <!-- Logo placeholders -->
-                <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-electric-blue/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-electric-blue/20 transition-colors duration-300">
-                            <i class="fas fa-building text-2xl text-electric-blue"></i>
-                        </div>
-                        <div class="text-xs font-medium text-charcoal/60">TechCorp</div>
-                    </div>
-                </div>
-                
-                <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-deep-navy/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-deep-navy/20 transition-colors duration-300">
-                            <i class="fas fa-store text-2xl text-deep-navy"></i>
-                        </div>
-                        <div class="text-xs font-medium text-charcoal/60">RetailPlus</div>
-                    </div>
-                </div>
-                
-                <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-electric-blue/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-electric-blue/20 transition-colors duration-300">
-                            <i class="fas fa-landmark text-2xl text-electric-blue"></i>
-                        </div>
-                        <div class="text-xs font-medium text-charcoal/60">GovTech</div>
-                    </div>
-                </div>
-                
-                <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-deep-navy/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-deep-navy/20 transition-colors duration-300">
-                            <i class="fas fa-hands-helping text-2xl text-deep-navy"></i>
-                        </div>
-                        <div class="text-xs font-medium text-charcoal/60">NonProfit+</div>
-                    </div>
-                </div>
-                
-                <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-electric-blue/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-electric-blue/20 transition-colors duration-300">
-                            <i class="fas fa-rocket text-2xl text-electric-blue"></i>
-                        </div>
-                        <div class="text-xs font-medium text-charcoal/60">StartupHub</div>
-                    </div>
-                </div>
-                
-                <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-deep-navy/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-deep-navy/20 transition-colors duration-300">
-                            <i class="fas fa-globe text-2xl text-deep-navy"></i>
-                        </div>
-                        <div class="text-xs font-medium text-charcoal/60">GlobalTech</div>
-                    </div>
-                </div>
+            <!-- Bottom CTA -->
+            <div class="text-center mt-16">
+                <a href="services.html" class="inline-flex items-center px-8 py-4 bg-white border-2 border-electric-blue text-electric-blue rounded-lg font-semibold transition-all duration-300 hover:bg-electric-blue hover:text-white hover:shadow-lg">
+                    View All Enterprise Solutions
+                    <i class="fas fa-long-arrow-alt-right ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Quick About Section -->
-    <section class="relative py-20 bg-gray-50">
-        <div class="max-w-container mx-auto px-5">
+    <!-- Featured Case Study -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-light-gray to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-5 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Column: Case Study Content -->
                 <div>
-                    <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
-                        <i class="fas fa-building-columns mr-2 text-lg"></i>
-                        About ICECODING
+                    <div class="inline-flex items-center px-4 py-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
+                        <i class="fas fa-trophy mr-2"></i>
+                        Featured Success Story
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-deep-navy mb-6">Empowering Technology Innovation</h2>
+                    
+                    <h2 class="text-3xl md:text-4xl font-bold text-deep-navy mb-6">
+                        <span class="text-electric-blue">62% Revenue Growth</span> 
+                        After Digital Transformation
+                    </h2>
+                    
                     <p class="text-lg text-charcoal/80 leading-relaxed mb-8">
-                        Our mission is to utilize technology to develop solutions that foster transformation and success for our clients. We are dedicated to providing innovative, dependable, and scalable software products and services.
+                        See how we helped TechCorp, a leading B2B software provider, transform their legacy systems into a modern, scalable platform that dramatically increased efficiency and accelerated growth.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="text-center p-6 bg-white border border-electric-blue/20 rounded-xl shadow-md">
-                            <div class="text-3xl font-bold text-electric-blue mb-2">5+</div>
-                            <div class="text-sm text-charcoal/70 font-medium">Years Experience</div>
+                    
+                    <!-- Results Metrics -->
+                    <div class="grid sm:grid-cols-2 gap-6 mb-10">
+                        <div class="bg-light-gray border border-gray-100 rounded-xl p-6 relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-electric-blue/10 rounded-full"></div>
+                            <h4 class="text-deep-navy font-bold text-4xl mb-2">62%</h4>
+                            <p class="text-charcoal/70 font-medium">Increase in Annual Revenue</p>
                         </div>
-                        <div class="text-center p-6 bg-white border border-electric-blue/20 rounded-xl shadow-md">
-                            <div class="text-3xl font-bold text-electric-blue mb-2">24/7</div>
-                            <div class="text-sm text-charcoal/70 font-medium">Support Available</div>
+                        
+                        <div class="bg-light-gray border border-gray-100 rounded-xl p-6 relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-electric-blue/10 rounded-full"></div>
+                            <h4 class="text-deep-navy font-bold text-4xl mb-2">3.2x</h4>
+                            <p class="text-charcoal/70 font-medium">Return on Investment</p>
                         </div>
                     </div>
-                    <a href="about.html" class="inline-flex items-center px-6 py-3 bg-electric-blue text-white font-semibold rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
-                        Learn More About Us
+                    
+                    <!-- Testimonial -->
+                    <div class="bg-gradient-light p-6 rounded-xl border border-electric-blue/10 mb-8 relative">
+                        <div class="absolute -top-3 left-8 text-electric-blue text-5xl opacity-20">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="italic text-charcoal/80 relative z-10 mb-4">
+                            "ICECODING transformed our business by modernizing our entire technology stack. Their enterprise-grade solutions helped us scale operations and enter new markets with confidence."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-deep-navy rounded-full flex items-center justify-center text-white font-bold">
+                                JD
+                            </div>
+                            <div>
+                                <div class="font-bold text-deep-navy">John Doe</div>
+                                <div class="text-sm text-charcoal/60">CTO, TechCorp</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="solutions.html#case-studies" class="inline-flex items-center px-6 py-3 bg-electric-blue text-white font-medium rounded-lg shadow-md transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
+                        Read Full Case Study
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
                 
+                <!-- Right Column: Visual Content -->
                 <div class="relative">
-                    <div class="bg-white border border-electric-blue/20 p-8 rounded-2xl shadow-lg">
-                        <img src="assets/images/billboard.png" alt="ICECODING Brand Solutions" class="w-full h-auto rounded-xl">
+                    <div class="bg-white border border-gray-100 p-6 rounded-2xl shadow-card">
+                        <!-- Main Image -->
+                        <div class="rounded-xl overflow-hidden mb-6">
+                            <img src="assets/images/billboard.png" alt="TechCorp Digital Transformation Case Study" class="w-full h-auto object-cover">
+                        </div>
+                        
+                        <!-- Stats Highlights -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-light-gray p-4 rounded-lg text-center">
+                                <div class="text-xl font-bold text-electric-blue">8 Weeks</div>
+                                <div class="text-xs text-charcoal/60">Implementation</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center">
+                                <div class="text-xl font-bold text-electric-blue">99.9%</div>
+                                <div class="text-xs text-charcoal/60">Uptime</div>
+                            </div>
+                            <div class="bg-light-gray p-4 rounded-lg text-center">
+                                <div class="text-xl font-bold text-electric-blue">45%</div>
+                                <div class="text-xs text-charcoal/60">Cost Reduction</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Technology Stack -->
+                        <div class="mt-6 pt-6 border-t border-gray-100">
+                            <div class="text-sm text-charcoal/60 mb-3">Technology Stack</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded-full">React</span>
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded-full">Node.js</span>
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded-full">AWS</span>
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded-full">MongoDB</span>
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded-full">Docker</span>
+                                <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs rounded-full">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-6 -right-6 w-20 h-20 border-2 border-electric-blue/20 rounded-lg transform rotate-6"></div>
+                    <div class="absolute -bottom-6 -left-6 w-16 h-16 border-2 border-deep-navy/20 rounded-lg transform -rotate-6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack & Partners -->
+    <section class="py-16 bg-light-gray">
+        <div class="container mx-auto px-5">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center px-4 py-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
+                    <i class="fas fa-handshake mr-2"></i>
+                    Enterprise Partners
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-deep-navy mb-4">Trusted by Industry Leaders</h2>
+                <p class="text-charcoal/70 max-w-2xl mx-auto">
+                    We partner with world-class technology providers to deliver comprehensive enterprise solutions.
+                </p>
+            </div>
+            
+            <!-- Partners Grid -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                    <!-- Partner Logos -->
+                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-aws text-3xl text-charcoal/70"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-microsoft text-3xl text-charcoal/70"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-google text-3xl text-charcoal/70"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-salesforce text-3xl text-charcoal/70"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-adobe text-3xl text-charcoal/70"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-oracle text-3xl text-charcoal/70"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technology Stack -->
+                <div class="mt-12 pt-8 border-t border-gray-100">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-deep-navy">Enterprise Technology Stack</h3>
+                        <p class="text-charcoal/60">Technologies we leverage to build robust, scalable solutions</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Frontend -->
+                        <div class="bg-light-gray p-4 rounded-xl">
+                            <div class="text-sm font-medium text-electric-blue mb-3">Frontend</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">React</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Angular</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Vue.js</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Next.js</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Backend -->
+                        <div class="bg-light-gray p-4 rounded-xl">
+                            <div class="text-sm font-medium text-electric-blue mb-3">Backend</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Node.js</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Java</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">.NET</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Python</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Data -->
+                        <div class="bg-light-gray p-4 rounded-xl">
+                            <div class="text-sm font-medium text-electric-blue mb-3">Database & Data</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">MongoDB</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Redis</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Elasticsearch</span>
+                            </div>
+                        </div>
+                        
+                        <!-- DevOps -->
+                        <div class="bg-light-gray p-4 rounded-xl">
+                            <div class="text-sm font-medium text-electric-blue mb-3">DevOps & Cloud</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">AWS</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Azure</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Kubernetes</span>
+                                <span class="px-3 py-1 bg-white shadow-sm text-charcoal/80 text-xs rounded-full">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-tech text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10 z-0">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('assets/images/brand_pattern.png')] bg-repeat opacity-20"></div>
+            <div class="absolute top-1/4 right-1/4 w-60 h-60 rounded-full bg-white opacity-5"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-40 h-40 rounded-full bg-white opacity-5"></div>
+        </div>
+        
+        <div class="container mx-auto px-5 relative z-10">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div class="inline-flex items-center px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white font-medium text-sm mb-6">
+                    <i class="fas fa-star mr-2"></i>
+                    Client Testimonials
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">What Our Clients Say</h2>
+                <p class="text-white/80 text-lg">
+                    We're proud to partner with forward-thinking organizations to deliver solutions that drive measurable business outcomes.
+                </p>
+            </div>
+            
+            <!-- Testimonial Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative">
+                    <!-- Quote Icon -->
+                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left text-white/80"></i>
+                    </div>
+                    
+                    <!-- Stars -->
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                    </div>
+                    
+                    <!-- Quote -->
+                    <p class="text-white/90 mb-6 leading-relaxed">
+                        "ICECODING delivered a cutting-edge enterprise solution that transformed our operations. Their strategic approach and technical expertise exceeded our expectations."
+                    </p>
+                    
+                    <!-- Author -->
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                            SJ
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Sarah Johnson</div>
+                            <div class="text-white/70 text-sm">CIO, RetailPlus</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative">
+                    <!-- Quote Icon -->
+                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left text-white/80"></i>
+                    </div>
+                    
+                    <!-- Stars -->
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                    </div>
+                    
+                    <!-- Quote -->
+                    <p class="text-white/90 mb-6 leading-relaxed">
+                        "Working with ICECODING has been a game-changer for our digital transformation initiatives. Their AI solutions have given us a competitive edge in our industry."
+                    </p>
+                    
+                    <!-- Author -->
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                            MR
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Michael Rodriguez</div>
+                            <div class="text-white/70 text-sm">CEO, GovTech</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative">
+                    <!-- Quote Icon -->
+                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left text-white/80"></i>
+                    </div>
+                    
+                    <!-- Stars -->
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star text-warning-orange"></i>
+                        <i class="fas fa-star-half-alt text-warning-orange"></i>
+                    </div>
+                    
+                    <!-- Quote -->
+                    <p class="text-white/90 mb-6 leading-relaxed">
+                        "The team at ICECODING understands both technology and business strategy. They've helped us implement cloud solutions that reduced costs while improving scalability."
+                    </p>
+                    
+                    <!-- Author -->
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                            LC
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Lisa Chen</div>
+                            <div class="text-white/70 text-sm">CTO, StartupHub</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View More Link -->
+            <div class="text-center mt-12">
+                <a href="solutions.html#testimonials" class="inline-flex items-center px-6 py-3 bg-white text-deep-navy font-medium rounded-lg shadow-md transition-all duration-300 hover:bg-deep-navy hover:text-white hover:shadow-lg">
+                    View More Testimonials
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-light-gray to-transparent opacity-70"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-electric-blue/5"></div>
+            <div class="absolute top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 w-full h-1/2 bg-gradient-to-b from-light-gray/50 to-transparent blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-5 relative z-10">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <!-- Left: CTA Content -->
+                    <div class="p-8 md:p-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-deep-navy mb-6">Ready to Transform Your Business?</h2>
+                        <p class="text-charcoal/70 mb-8">
+                            Let's discuss how our enterprise solutions can help you accelerate growth, reduce costs, and gain competitive advantage.
+                        </p>
+                        
+                        <!-- Benefits List -->
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <div class="flex-shrink-0 mt-1 w-6 h-6 rounded-full bg-success-green/10 flex items-center justify-center">
+                                    <i class="fas fa-check text-success-green text-xs"></i>
+                                </div>
+                                <span class="text-charcoal/80">Free initial consultation</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="flex-shrink-0 mt-1 w-6 h-6 rounded-full bg-success-green/10 flex items-center justify-center">
+                                    <i class="fas fa-check text-success-green text-xs"></i>
+                                </div>
+                                <span class="text-charcoal/80">Custom solution proposal within 5 days</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="flex-shrink-0 mt-1 w-6 h-6 rounded-full bg-success-green/10 flex items-center justify-center">
+                                    <i class="fas fa-check text-success-green text-xs"></i>
+                                </div>
+                                <span class="text-charcoal/80">Dedicated solution architect assigned</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="inline-flex items-center px-8 py-3.5 bg-gradient-tech text-white font-medium rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+                            Schedule a Consultation
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Right: Image -->
+                    <div class="relative overflow-hidden h-full">
+                        <img src="assets/images/billboard.png" alt="ICECODING Enterprise Solutions" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-deep-navy/80 to-deep-navy/40"></div>
+                        <div class="absolute inset-0 p-12 flex flex-col justify-center">
+                            <div class="text-4xl font-bold text-white mb-4">500+</div>
+                            <div class="text-xl text-white/90 mb-2">Enterprise Clients</div>
+                            <div class="text-sm text-white/70 mb-8">across 20+ industries</div>
+                            
+                            <div class="flex gap-2 mb-4">
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                                <i class="fas fa-star text-warning-orange"></i>
+                            </div>
+                            <div class="text-white/90 text-sm">
+                                Rated 4.9/5 by enterprise clients
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -424,184 +1028,265 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="relative py-20 bg-deep-navy text-white">
-        <div class="relative max-w-container mx-auto px-5">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-                <p class="text-xl text-white/80 max-w-2xl mx-auto">
-                    Let's discuss how we can help transform your business with innovative technology solutions.
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16">
-                <!-- Contact Info -->
+    <section id="contact" class="relative py-20 bg-deep-navy text-white overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10 z-0">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('assets/images/brand_pattern.png')] bg-repeat opacity-20"></div>
+            <div class="absolute bottom-0 right-0 w-1/3 h-1/2 bg-electric-blue/10 filter blur-3xl rounded-tl-full"></div>
+        </div>
+        
+        <div class="container mx-auto px-5 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Form -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-8">Get in Touch</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-electric-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Office Location</h4>
-                                <p class="text-white/80">123 Tech Innovation Drive<br>Silicon Valley, CA 94025</p>
-                            </div>
+                    <div class="mb-10">
+                        <div class="inline-flex items-center px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white font-medium text-sm mb-6">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Contact Us
                         </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-electric-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Phone</h4>
-                                <p class="text-white/80">+1 (234) 567-8900</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-electric-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Email</h4>
-                                <p class="text-white/80">hello@icecoding.com</p>
-                            </div>
-                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Exceptional</h2>
+                        <p class="text-white/80 text-lg max-w-xl">
+                            Schedule a consultation with our solution architects to discuss your enterprise technology needs.
+                        </p>
                     </div>
-                </div>
-                
-                <!-- Contact Form -->
-                <div class="bg-white/10 rounded-2xl p-8">
-                    <form class="space-y-6">
+                    
+                    <form class="space-y-6 bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-white font-medium mb-2">First Name</label>
-                                <input type="text" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <label class="block text-white font-medium mb-2">Full Name*</label>
+                                <input type="text" required placeholder="John Smith" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
                             </div>
                             <div>
-                                <label class="block text-white font-medium mb-2">Last Name</label>
-                                <input type="text" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <label class="block text-white font-medium mb-2">Company*</label>
+                                <input type="text" required placeholder="ACME Corp" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white font-medium mb-2">Email Address*</label>
+                                <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-white font-medium mb-2">Phone Number</label>
+                                <input type="tel" placeholder="+1 (555) 123-4567" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-white font-medium mb-2">Email Address</label>
-                            <input type="email" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-white font-medium mb-2">Service Interest</label>
-                            <select class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
-                                <option value="">Select a service</option>
-                                <option value="education">Technology Education</option>
-                                <option value="development">Software Development</option>
-                                <option value="consulting">Technology Consulting</option>
-                                <option value="transformation">Digital Transformation</option>
+                            <label class="block text-white font-medium mb-2">Solution Interest*</label>
+                            <select required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <option value="">Select a solution</option>
+                                <option value="digital-transformation">Digital Transformation</option>
+                                <option value="enterprise-software">Enterprise Software Development</option>
+                                <option value="ai-solutions">AI & Data Solutions</option>
+                                <option value="cloud-services">Cloud Migration & Services</option>
+                                <option value="devops">DevOps & CI/CD Implementation</option>
+                                <option value="consulting">Technology Strategy Consulting</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
                         
                         <div>
-                            <label class="block text-white font-medium mb-2">Project Details</label>
-                            <textarea rows="4" placeholder="Tell us about your project requirements..." class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 resize-none"></textarea>
+                            <label class="block text-white font-medium mb-2">Project Details*</label>
+                            <textarea rows="4" required placeholder="Please share details about your project, goals, and timeline..." class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 resize-none"></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full bg-electric-blue text-white py-4 rounded-lg font-semibold hover:bg-white hover:text-electric-blue transition-all duration-300 hover:shadow-lg">
-                            Send Message
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="privacy-policy" required class="mt-1">
+                            <label for="privacy-policy" class="text-sm text-white/70">
+                                I agree to the <a href="#" class="text-electric-blue hover:text-white transition-colors duration-300">Privacy Policy</a> and consent to being contacted regarding my request.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-tech text-white py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 transform">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Schedule Consultation
                         </button>
                     </form>
+                </div>
+                
+                <!-- Right: Contact Info -->
+                <div>
+                    <div class="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Enterprise Contact</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-electric-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-building text-electric-blue"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Global Headquarters</h4>
+                                    <p class="text-white/80">123 Innovation Drive<br>Silicon Valley, CA 94025<br>United States</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-electric-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-electric-blue"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <p class="text-white/80">
+                                        <a href="tel:+12345678900" class="hover:text-electric-blue transition-colors duration-300">+1 (234) 567-8900</a> 
+                                        <span class="text-white/60 text-sm">(Sales)</span>
+                                    </p>
+                                    <p class="text-white/80">
+                                        <a href="tel:+12345678911" class="hover:text-electric-blue transition-colors duration-300">+1 (234) 567-8911</a> 
+                                        <span class="text-white/60 text-sm">(Support)</span>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-electric-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-electric-blue"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-white/80">
+                                        <a href="mailto:enterprise@icecoding.com" class="hover:text-electric-blue transition-colors duration-300">enterprise@icecoding.com</a> 
+                                        <span class="text-white/60 text-sm">(Enterprise)</span>
+                                    </p>
+                                    <p class="text-white/80">
+                                        <a href="mailto:support@icecoding.com" class="hover:text-electric-blue transition-colors duration-300">support@icecoding.com</a> 
+                                        <span class="text-white/60 text-sm">(Support)</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hours & Support -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-electric-blue/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-clock text-electric-blue"></i>
+                                </div>
+                                <h4 class="font-semibold">Business Hours</h4>
+                            </div>
+                            <ul class="space-y-2 text-white/80 text-sm">
+                                <li class="flex justify-between">
+                                    <span>Monday - Friday:</span>
+                                    <span>8:00 AM - 6:00 PM PST</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Saturday:</span>
+                                    <span>10:00 AM - 2:00 PM PST</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Sunday:</span>
+                                    <span>Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-electric-blue/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-headset text-electric-blue"></i>
+                                </div>
+                                <h4 class="font-semibold">Support</h4>
+                            </div>
+                            <p class="text-white/80 text-sm mb-4">Enterprise clients receive 24/7 priority support with a dedicated account manager.</p>
+                            <a href="#" class="inline-flex items-center text-electric-blue hover:text-white transition-colors duration-300 text-sm">
+                                Client Portal Login
+                                <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="relative bg-deep-navy text-white py-20 border-t border-white/10">
-        <!-- Brand Pattern Background -->
-        <div class="absolute inset-0 opacity-5 pointer-events-none">
-            <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center">
-        </div>
-        
-        <div class="relative max-w-container mx-auto px-5">
-            <div class="grid lg:grid-cols-4 gap-12 mb-16">
-                <!-- Brand Section -->
+    <footer class="bg-deep-navy border-t border-white/10 relative overflow-hidden">
+        <div class="container mx-auto px-5">
+            <!-- Top Footer -->
+            <div class="grid lg:grid-cols-4 gap-12 py-16">
+                <!-- Company Info -->
                 <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
                         <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-12 w-auto">
                         <div>
-                            <div class="text-2xl font-bold">ICECODING</div>
+                            <div class="text-2xl font-bold text-white">ICECODING</div>
                             <div class="text-electric-blue text-sm font-medium">Innovative Minds, Smart Tech</div>
                         </div>
                     </div>
-                    <p class="text-white/80 leading-relaxed mb-8 max-w-md">
-                        Empowering individuals and businesses with cutting-edge technology solutions. From tech education to scalable software development, we drive transformation and success.
+                    <p class="text-white/70 leading-relaxed mb-8 max-w-md">
+                        ICECODING delivers enterprise-grade technology solutions that drive digital transformation and accelerate business growth for forward-thinking organizations.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
-                            <i class="fab fa-linkedin text-lg"></i>
+                    
+                    <!-- Social Links -->
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
-                            <i class="fab fa-twitter text-lg"></i>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
-                            <i class="fab fa-github text-lg"></i>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
-                            <i class="fab fa-youtube text-lg"></i>
+                        <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Quick Links -->
+                <!-- Solution Links -->
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <h4 class="text-lg font-bold text-white mb-6">Solutions</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-electric-blue hover:text-white transition-colors duration-300">Home</a></li>
-                        <li><a href="about.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
-                        <li><a href="services.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Services</a></li>
-                        <li><a href="solutions.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Solutions</a></li>
-                        <li><a href="team.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Team</a></li>
-                        <li><a href="gallery.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Gallery</a></li>
+                        <li><a href="solutions.html#digital-transformation" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Digital Transformation</a></li>
+                        <li><a href="solutions.html#enterprise-software" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Enterprise Software</a></li>
+                        <li><a href="solutions.html#ai-solutions" class="text-white/70 hover:text-electric-blue transition-colors duration-300">AI & Data Solutions</a></li>
+                        <li><a href="solutions.html#cloud-services" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Cloud Services</a></li>
+                        <li><a href="solutions.html#devops" class="text-white/70 hover:text-electric-blue transition-colors duration-300">DevOps & CI/CD</a></li>
+                        <li><a href="solutions.html#consulting" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Strategy Consulting</a></li>
                     </ul>
                 </div>
                 
-                <!-- Contact Info -->
+                <!-- Company Links -->
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Contact Info</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-electric-blue mt-1"></i>
-                            <div class="text-white/80">
-                                <div>123 Tech Innovation Drive</div>
-                                <div>Silicon Valley, CA 94025</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-phone text-electric-blue"></i>
-                            <a href="tel:+1234567890" class="text-white/80 hover:text-electric-blue transition-colors duration-300">+1 (234) 567-8900</a>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-electric-blue"></i>
-                            <a href="mailto:hello@icecoding.com" class="text-white/80 hover:text-electric-blue transition-colors duration-300">hello@icecoding.com</a>
-                        </div>
-                    </div>
+                    <h4 class="text-lg font-bold text-white mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-white/70 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
+                        <li><a href="team.html" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Leadership Team</a></li>
+                        <li><a href="gallery.html" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Gallery</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Press & Media</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-electric-blue transition-colors duration-300">Partner Program</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <!-- Copyright -->
-            <div class="pt-8 border-t border-white/20 text-center">
-                <p class="text-white/60">
-                    © 2025 ICECODING. All rights reserved. | 
-                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Privacy Policy</a> | 
-                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Terms of Service</a>
-                </p>
+            <!-- Bottom Footer -->
+            <div class="py-6 border-t border-white/10 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                <div class="text-white/50 text-sm">
+                    © 2025 ICECODING. All rights reserved.
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="#" class="text-white/50 hover:text-electric-blue transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-white/50 hover:text-electric-blue transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-white/50 hover:text-electric-blue transition-colors duration-300">Cookie Policy</a>
+                    <a href="#" class="text-white/50 hover:text-electric-blue transition-colors duration-300">Accessibility</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-electric-blue text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50 hover:bg-deep-navy">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
     <script>
-        // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             
@@ -618,6 +1303,79 @@
                     }
                 });
             }
+            
+            // Navbar scroll behavior
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('back-to-top');
+            
+            function handleScroll() {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('bg-white', 'shadow-nav');
+                    navbar.classList.remove('bg-transparent');
+                    
+                    // Show back to top button
+                    backToTop.classList.remove('opacity-0', 'invisible');
+                    backToTop.classList.add('opacity-100', 'visible');
+                } else {
+                    navbar.classList.remove('shadow-nav');
+                    
+                    // Hide back to top button
+                    backToTop.classList.add('opacity-0', 'invisible');
+                    backToTop.classList.remove('opacity-100', 'visible');
+                }
+            }
+            
+            // Initialize on load
+            handleScroll();
+            
+            // Listen for scroll
+            window.addEventListener('scroll', handleScroll);
+            
+            // Back to top functionality
+            if (backToTop) {
+                backToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // Skip if it's the back to top button
+                    if (this.getAttribute('id') === 'back-to-top') return;
+                    
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    
+                    if (target) {
+                        // Close mobile menu if open
+                        if (mobileMenu && mobileMenu.classList.contains('opacity-100')) {
+                            mobileMenu.classList.remove('opacity-100', 'visible');
+                            mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                        }
+                        
+                        // Scroll to target
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Accessibility improvements for form elements
+            const formElements = document.querySelectorAll('input, select, textarea, button');
+            formElements.forEach(element => {
+                element.addEventListener('focus', function() {
+                    this.classList.add('focus-ring');
+                });
+                element.addEventListener('blur', function() {
+                    this.classList.remove('focus-ring');
+                });
+            });
         });
     </script>
 </body>
