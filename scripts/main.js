@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initErrorBoundary();
     registerServiceWorker();
     initPerformanceMonitoring();
+    initBackToTop();
+    initLanguageSelector();
+    initNewsletterForm();
     
     // Performance logging
     const endTime = performance.now();
@@ -1178,6 +1181,430 @@ function initSuccessStoriesAnimations() {
 
 // Call the new animation function
 document.addEventListener('DOMContentLoaded', function() {
-    // ... existing code ...
+    // Initialize all components
     initSuccessStoriesAnimations();
+    initBackToTop();
+    initLanguageSelector();
+    initNewsletterForm();
+});
+
+// Back to Top Button
+function initBackToTop() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (!backToTopButton) return;
+    
+    const scrollThreshold = 300; // Show button after scrolling this many pixels
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', throttle(function() {
+        if (window.pageYOffset > scrollThreshold) {
+            backToTopButton.classList.remove('opacity-0', 'translate-y-8');
+            backToTopButton.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            backToTopButton.classList.add('opacity-0', 'translate-y-8');
+            backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+        }
+    }, 200));
+    
+    // Scroll to top when clicked
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Language Selector Dropdown
+function initLanguageSelector() {
+    const languageButton = document.querySelector('.language-selector button');
+    const languageDropdown = document.querySelector('.language-dropdown');
+    
+    if (!languageButton || !languageDropdown) return;
+    
+    // Toggle dropdown when button is clicked
+    languageButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('hidden');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        if (!languageDropdown.classList.contains('hidden')) {
+            languageDropdown.classList.add('hidden');
+        }
+    });
+    
+    // Prevent dropdown from closing when clicking inside it
+    languageDropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Language selection
+    const languageLinks = languageDropdown.querySelectorAll('a');
+    languageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Update button text
+            const selectedLanguage = this.textContent.trim();
+            languageButton.innerHTML = `<i class="fas fa-globe"></i> ${selectedLanguage} <i class="fas fa-chevron-down text-xs"></i>`;
+            
+            // Close dropdown
+            languageDropdown.classList.add('hidden');
+            
+            // Here you would typically handle language change - this is a placeholder
+            console.log(`Language changed to: ${selectedLanguage}`);
+        });
+    });
+}
+
+// Newsletter Form
+// Helper function to validate email format
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Helper function to throttle function calls
+function throttle(func, delay) {
+    let lastCall = 0;
+    return function(...args) {
+        const now = new Date().getTime();
+        if (now - lastCall >= delay) {
+            lastCall = now;
+            func(...args);
+        }
+    };
+}
+
+// Success Stories Animation
+function initSuccessStoriesAnimations() {
+    // Implementation will go here
+    console.log('Success stories animations initialized');
+}
+
+// Back to Top Button
+function initBackToTop() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (!backToTopButton) return;
+    
+    const scrollThreshold = 300; // Show button after scrolling this many pixels
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', throttle(function() {
+        if (window.pageYOffset > scrollThreshold) {
+            backToTopButton.classList.remove('opacity-0', 'translate-y-8');
+            backToTopButton.classList.add('opacity-100', 'translate-y-0');
+        } else {
+            backToTopButton.classList.add('opacity-0', 'translate-y-8');
+            backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+        }
+    }, 200));
+    
+    // Scroll to top when clicked
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Language Selector Dropdown
+function initLanguageSelector() {
+    const languageButton = document.querySelector('.language-selector button');
+    const languageDropdown = document.querySelector('.language-dropdown');
+    
+    if (!languageButton || !languageDropdown) return;
+    
+    // Toggle dropdown when button is clicked
+    languageButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('hidden');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        if (!languageDropdown.classList.contains('hidden')) {
+            languageDropdown.classList.add('hidden');
+        }
+    });
+    
+    // Prevent dropdown from closing when clicking inside it
+    languageDropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Language selection
+    const languageLinks = languageDropdown.querySelectorAll('a');
+    languageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get selected language text (remove flag image)
+            const selectedLanguage = this.textContent.trim();
+            const flagImg = this.querySelector('img').cloneNode(true);
+            
+            // Update button content
+            languageButton.innerHTML = '';
+            languageButton.appendChild(document.createElement('i')).className = 'fas fa-globe';
+            languageButton.appendChild(document.createTextNode(' ' + selectedLanguage));
+            languageButton.appendChild(document.createElement('i')).className = 'fas fa-chevron-down text-xs';
+            
+            // Insert flag before the text
+            languageButton.insertBefore(flagImg, languageButton.firstChild);
+            
+            // Close dropdown
+            languageDropdown.classList.add('hidden');
+            
+            // Here you would typically handle language change - this is a placeholder
+            console.log(`Language changed to: ${selectedLanguage}`);
+        });
+    });
+}
+
+// Newsletter Form
+function initNewsletterForm() {
+    const newsletterForm = document.querySelector('footer form');
+    if (!newsletterForm) return;
+    
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+        
+        // Basic validation
+        if (!email || !isValidEmail(email)) {
+            // Show error
+            emailInput.classList.add('border-red-500');
+            setTimeout(() => {
+                emailInput.classList.remove('border-red-500');
+            }, 3000);
+            return;
+        }
+        
+        // Show success message
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        
+        submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Subscribed!';
+        submitButton.classList.add('bg-green-500');
+        submitButton.disabled = true;
+        
+        // Reset form after delay
+        setTimeout(() => {
+            this.reset();
+            submitButton.innerHTML = originalText;
+            submitButton.classList.remove('bg-green-500');
+            submitButton.disabled = false;
+        }, 3000);
+        
+        // Here you would typically send the data to your backend
+        console.log(`Newsletter subscription: ${email}`);
+    });
+}
+
+// Testimonials Carousel
+function initTestimonialsCarousel() {
+    const track = document.getElementById('carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const currentSlideElement = document.getElementById('current-slide');
+    const totalSlidesElement = document.getElementById('total-slides');
+    const loadingIndicator = document.getElementById('carousel-loading');
+    
+    if (!track || !slides.length) return;
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    // Update total slides count
+    if (totalSlidesElement) {
+        totalSlidesElement.textContent = totalSlides;
+    }
+    
+    // Initialize dots
+    updateDots();
+    
+    // Initialize dots click events
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+    });
+    
+    // Previous button click handler
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            goToSlide(newIndex);
+        });
+    }
+    
+    // Next button click handler
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const newIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(newIndex);
+        });
+    }
+    
+    // Function to update dots
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('bg-white', 'w-6');
+                dot.classList.remove('bg-white/30');
+            } else {
+                dot.classList.remove('bg-white', 'w-6');
+                dot.classList.add('bg-white/30');
+            }
+        });
+    }
+    
+    // Function to go to specific slide
+    function goToSlide(index) {
+        if (loadingIndicator) {
+            loadingIndicator.classList.add('opacity-20');
+            loadingIndicator.classList.remove('opacity-0');
+        }
+        
+        currentIndex = index;
+        
+        // Update track position
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update current slide number
+        if (currentSlideElement) {
+            currentSlideElement.textContent = currentIndex + 1;
+        }
+        
+        // Update dots
+        updateDots();
+        
+        // Hide loading indicator after transition
+        setTimeout(() => {
+            if (loadingIndicator) {
+                loadingIndicator.classList.remove('opacity-20');
+                loadingIndicator.classList.add('opacity-0');
+            }
+        }, 500);
+    }
+    
+    // Auto-advance slides
+    let intervalId = setInterval(() => {
+        const newIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(newIndex);
+    }, 5000);
+    
+    // Clear interval when user interacts with carousel
+    track.addEventListener('mouseenter', () => {
+        clearInterval(intervalId);
+    });
+    
+    // Resume interval when user stops interacting
+    track.addEventListener('mouseleave', () => {
+        intervalId = setInterval(() => {
+            const newIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(newIndex);
+        }, 5000);
+    });
+}
+
+// Partners Carousel
+function initPartnersCarousel() {
+    const track = document.getElementById('partners-track');
+    const slides = document.querySelectorAll('.partners-slide');
+    const prevBtn = document.getElementById('partners-prev-btn');
+    const nextBtn = document.getElementById('partners-next-btn');
+    const dots = document.querySelectorAll('.partners-dot');
+    
+    if (!track || !slides.length) return;
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    // Initialize dots
+    updateDots();
+    
+    // Initialize dots click events
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+    });
+    
+    // Previous button click handler
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            goToSlide(newIndex);
+        });
+    }
+    
+    // Next button click handler
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const newIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(newIndex);
+        });
+    }
+    
+    // Function to update dots
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('bg-deep-navy', 'w-4');
+                dot.classList.remove('bg-deep-navy/20');
+            } else {
+                dot.classList.remove('bg-deep-navy', 'w-4');
+                dot.classList.add('bg-deep-navy/20');
+            }
+        });
+    }
+    
+    // Function to go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        
+        // Update track position
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update dots
+        updateDots();
+    }
+    
+    // Auto-advance slides
+    let intervalId = setInterval(() => {
+        const newIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(newIndex);
+    }, 4000);
+    
+    // Clear interval when user interacts with carousel
+    track.addEventListener('mouseenter', () => {
+        clearInterval(intervalId);
+    });
+    
+    // Resume interval when user stops interacting
+    track.addEventListener('mouseleave', () => {
+        intervalId = setInterval(() => {
+            const newIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(newIndex);
+        }, 4000);
+    });
+}
+
+// Call all initialization functions when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all components
+    initSuccessStoriesAnimations();
+    initBackToTop();
+    initLanguageSelector();
+    initNewsletterForm();
+    initTestimonialsCarousel();
+    initPartnersCarousel();
 });
