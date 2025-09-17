@@ -1,14 +1,14 @@
     <!-- Footer -->
-    <footer class="relative bg-deep-navy text-white py-20">
+    <footer class="relative bg-deep-navy text-white py-16">
         <!-- Brand Pattern Background -->
         <div class="absolute inset-0 opacity-5 pointer-events-none">
             <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center">
         </div>
         
         <div class="relative max-w-container mx-auto px-5">
-            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid md:grid-cols-3 gap-10 mb-10">
                 <!-- Brand Section -->
-                <div class="lg:col-span-2">
+                <div>
                     <div class="flex items-center gap-3 mb-6">
                         <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-12 w-auto">
                         <div>
@@ -16,12 +16,12 @@
                             <div class="text-electric-blue text-sm font-medium">Innovative Minds, Smart Tech</div>
                         </div>
                     </div>
-                    <p class="text-white/80 leading-relaxed mb-8 max-w-md">
-                        Empowering individuals and businesses with cutting-edge technology solutions. From tech education to scalable software development, we drive transformation and success.
+                    <p class="text-white/80 leading-relaxed mb-6 max-w-md">
+                        ICECODING delivers enterprise-grade technology solutions that drive digital transformation and accelerate business growth.
                     </p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
-                            <i class="fab fa-linkedin text-lg"></i>
+                            <i class="fab fa-linkedin-in text-lg"></i>
                         </a>
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
                             <i class="fab fa-twitter text-lg"></i>
@@ -29,28 +29,31 @@
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
                             <i class="fab fa-github text-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-electric-blue transition-all duration-300">
-                            <i class="fab fa-youtube text-lg"></i>
-                        </a>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div>
                     <h4 class="text-xl font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Home</a></li>
-                        <li><a href="about.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
-                        <li><a href="services.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Services</a></li>
-                        <li><a href="solutions.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Solutions</a></li>
-                        <li><a href="team.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Team</a></li>
-                        <li><a href="gallery.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Gallery</a></li>
-                    </ul>
+                    <div class="grid grid-cols-2 gap-x-4">
+                        <ul class="space-y-3">
+                            <li><a href="index.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Home</a></li>
+                            <li><a href="about.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">About Us</a></li>
+                            <li><a href="services.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Services</a></li>
+                            <li><a href="solutions.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Solutions</a></li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li><a href="team.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Team</a></li>
+                            <li><a href="gallery.html" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Gallery</a></li>
+                            <li><a href="#" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Careers</a></li>
+                            <li><a href="#contact" class="text-white/80 hover:text-electric-blue transition-colors duration-300">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Contact Info</h4>
+                    <h4 class="text-xl font-bold mb-6">Contact Us</h4>
                     <div class="space-y-4">
                         <div class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt text-electric-blue mt-1"></i>
@@ -72,15 +75,23 @@
             </div>
             
             <!-- Copyright -->
-            <div class="pt-8 border-t border-white/20 text-center">
-                <p class="text-white/60">
-                    © 2025 ICECODING. All rights reserved. | 
-                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Privacy Policy</a> | 
-                    <a href="#" class="hover:text-electric-blue transition-colors duration-300">Terms of Service</a>
+            <div class="pt-6 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/60 text-sm">
+                    © 2025 ICECODING. All rights reserved.
                 </p>
+                <div class="flex flex-wrap gap-6 text-sm mt-4 md:mt-0">
+                    <a href="#" class="text-white/60 hover:text-electric-blue transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-white/60 hover:text-electric-blue transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-white/60 hover:text-electric-blue transition-colors duration-300">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-electric-blue text-white rounded-full flex items-center justify-center shadow-lg opacity-0 translate-y-8 transition-all duration-300 z-50 hover:bg-deep-navy transform hover:scale-110" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Contact Modal -->
     <div id="contact-modal" class="fixed inset-0 z-50 hidden">

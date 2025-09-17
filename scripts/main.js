@@ -1311,101 +1311,6 @@ function initBackToTop() {
     });
 }
 
-// Language Selector Dropdown
-function initLanguageSelector() {
-    const languageButton = document.querySelector('.language-selector button');
-    const languageDropdown = document.querySelector('.language-dropdown');
-    
-    if (!languageButton || !languageDropdown) return;
-    
-    // Toggle dropdown when button is clicked
-    languageButton.addEventListener('click', function(e) {
-        e.stopPropagation();
-        languageDropdown.classList.toggle('hidden');
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function() {
-        if (!languageDropdown.classList.contains('hidden')) {
-            languageDropdown.classList.add('hidden');
-        }
-    });
-    
-    // Prevent dropdown from closing when clicking inside it
-    languageDropdown.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-    
-    // Language selection
-    const languageLinks = languageDropdown.querySelectorAll('a');
-    languageLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get selected language text (remove flag image)
-            const selectedLanguage = this.textContent.trim();
-            const flagImg = this.querySelector('img').cloneNode(true);
-            
-            // Update button content
-            languageButton.innerHTML = '';
-            languageButton.appendChild(document.createElement('i')).className = 'fas fa-globe';
-            languageButton.appendChild(document.createTextNode(' ' + selectedLanguage));
-            languageButton.appendChild(document.createElement('i')).className = 'fas fa-chevron-down text-xs';
-            
-            // Insert flag before the text
-            languageButton.insertBefore(flagImg, languageButton.firstChild);
-            
-            // Close dropdown
-            languageDropdown.classList.add('hidden');
-            
-            // Here you would typically handle language change - this is a placeholder
-            console.log(`Language changed to: ${selectedLanguage}`);
-        });
-    });
-}
-
-// Newsletter Form
-function initNewsletterForm() {
-    const newsletterForm = document.querySelector('footer form');
-    if (!newsletterForm) return;
-    
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const emailInput = this.querySelector('input[type="email"]');
-        const email = emailInput.value.trim();
-        
-        // Basic validation
-        if (!email || !isValidEmail(email)) {
-            // Show error
-            emailInput.classList.add('border-red-500');
-            setTimeout(() => {
-                emailInput.classList.remove('border-red-500');
-            }, 3000);
-            return;
-        }
-        
-        // Show success message
-        const submitButton = this.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
-        
-        submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Subscribed!';
-        submitButton.classList.add('bg-green-500');
-        submitButton.disabled = true;
-        
-        // Reset form after delay
-        setTimeout(() => {
-            this.reset();
-            submitButton.innerHTML = originalText;
-            submitButton.classList.remove('bg-green-500');
-            submitButton.disabled = false;
-        }, 3000);
-        
-        // Here you would typically send the data to your backend
-        console.log(`Newsletter subscription: ${email}`);
-    });
-}
-
 // Testimonials Carousel
 function initTestimonialsCarousel() {
     const track = document.getElementById('carousel-track');
@@ -1603,8 +1508,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initSuccessStoriesAnimations();
     initBackToTop();
-    initLanguageSelector();
-    initNewsletterForm();
     initTestimonialsCarousel();
     initPartnersCarousel();
 });
