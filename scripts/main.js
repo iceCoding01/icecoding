@@ -727,13 +727,24 @@ function isInViewport(element) {
 
 // Carousel Functionality
 function initCarousel() {
+    // Main testimonial carousel
+    initTestimonialCarousel();
+    
+    // Case study carousel
+    initCaseStudyCarousel();
+    
+    // Partners carousel
+    initPartnersCarousel();
+}
+
+// Testimonial Carousel
+function initTestimonialCarousel() {
     const track = document.getElementById('carousel-track');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const dots = document.querySelectorAll('.carousel-dot');
     const currentSlideSpan = document.getElementById('current-slide');
     const totalSlidesSpan = document.getElementById('total-slides');
-    const loading = document.getElementById('carousel-loading');
     
     if (!track || !prevBtn || !nextBtn) return;
     
@@ -757,10 +768,6 @@ function initCarousel() {
         
         if (withAnimation) {
             isAnimating = true;
-            // Show loading overlay
-            if (loading) {
-                loading.style.opacity = '0.3';
-            }
         }
         
         const translateX = -(slideIndex * 100);
@@ -777,28 +784,17 @@ function initCarousel() {
                 dot.style.backgroundColor = '#007BFF';
                 dot.style.transform = 'scale(1.2)';
             } else {
-                dot.style.backgroundColor = 'rgba(45, 45, 45, 0.3)';
+                dot.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
                 dot.style.transform = 'scale(1)';
             }
         });
         
-        // Hide loading overlay after animation
+        // Finish animation
         if (withAnimation) {
             setTimeout(() => {
                 isAnimating = false;
-                if (loading) {
-                    loading.style.opacity = '0';
-                }
             }, 500);
         }
-    }
-    
-    // Go to specific slide
-    function goToSlide(slideIndex) {
-        if (slideIndex < 0 || slideIndex >= totalSlides) return;
-        currentSlide = slideIndex;
-        updateCarousel(currentSlide);
-        resetAutoPlay();
     }
     
     // Next slide
@@ -840,16 +836,11 @@ function initCarousel() {
     
     // Dot navigation
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goToSlide(index));
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-        }
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel(currentSlide);
+            resetAutoPlay();
+        });
     });
     
     // Touch/swipe support
@@ -880,65 +871,180 @@ function initCarousel() {
         }
     }, { passive: true });
     
-    // Mouse drag support for desktop
-    let isDragging = false;
-    let dragStartX = 0;
-    let dragEndX = 0;
+    // Initialize carousel
+    updateCarousel(0, false);
+    startAutoPlay();
+}
+
+// Case Study Carousel
+function initCaseStudyCarousel() {
+    const track = document.getElementById('case-study-track');
+    const prevBtn = document.getElementById('case-prev-btn');
+    const nextBtn = document.getElementById('case-next-btn');
+    const dots = document.querySelectorAll('.case-study-dot');
     
-    track.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        dragStartX = e.clientX;
-        stopAutoPlay();
-        track.style.cursor = 'grabbing';
-        e.preventDefault();
-    });
+    if (!track || !prevBtn || !nextBtn) return;
     
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        dragEndX = e.clientX;
-    });
+    const slides = track.querySelectorAll('.case-study-slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let isAnimating = false;
     
-    document.addEventListener('mouseup', () => {
-        if (!isDragging) return;
+    // Update carousel position
+    function updateCarousel(slideIndex, withAnimation = true) {
+        if (isAnimating && withAnimation) return;
         
-        const dragDistance = dragStartX - dragEndX;
-        
-        if (Math.abs(dragDistance) > minSwipeDistance) {
-            if (dragDistance > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-        } else {
-            resetAutoPlay();
+        if (withAnimation) {
+            isAnimating = true;
         }
         
-        isDragging = false;
-        track.style.cursor = 'grab';
-    });
-    
-    // Pause auto-play on hover
-    const carouselContainer = track.closest('.carousel-container');
-    if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+        const translateX = -(slideIndex * 100);
+        track.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dot indicators
+        dots.forEach((dot, index) => {
+            if (index === slideIndex) {
+                dot.style.backgroundColor = '#001F3F';
+                dot.style.transform = 'scale(1.2)';
+            } else {
+                dot.style.backgroundColor = 'rgba(0, 31, 63, 0.2)';
+                dot.style.transform = 'scale(1)';
+            }
+        });
+        
+        // Finish animation
+        if (withAnimation) {
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+        }
     }
     
-    // Handle visibility change (pause when tab is not active)
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            stopAutoPlay();
-        } else {
-            startAutoPlay();
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel(currentSlide);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel(currentSlide);
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel(currentSlide);
+        });
+    });
+    
+    // Initialize carousel
+    updateCarousel(0, false);
+}
+
+// Partners Carousel
+function initPartnersCarousel() {
+    const track = document.getElementById('partners-track');
+    const prevBtn = document.getElementById('partners-prev-btn');
+    const nextBtn = document.getElementById('partners-next-btn');
+    const dots = document.querySelectorAll('.partners-dot');
+    
+    if (!track || !prevBtn || !nextBtn) return;
+    
+    const slides = track.querySelectorAll('.partners-slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let isAnimating = false;
+    
+    // Auto-play settings
+    let autoPlayInterval;
+    const autoPlayDelay = 4000; // 4 seconds
+    
+    // Update carousel position
+    function updateCarousel(slideIndex, withAnimation = true) {
+        if (isAnimating && withAnimation) return;
+        
+        if (withAnimation) {
+            isAnimating = true;
         }
+        
+        const translateX = -(slideIndex * 100);
+        track.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dot indicators
+        dots.forEach((dot, index) => {
+            if (index === slideIndex) {
+                dot.style.backgroundColor = '#001F3F';
+                dot.style.transform = 'scale(1.2)';
+            } else {
+                dot.style.backgroundColor = 'rgba(0, 31, 63, 0.2)';
+                dot.style.transform = 'scale(1)';
+            }
+        });
+        
+        // Finish animation
+        if (withAnimation) {
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+        }
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel(currentSlide);
+        resetAutoPlay();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel(currentSlide);
+        resetAutoPlay();
+    }
+    
+    // Start auto-play
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+    }
+    
+    // Stop auto-play
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+    
+    // Reset auto-play
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel(currentSlide);
+            resetAutoPlay();
+        });
     });
     
     // Initialize carousel
     updateCarousel(0, false);
     startAutoPlay();
-    
-    // Set cursor style
-    track.style.cursor = 'grab';
 }
 
 // Add CSS for mobile menu animation

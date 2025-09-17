@@ -610,8 +610,8 @@
                 <!-- Left Column: Case Study Content -->
                 <div>
                     <div class="inline-flex items-center px-4 py-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
-                        <i class="fas fa-trophy mr-2"></i>
-                        Featured Success Story
+                        <i class="fas fa-briefcase mr-2"></i>
+                        Featured Case Study
                     </div>
                     
                     <h2 class="text-3xl md:text-4xl font-bold text-deep-navy mb-6">
@@ -725,42 +725,100 @@
             
             <!-- Partners Grid -->
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                    <!-- Partner Logos -->
-                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-aws text-3xl text-charcoal/70"></i>
+                <!-- Partners Carousel -->
+                <div class="partners-carousel-container relative mb-8">
+                    <!-- Carousel Controls -->
+                    <div class="absolute -left-4 top-1/2 transform -translate-y-1/2 z-10">
+                        <button id="partners-prev-btn" class="w-8 h-8 rounded-full bg-light-gray flex items-center justify-center hover:bg-electric-blue/10 transition-colors duration-300">
+                            <i class="fas fa-chevron-left text-deep-navy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
+                        <button id="partners-next-btn" class="w-8 h-8 rounded-full bg-light-gray flex items-center justify-center hover:bg-electric-blue/10 transition-colors duration-300">
+                            <i class="fas fa-chevron-right text-deep-navy"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Carousel Track -->
+                    <div class="overflow-hidden px-4">
+                        <div id="partners-track" class="flex transition-transform duration-500 ease-out">
+                            <!-- Partner Group 1 -->
+                            <div class="partners-slide w-full flex-shrink-0">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 items-center">
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-aws text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-microsoft text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-google text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Partner Group 2 -->
+                            <div class="partners-slide w-full flex-shrink-0">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 items-center">
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-salesforce text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-adobe text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-oracle text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Partner Group 3 -->
+                            <div class="partners-slide w-full flex-shrink-0">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 items-center">
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-apple text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-stripe text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
+                                            <i class="fab fa-slack text-3xl text-charcoal/70"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-microsoft text-3xl text-charcoal/70"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-google text-3xl text-charcoal/70"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-salesforce text-3xl text-charcoal/70"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-adobe text-3xl text-charcoal/70"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="p-4 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-                        <div class="w-full h-12 bg-electric-blue/5 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-oracle text-3xl text-charcoal/70"></i>
-                        </div>
+                    <!-- Carousel Indicators -->
+                    <div class="flex justify-center mt-4 gap-2">
+                        <div class="partners-dot w-2 h-2 rounded-full bg-deep-navy/20 cursor-pointer transition-all duration-300"></div>
+                        <div class="partners-dot w-2 h-2 rounded-full bg-deep-navy/20 cursor-pointer transition-all duration-300"></div>
+                        <div class="partners-dot w-2 h-2 rounded-full bg-deep-navy/20 cursor-pointer transition-all duration-300"></div>
                     </div>
                 </div>
                 
@@ -842,105 +900,218 @@
                 </p>
             </div>
             
-            <!-- Testimonial Cards -->
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative">
-                    <!-- Quote Icon -->
-                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <i class="fas fa-quote-left text-white/80"></i>
-                    </div>
-                    
-                    <!-- Stars -->
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                    </div>
-                    
-                    <!-- Quote -->
-                    <p class="text-white/90 mb-6 leading-relaxed">
-                        "ICECODING delivered a cutting-edge enterprise solution that transformed our operations. Their strategic approach and technical expertise exceeded our expectations."
-                    </p>
-                    
-                    <!-- Author -->
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
-                            SJ
+            <!-- Testimonial Carousel -->
+            <div class="carousel-container relative max-w-5xl mx-auto">
+                <!-- Loading Indicator -->
+                <div id="carousel-loading" class="absolute inset-0 bg-deep-navy opacity-0 z-10 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+                
+                <!-- Controls -->
+                <div class="absolute -left-4 md:-left-12 top-1/2 transform -translate-y-1/2 z-20">
+                    <button id="prev-btn" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/30">
+                        <i class="fas fa-chevron-left text-white"></i>
+                    </button>
+                </div>
+                
+                <div class="absolute -right-4 md:-right-12 top-1/2 transform -translate-y-1/2 z-20">
+                    <button id="next-btn" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/30">
+                        <i class="fas fa-chevron-right text-white"></i>
+                    </button>
+                </div>
+                
+                <!-- Carousel Track -->
+                <div class="overflow-hidden rounded-2xl">
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-slide w-full flex-shrink-0">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative m-2">
+                                <!-- Quote Icon -->
+                                <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-quote-left text-white/80"></i>
+                                </div>
+                                
+                                <!-- Stars -->
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    "ICECODING delivered a cutting-edge enterprise solution that transformed our operations. Their strategic approach and technical expertise exceeded our expectations."
+                                </p>
+                                
+                                <!-- Author -->
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                        SJ
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-white">Sarah Johnson</div>
+                                        <div class="text-white/70 text-sm">CIO, RetailPlus</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="font-bold text-white">Sarah Johnson</div>
-                            <div class="text-white/70 text-sm">CIO, RetailPlus</div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-slide w-full flex-shrink-0">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative m-2">
+                                <!-- Quote Icon -->
+                                <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-quote-left text-white/80"></i>
+                                </div>
+                                
+                                <!-- Stars -->
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    "Working with ICECODING has been a game-changer for our digital transformation initiatives. Their AI solutions have given us a competitive edge in our industry."
+                                </p>
+                                
+                                <!-- Author -->
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                        MR
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-white">Michael Rodriguez</div>
+                                        <div class="text-white/70 text-sm">CEO, GovTech</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-slide w-full flex-shrink-0">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative m-2">
+                                <!-- Quote Icon -->
+                                <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-quote-left text-white/80"></i>
+                                </div>
+                                
+                                <!-- Stars -->
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star-half-alt text-warning-orange"></i>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    "The team at ICECODING understands both technology and business strategy. They've helped us implement cloud solutions that reduced costs while improving scalability."
+                                </p>
+                                
+                                <!-- Author -->
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                        LC
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-white">Lisa Chen</div>
+                                        <div class="text-white/70 text-sm">CTO, StartupHub</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 4 -->
+                        <div class="carousel-slide w-full flex-shrink-0">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative m-2">
+                                <!-- Quote Icon -->
+                                <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-quote-left text-white/80"></i>
+                                </div>
+                                
+                                <!-- Stars -->
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    "ICECODING's enterprise software solutions have dramatically improved our operational efficiency. Their team's attention to detail and commitment to excellence is unmatched."
+                                </p>
+                                
+                                <!-- Author -->
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                        DP
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-white">David Patel</div>
+                                        <div class="text-white/70 text-sm">COO, FinServe Global</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 5 -->
+                        <div class="carousel-slide w-full flex-shrink-0">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative m-2">
+                                <!-- Quote Icon -->
+                                <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-quote-left text-white/80"></i>
+                                </div>
+                                
+                                <!-- Stars -->
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                    <i class="fas fa-star text-warning-orange"></i>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    "As a non-profit organization, we needed affordable yet powerful tech solutions. ICECODING delivered exactly what we needed while providing exceptional support throughout the process."
+                                </p>
+                                
+                                <!-- Author -->
+                                <div class="flex items-center gap-4 mt-auto">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                        JW
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-white">Jennifer Wong</div>
+                                        <div class="text-white/70 text-sm">Director, Global Education Fund</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Testimonial 2 -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative">
-                    <!-- Quote Icon -->
-                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <i class="fas fa-quote-left text-white/80"></i>
-                    </div>
-                    
-                    <!-- Stars -->
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                    </div>
-                    
-                    <!-- Quote -->
-                    <p class="text-white/90 mb-6 leading-relaxed">
-                        "Working with ICECODING has been a game-changer for our digital transformation initiatives. Their AI solutions have given us a competitive edge in our industry."
-                    </p>
-                    
-                    <!-- Author -->
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
-                            MR
-                        </div>
-                        <div>
-                            <div class="font-bold text-white">Michael Rodriguez</div>
-                            <div class="text-white/70 text-sm">CEO, GovTech</div>
-                        </div>
-                    </div>
+                <!-- Carousel Indicators -->
+                <div class="flex justify-center mt-8 gap-2">
+                    <div class="carousel-dot w-3 h-3 rounded-full bg-white/30 cursor-pointer transition-all duration-300"></div>
+                    <div class="carousel-dot w-3 h-3 rounded-full bg-white/30 cursor-pointer transition-all duration-300"></div>
+                    <div class="carousel-dot w-3 h-3 rounded-full bg-white/30 cursor-pointer transition-all duration-300"></div>
+                    <div class="carousel-dot w-3 h-3 rounded-full bg-white/30 cursor-pointer transition-all duration-300"></div>
+                    <div class="carousel-dot w-3 h-3 rounded-full bg-white/30 cursor-pointer transition-all duration-300"></div>
                 </div>
                 
-                <!-- Testimonial 3 -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg relative">
-                    <!-- Quote Icon -->
-                    <div class="absolute -top-4 -left-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <i class="fas fa-quote-left text-white/80"></i>
-                    </div>
-                    
-                    <!-- Stars -->
-                    <div class="flex mb-4">
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star text-warning-orange"></i>
-                        <i class="fas fa-star-half-alt text-warning-orange"></i>
-                    </div>
-                    
-                    <!-- Quote -->
-                    <p class="text-white/90 mb-6 leading-relaxed">
-                        "The team at ICECODING understands both technology and business strategy. They've helped us implement cloud solutions that reduced costs while improving scalability."
-                    </p>
-                    
-                    <!-- Author -->
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
-                            LC
-                        </div>
-                        <div>
-                            <div class="font-bold text-white">Lisa Chen</div>
-                            <div class="text-white/70 text-sm">CTO, StartupHub</div>
-                        </div>
-                    </div>
+                <!-- Slide Counter -->
+                <div class="flex justify-center items-center mt-4 text-white/70 text-sm">
+                    <span id="current-slide">1</span>
+                    <span class="mx-2">/</span>
+                    <span id="total-slides">5</span>
                 </div>
             </div>
             
