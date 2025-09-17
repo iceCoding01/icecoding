@@ -738,6 +738,110 @@ function initCarousel() {
     
     // Partners carousel
     initPartnersCarousel();
+    
+    // Hero carousel
+    initHeroCarousel();
+}
+
+// Hero Carousel
+function initHeroCarousel() {
+    const track = document.getElementById('heroCarouselTrack');
+    const dots = document.querySelectorAll('.hero-nav-dot');
+    
+    if (!track || !dots.length) return;
+    
+    let currentIndex = 0;
+    const slides = track.querySelectorAll('.hero-slide');
+    const totalSlides = slides.length;
+    
+    // Initialize dots
+    updateDots();
+    
+    // Initialize dots click events
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+    });
+    
+    // Function to update dots
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.style.opacity = '1';
+                dot.style.width = '12px';
+            } else {
+                dot.style.opacity = '0.5';
+                dot.style.width = '8px';
+            }
+        });
+    }
+    
+    // Function to go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        
+        // Update track position
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update dots
+        updateDots();
+    }
+    
+    // Auto-advance slides
+    let intervalId = setInterval(() => {
+        const newIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(newIndex);
+    }, 6000); // Change slide every 6 seconds
+    
+    // Pause auto-advance on hover
+    track.addEventListener('mouseenter', () => {
+        clearInterval(intervalId);
+    });
+    
+    // Resume auto-advance on mouse leave
+    track.addEventListener('mouseleave', () => {
+        intervalId = setInterval(() => {
+            const newIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(newIndex);
+        }, 6000);
+    });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let endX = 0;
+    const minSwipeDistance = 50;
+    
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        clearInterval(intervalId);
+    }, { passive: true });
+    
+    track.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    }, { passive: true });
+    
+    track.addEventListener('touchend', () => {
+        const swipeDistance = startX - endX;
+        
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                // Swipe left, go to next slide
+                const newIndex = (currentIndex + 1) % totalSlides;
+                goToSlide(newIndex);
+            } else {
+                // Swipe right, go to previous slide
+                const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                goToSlide(newIndex);
+            }
+        }
+        
+        // Resume auto-advance
+        intervalId = setInterval(() => {
+            const newIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(newIndex);
+        }, 6000);
+    }, { passive: true });
 }
 
 // Testimonial Carousel
