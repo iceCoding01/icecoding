@@ -1,5 +1,74 @@
 /* Additional styles to complement Tailwind CSS for ICECODING */
 
+/* Index page utility styles migrated from inline head CSS */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F7F9FC;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 123, 255, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 31, 63, 0.8);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: rgba(0, 123, 255, 0.3);
+    color: #001F3F;
+}
+
+.focus-ring:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #001F3F, #007BFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.layer-effect::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 31, 63, 0.1) 100%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    z-index: -1;
+}
+
+.section-divider {
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #007BFF, transparent);
+    margin: 0 auto;
+    width: 50%;
+    opacity: 0.3;
+}
+
 /* Carousel Styles */
 .carousel-container {
     position: relative;

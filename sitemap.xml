@@ -110,8 +110,8 @@
 
     <!-- Privacy Policy -->
     <url>
-        <loc>https://www.icecoding.com/privacy-policy</loc>
-        <lastmod>2025-01-30</lastmod>
+        <loc>https://www.icecoding.com/privacy.html</loc>
+        <lastmod>2026-03-14</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
         <mobile:mobile/>
@@ -119,8 +119,26 @@
 
     <!-- Terms of Service -->
     <url>
-        <loc>https://www.icecoding.com/terms-of-service</loc>
-        <lastmod>2025-01-30</lastmod>
+        <loc>https://www.icecoding.com/terms.html</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <mobile:mobile/>
+    </url>
+
+    <!-- Cookie Policy -->
+    <url>
+        <loc>https://www.icecoding.com/cookies.html</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <mobile:mobile/>
+    </url>
+
+    <!-- Careers -->
+    <url>
+        <loc>https://www.icecoding.com/careers.html</loc>
+        <lastmod>2026-03-14</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
         <mobile:mobile/>

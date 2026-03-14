@@ -395,7 +395,7 @@ function showFormStatus(message, type) {
             </div>
             <div class="ml-auto pl-3">
                 <button type="button" class="inline-flex text-gray-400 hover:text-gray-600 focus:outline-none" onclick="this.parentElement.parentElement.parentElement.remove()">
-                    <span class="material-icons text-sm">close</span>
+                    <i class="fas fa-times text-sm" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
@@ -427,13 +427,13 @@ function getStatusClasses(type) {
 function getStatusIcon(type) {
     switch (type) {
         case 'success':
-            return '<span class="material-icons text-green-400">check_circle</span>';
+            return '<i class="fas fa-check-circle text-green-400" aria-hidden="true"></i>';
         case 'error':
-            return '<span class="material-icons text-red-400">error</span>';
+            return '<i class="fas fa-exclamation-circle text-red-400" aria-hidden="true"></i>';
         case 'warning':
-            return '<span class="material-icons text-yellow-400">warning</span>';
+            return '<i class="fas fa-exclamation-triangle text-yellow-400" aria-hidden="true"></i>';
         default:
-            return '<span class="material-icons text-blue-400">info</span>';
+            return '<i class="fas fa-info-circle text-blue-400" aria-hidden="true"></i>';
     }
 }
 
@@ -531,7 +531,7 @@ function showUpdateNotification() {
     notification.className = 'sw-update-available fixed bottom-6 right-6 bg-electric-blue text-white p-4 rounded-lg shadow-lg z-50 max-w-sm';
     notification.innerHTML = `
         <div class="flex items-center">
-            <span class="material-icons mr-2">system_update</span>
+            <i class="fas fa-sync-alt mr-2" aria-hidden="true"></i>
             <div class="flex-1">
                 <p class="font-medium">Update Available</p>
                 <p class="text-sm opacity-90">A new version is ready. Refresh to update.</p>
@@ -1384,8 +1384,3 @@ function initNewsletterForm() {
     });
 }
 
-// Helper function to validate email format
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
