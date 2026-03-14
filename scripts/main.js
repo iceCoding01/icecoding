@@ -501,7 +501,7 @@ function showFormStatusLegacy(message, type) {
 function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('./sw.js')
                 .then(registration => {
                     console.log('SW registered: ', registration);
                     
@@ -1283,15 +1283,6 @@ function initSuccessStoriesAnimations() {
     }
 }
 
-// Call the new animation function
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
-    initSuccessStoriesAnimations();
-    initBackToTop();
-    initLanguageSelector();
-    initNewsletterForm();
-});
-
 // Back to Top Button
 function initBackToTop() {
     const backToTopButton = document.getElementById('back-to-top');
@@ -1364,254 +1355,37 @@ function initLanguageSelector() {
 }
 
 // Newsletter Form
+function initNewsletterForm() {
+    const newsletterForms = document.querySelectorAll('.newsletter-form, form[data-newsletter="true"]');
+
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const emailInput = form.querySelector('input[type="email"], input[name="email"]');
+            const emailValue = emailInput ? emailInput.value.trim() : '';
+
+            if (!isValidEmail(emailValue)) {
+                if (emailInput) {
+                    emailInput.classList.add('border-red-500');
+                    emailInput.setAttribute('aria-invalid', 'true');
+                    emailInput.focus();
+                }
+                return;
+            }
+
+            if (emailInput) {
+                emailInput.classList.remove('border-red-500');
+                emailInput.setAttribute('aria-invalid', 'false');
+            }
+
+            form.reset();
+        });
+    });
+}
+
 // Helper function to validate email format
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
-
-// Helper function to throttle function calls
-function throttle(func, delay) {
-    let lastCall = 0;
-    return function(...args) {
-        const now = new Date().getTime();
-        if (now - lastCall >= delay) {
-            lastCall = now;
-            func(...args);
-        }
-    };
-}
-
-// Success Stories Animation
-function initSuccessStoriesAnimations() {
-    // Implementation will go here
-    console.log('Success stories animations initialized');
-}
-
-// Back to Top Button
-function initBackToTop() {
-    const backToTopButton = document.getElementById('back-to-top');
-    if (!backToTopButton) return;
-    
-    const scrollThreshold = 300; // Show button after scrolling this many pixels
-    
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', throttle(function() {
-        if (window.pageYOffset > scrollThreshold) {
-            backToTopButton.classList.remove('opacity-0', 'translate-y-8');
-            backToTopButton.classList.add('opacity-100', 'translate-y-0');
-        } else {
-            backToTopButton.classList.add('opacity-0', 'translate-y-8');
-            backToTopButton.classList.remove('opacity-100', 'translate-y-0');
-        }
-    }, 200));
-    
-    // Scroll to top when clicked
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Testimonials Carousel
-function initTestimonialsCarousel() {
-    const track = document.getElementById('carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const currentSlideElement = document.getElementById('current-slide');
-    const totalSlidesElement = document.getElementById('total-slides');
-    const loadingIndicator = document.getElementById('carousel-loading');
-    
-    if (!track || !slides.length) return;
-    
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    
-    // Update total slides count
-    if (totalSlidesElement) {
-        totalSlidesElement.textContent = totalSlides;
-    }
-    
-    // Initialize dots
-    updateDots();
-    
-    // Initialize dots click events
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-        });
-    });
-    
-    // Previous button click handler
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            goToSlide(newIndex);
-        });
-    }
-    
-    // Next button click handler
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            const newIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(newIndex);
-        });
-    }
-    
-    // Function to update dots
-    function updateDots() {
-        dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('bg-white', 'w-6');
-                dot.classList.remove('bg-white/30');
-            } else {
-                dot.classList.remove('bg-white', 'w-6');
-                dot.classList.add('bg-white/30');
-            }
-        });
-    }
-    
-    // Function to go to specific slide
-    function goToSlide(index) {
-        if (loadingIndicator) {
-            loadingIndicator.classList.add('opacity-20');
-            loadingIndicator.classList.remove('opacity-0');
-        }
-        
-        currentIndex = index;
-        
-        // Update track position
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
-        // Update current slide number
-        if (currentSlideElement) {
-            currentSlideElement.textContent = currentIndex + 1;
-        }
-        
-        // Update dots
-        updateDots();
-        
-        // Hide loading indicator after transition
-        setTimeout(() => {
-            if (loadingIndicator) {
-                loadingIndicator.classList.remove('opacity-20');
-                loadingIndicator.classList.add('opacity-0');
-            }
-        }, 500);
-    }
-    
-    // Auto-advance slides
-    let intervalId = setInterval(() => {
-        const newIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(newIndex);
-    }, 5000);
-    
-    // Clear interval when user interacts with carousel
-    track.addEventListener('mouseenter', () => {
-        clearInterval(intervalId);
-    });
-    
-    // Resume interval when user stops interacting
-    track.addEventListener('mouseleave', () => {
-        intervalId = setInterval(() => {
-            const newIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(newIndex);
-        }, 5000);
-    });
-}
-
-// Partners Carousel
-function initPartnersCarousel() {
-    const track = document.getElementById('partners-track');
-    const slides = document.querySelectorAll('.partners-slide');
-    const prevBtn = document.getElementById('partners-prev-btn');
-    const nextBtn = document.getElementById('partners-next-btn');
-    const dots = document.querySelectorAll('.partners-dot');
-    
-    if (!track || !slides.length) return;
-    
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    
-    // Initialize dots
-    updateDots();
-    
-    // Initialize dots click events
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-        });
-    });
-    
-    // Previous button click handler
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            goToSlide(newIndex);
-        });
-    }
-    
-    // Next button click handler
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            const newIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(newIndex);
-        });
-    }
-    
-    // Function to update dots
-    function updateDots() {
-        dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('bg-deep-navy', 'w-4');
-                dot.classList.remove('bg-deep-navy/20');
-            } else {
-                dot.classList.remove('bg-deep-navy', 'w-4');
-                dot.classList.add('bg-deep-navy/20');
-            }
-        });
-    }
-    
-    // Function to go to specific slide
-    function goToSlide(index) {
-        currentIndex = index;
-        
-        // Update track position
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
-        // Update dots
-        updateDots();
-    }
-    
-    // Auto-advance slides
-    let intervalId = setInterval(() => {
-        const newIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(newIndex);
-    }, 4000);
-    
-    // Clear interval when user interacts with carousel
-    track.addEventListener('mouseenter', () => {
-        clearInterval(intervalId);
-    });
-    
-    // Resume interval when user stops interacting
-    track.addEventListener('mouseleave', () => {
-        intervalId = setInterval(() => {
-            const newIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(newIndex);
-        }, 4000);
-    });
-}
-
-// Call all initialization functions when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
-    initSuccessStoriesAnimations();
-    initBackToTop();
-    initTestimonialsCarousel();
-    initPartnersCarousel();
-});
