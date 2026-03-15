@@ -29,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/components.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -51,6 +52,70 @@
             }
         }
     </script>
+
+    <style>
+        .gallery-hero-orb {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(42px);
+            opacity: 0.24;
+            pointer-events: none;
+        }
+
+        .gallery-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.95rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            background: rgba(0, 123, 255, 0.08);
+            color: #001F3F;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .gallery-intro-card {
+            border: 1px solid rgba(0, 123, 255, 0.16);
+            background: #FFFFFF;
+            box-shadow: 0 14px 30px rgba(0, 31, 63, 0.08);
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+
+        .gallery-filter-note {
+            font-size: 0.9rem;
+            color: rgba(45, 45, 45, 0.72);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .gallery-card-summary {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: rgba(45, 45, 45, 0.74);
+        }
+
+        .gallery-section-heading {
+            font-size: 1.95rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #001F3F;
+            margin-bottom: 0.45rem;
+            text-align: center;
+        }
+
+        .gallery-section-subtitle {
+            text-align: center;
+            color: rgba(45, 45, 45, 0.72);
+            margin-bottom: 2rem;
+            max-width: 58ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body class="font-poppins">
     <!-- Navigation -->
@@ -168,14 +233,44 @@
         <div class="absolute inset-0 opacity-5 pointer-events-none">
             <img src="assets/images/brand_pattern.png" alt="" class="w-full h-full object-cover object-center" loading="lazy" decoding="async">
         </div>
+
+        <div class="gallery-hero-orb w-72 h-72 bg-electric-blue -left-16 top-12"></div>
+        <div class="gallery-hero-orb w-80 h-80 bg-deep-navy -right-20 bottom-4"></div>
         
         <div class="relative max-w-container mx-auto px-5">
             <div class="text-center mb-16">
-                
+                <div class="gallery-chip mx-auto mb-6">
+                    <i class="fa-sharp fa-solid icon-premium fa-photo-film text-electric-blue" aria-hidden="true"></i>
+                    Premium Portfolio Showcase
+                </div>
                 <h1 class="text-4xl md:text-6xl font-bold text-deep-navy mb-6">Visual Portfolio</h1>
-                <p class="text-xl text-charcoal/70 max-w-3xl mx-auto leading-relaxed">
-                    Explore our comprehensive portfolio showcasing innovative technology solutions, project highlights, and behind-the-scenes insights into our development process.
+                <p class="text-lg md:text-xl text-charcoal/75 max-w-3xl mx-auto leading-relaxed mb-8">
+                    Explore curated projects, product stories, and behind-the-scenes moments that show how we build high-impact digital solutions.
                 </p>
+
+                <div class="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+                    <div class="gallery-intro-card">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="about-rich-icon !w-10 !h-10"><i class="fa-sharp fa-solid icon-premium fa-diagram-project text-electric-blue"></i></span>
+                            <span class="text-sm font-semibold text-deep-navy">Real Project Outcomes</span>
+                        </div>
+                        <p class="gallery-card-summary">Snapshots of production-ready systems and the value they delivered.</p>
+                    </div>
+                    <div class="gallery-intro-card">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="about-rich-icon !w-10 !h-10"><i class="fa-sharp fa-solid icon-premium fa-people-group text-electric-blue"></i></span>
+                            <span class="text-sm font-semibold text-deep-navy">Team In Action</span>
+                        </div>
+                        <p class="gallery-card-summary">A closer look at collaboration, culture, and execution practices.</p>
+                    </div>
+                    <div class="gallery-intro-card">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="about-rich-icon !w-10 !h-10"><i class="fa-sharp fa-solid icon-premium fa-video text-electric-blue"></i></span>
+                            <span class="text-sm font-semibold text-deep-navy">Video Highlights</span>
+                        </div>
+                        <p class="gallery-card-summary">Presentations, demos, and walkthroughs from our delivery journey.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -185,27 +280,36 @@
         <div class="relative max-w-container mx-auto px-5">
             <div class="flex flex-wrap justify-center gap-4">
                 <button class="media-filter-btn active px-6 py-3 bg-electric-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg" data-filter="all">
+                    <i class="fa-sharp fa-solid icon-premium fa-grid-2 mr-2" aria-hidden="true"></i>
                     All Media
                 </button>
                 <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="projects">
+                    <i class="fa-sharp fa-solid icon-premium fa-briefcase mr-2" aria-hidden="true"></i>
                     Project Showcases
                 </button>
                 <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="process">
+                    <i class="fa-sharp fa-solid icon-premium fa-gears mr-2" aria-hidden="true"></i>
                     Development Process
                 </button>
                 <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="team">
+                    <i class="fa-sharp fa-solid icon-premium fa-users mr-2" aria-hidden="true"></i>
                     Team & Culture
                 </button>
                 <button class="media-filter-btn px-6 py-3 bg-white border border-electric-blue/30 text-electric-blue rounded-lg font-medium transition-all duration-300 hover:bg-electric-blue hover:text-white" data-filter="videos">
+                    <i class="fa-sharp fa-solid icon-premium fa-circle-play mr-2" aria-hidden="true"></i>
                     Video Content
                 </button>
             </div>
+            <p class="gallery-filter-note">Use the filters to quickly focus on the content type you want to explore.</p>
         </div>
     </section>
 
     <!-- Media Grid -->
     <section class="relative py-20 bg-white">
         <div class="relative max-w-container mx-auto px-5">
+            <h2 class="gallery-section-heading">Curated Media Highlights</h2>
+            <p class="gallery-section-subtitle">A selection of our most impactful work, process moments, and team-driven innovation stories.</p>
+
             <div class="media-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Featured Video Item -->
                 <div class="media-item lg:col-span-2 lg:row-span-2" data-category="videos projects">
@@ -487,18 +591,30 @@
                 
                 <div class="grid md:grid-cols-4 gap-8">
                     <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-electric-blue/10 border border-electric-blue/20 mb-3">
+                            <i class="fa-sharp fa-solid icon-premium fa-images text-electric-blue"></i>
+                        </div>
                         <div class="text-4xl font-bold text-electric-blue mb-2">150+</div>
                         <div class="text-sm text-charcoal/70 font-medium">Project Photos</div>
                     </div>
                     <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-deep-navy/10 border border-deep-navy/20 mb-3">
+                            <i class="fa-sharp fa-solid icon-premium fa-video text-deep-navy"></i>
+                        </div>
                         <div class="text-4xl font-bold text-deep-navy mb-2">50+</div>
                         <div class="text-sm text-charcoal/70 font-medium">Video Content</div>
                     </div>
                     <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-electric-blue/10 border border-electric-blue/20 mb-3">
+                            <i class="fa-sharp fa-solid icon-premium fa-user-group text-electric-blue"></i>
+                        </div>
                         <div class="text-4xl font-bold text-electric-blue mb-2">25+</div>
                         <div class="text-sm text-charcoal/70 font-medium">Team Spotlights</div>
                     </div>
                     <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-deep-navy/10 border border-deep-navy/20 mb-3">
+                            <i class="fa-sharp fa-solid icon-premium fa-eye text-deep-navy"></i>
+                        </div>
                         <div class="text-4xl font-bold text-deep-navy mb-2">5K+</div>
                         <div class="text-sm text-charcoal/70 font-medium">Total Views</div>
                     </div>
@@ -671,7 +787,7 @@
             <!-- Copyright -->
             <div class="pt-8 border-t border-white/20 text-center">
                 <p class="text-white/60">
-                    Â© 2025 ICECODING. All rights reserved. | 
+                    &copy; 2026 ICECODING. All rights reserved. | 
                     <a href="privacy.html" class="hover:text-electric-blue transition-colors duration-300">Privacy Policy</a> | 
                     <a href="terms.html" class="hover:text-electric-blue transition-colors duration-300">Terms of Service</a> |
                     <a href="cookies.html" class="hover:text-electric-blue transition-colors duration-300">Cookie Policy</a>

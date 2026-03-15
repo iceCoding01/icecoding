@@ -403,6 +403,28 @@ i[class*=" fa-"] {
     transition: transform 0.25s ease, filter 0.25s ease;
 }
 
+/* Rich premium icon layer shared across pages */
+.icon-premium {
+    filter:
+        drop-shadow(0 4px 10px rgba(0, 31, 63, 0.2))
+        drop-shadow(0 0 1px rgba(255, 255, 255, 0.25));
+    transform-origin: center;
+}
+
+.icon-premium-rich {
+    filter:
+        drop-shadow(0 6px 14px rgba(0, 31, 63, 0.24))
+        drop-shadow(0 10px 20px rgba(0, 123, 255, 0.16));
+}
+
+.icon-premium,
+.icon-premium-rich,
+i[class*=" fa-"] {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    will-change: transform, filter;
+}
+
 a:hover i.fa-solid,
 a:hover i.fa-regular,
 a:hover i.fa-brands,
@@ -411,6 +433,16 @@ button:hover i.fa-regular,
 button:hover i.fa-brands {
     transform: translateY(-1px) scale(1.06);
     filter: drop-shadow(0 10px 20px rgba(0, 123, 255, 0.25));
+}
+
+a:hover .icon-premium,
+button:hover .icon-premium,
+.about-rich-icon:hover .icon-premium,
+.gallery-intro-card:hover .icon-premium {
+    transform: translateY(-1px) scale(1.08);
+    filter:
+        drop-shadow(0 10px 22px rgba(0, 123, 255, 0.26))
+        drop-shadow(0 4px 10px rgba(0, 31, 63, 0.2));
 }
 
 ::selection {
