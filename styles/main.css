@@ -1,21 +1,88 @@
 /* ICECODING Brand Variables */
 :root {
-    /* Brand Colors */
-    --deep-navy: #001F3F;
-    --electric-blue: #007BFF;
-    --white: #FFFFFF;
-    --charcoal: #2D2D2D;
-    
-    /* Typography */
-    --font-family: 'Poppins', sans-serif;
-    
-    /* Spacing */
+    /* ─── Brand Colors ─────────────────────────────── */
+    --deep-navy:      #001F3F;
+    --electric-blue:  #007BFF;
+    --white:          #FFFFFF;
+    --charcoal:       #2D2D2D;
+
+    /* ─── Surface Colors ───────────────────────────── */
+    --surface-base:   #FFFFFF;
+    --surface-subtle: #F7F9FC;
+    --surface-muted:  #EEF2F8;
+
+    /* ─── Text Colors ──────────────────────────────── */
+    --text-primary:   #2D2D2D;
+    --text-secondary: #4A5568;
+    --text-muted:     #64748B;
+    --text-inverse:   #FFFFFF;
+
+    /* ─── Border Colors ────────────────────────────── */
+    --border-default: #E2E8F0;
+    --border-strong:  #CBD5E1;
+
+    /* ─── Status Colors ────────────────────────────── */
+    --success:        #0CAF60;
+    --warning:        #FF9500;
+    --error:          #E53E3E;
+    --info:           #007BFF;
+
+    /* ─── Gradients ────────────────────────────────── */
+    --gradient-primary: linear-gradient(135deg, #001F3F 0%, #007BFF 100%);
+    --gradient-subtle:  linear-gradient(135deg, #F7F9FC 0%, #E9F3FF 100%);
+    --gradient-navy:    linear-gradient(135deg, #001F3F 0%, #001228 100%);
+
+    /* ─── Typography ───────────────────────────────── */
+    --font-family:    'Poppins', sans-serif;
+    --text-xs:    0.75rem;
+    --text-sm:    0.875rem;
+    --text-base:  1rem;
+    --text-lg:    1.125rem;
+    --text-xl:    1.25rem;
+    --text-2xl:   1.5rem;
+    --text-3xl:   1.875rem;
+    --text-4xl:   2.25rem;
+    --text-5xl:   3rem;
+
+    /* ─── Spacing Scale ────────────────────────────── */
+    --space-1:  0.25rem;
+    --space-2:  0.5rem;
+    --space-3:  0.75rem;
+    --space-4:  1rem;
+    --space-6:  1.5rem;
+    --space-8:  2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    /* ─── Border Radius Scale ──────────────────────── */
+    --radius-sm:   4px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+    --radius-xl:   16px;
+    --radius-2xl:  24px;
+    --radius-full: 9999px;
+
+    /* ─── Shadow Scale ─────────────────────────────── */
+    --shadow-xs: 0 1px 3px rgba(0, 31, 63, 0.06);
+    --shadow-sm: 0 4px 8px rgba(0, 31, 63, 0.08);
+    --shadow-md: 0 10px 24px rgba(0, 31, 63, 0.10);
+    --shadow-lg: 0 20px 40px rgba(0, 31, 63, 0.12);
+    --shadow-xl: 0 32px 64px rgba(0, 31, 63, 0.16);
+
+    /* ─── Transition Timing ────────────────────────── */
+    --duration-fast:   150ms;
+    --duration-base:   300ms;
+    --duration-slow:   500ms;
+    --ease-default:    cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring:     cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* ─── Legacy aliases (kept for backward compat) ── */
     --container-max-width: 1200px;
     --section-padding: 80px 0;
-    --border-radius: 8px;
-    
-    /* Transitions */
-    --transition: all 0.3s ease;
+    --border-radius: var(--radius-md);
+    --transition: all var(--duration-base) var(--ease-default);
 }
 
 /* Reset and Base Styles */

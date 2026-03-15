@@ -1,6 +1,358 @@
 /* Additional styles to complement Tailwind CSS for ICECODING */
 
-/* Index page utility styles migrated from inline head CSS */
+/* ═══════════════════════════════════════════════════
+   BUTTON SYSTEM — 4 tiers + 2 size modifiers
+   ═══════════════════════════════════════════════════ */
+
+/* Base shared reset */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-tertiary,
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-lg, 12px);
+    font-family: var(--font-family, 'Poppins', sans-serif);
+    font-size: var(--text-base, 1rem);
+    font-weight: 600;
+    line-height: 1;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background-color var(--duration-fast, 150ms) var(--ease-default, ease),
+        border-color     var(--duration-fast, 150ms) var(--ease-default, ease),
+        color            var(--duration-fast, 150ms) var(--ease-default, ease),
+        box-shadow       var(--duration-base, 300ms) var(--ease-default, ease),
+        transform        var(--duration-base, 300ms) var(--ease-spring, ease);
+}
+
+/* Focus ring — shared */
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-tertiary:focus-visible,
+.btn-ghost:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+}
+
+/* Disabled state — shared */
+.btn:disabled,
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-tertiary:disabled,
+.btn-ghost:disabled {
+    opacity: 0.48;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ── Tier 1: Primary — filled electric-blue ── */
+.btn-primary {
+    background-color: var(--electric-blue, #007BFF);
+    color: #FFFFFF;
+    border-color: var(--electric-blue, #007BFF);
+    box-shadow: var(--shadow-sm, 0 4px 8px rgba(0,31,63,0.08));
+}
+.btn-primary:hover {
+    background-color: #0069D9;
+    border-color: #0069D9;
+    color: #FFFFFF;
+    box-shadow: var(--shadow-md, 0 10px 24px rgba(0,31,63,0.10));
+    transform: translateY(-1px);
+}
+.btn-primary:active {
+    background-color: #0056B3;
+    border-color: #0056B3;
+    transform: translateY(0);
+    box-shadow: var(--shadow-xs, 0 1px 3px rgba(0,31,63,0.06));
+}
+
+/* ── Tier 2: Secondary — outlined deep-navy ── */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--deep-navy, #001F3F);
+    border-color: var(--deep-navy, #001F3F);
+}
+.btn-secondary:hover {
+    background-color: var(--deep-navy, #001F3F);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md, 0 10px 24px rgba(0,31,63,0.10));
+}
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ── Tier 3: Tertiary — text-blue, tinted bg on hover ── */
+.btn-tertiary {
+    background-color: transparent;
+    color: var(--electric-blue, #007BFF);
+    border-color: transparent;
+}
+.btn-tertiary:hover {
+    background-color: rgba(0, 123, 255, 0.08);
+    border-color: rgba(0, 123, 255, 0.2);
+    color: var(--electric-blue, #007BFF);
+    transform: translateY(-1px);
+}
+.btn-tertiary:active {
+    background-color: rgba(0, 123, 255, 0.12);
+    transform: translateY(0);
+}
+
+/* ── Tier 4: Ghost — transparent, white text (for dark backgrounds) ── */
+.btn-ghost {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+.btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+.btn-ghost:active {
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(0);
+}
+
+/* ── Size Modifiers ── */
+.btn-sm {
+    padding: 0.5rem 1.25rem;
+    font-size: var(--text-sm, 0.875rem);
+    border-radius: var(--radius-md, 8px);
+}
+.btn-lg {
+    padding: 1rem 2.25rem;
+    font-size: var(--text-lg, 1.125rem);
+    border-radius: var(--radius-xl, 16px);
+}
+
+/* ── Gradient variant (used by inline Tailwind CTAs) ── */
+.btn-gradient {
+    background: var(--gradient-primary, linear-gradient(135deg, #001F3F 0%, #007BFF 100%));
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: var(--shadow-sm, 0 4px 8px rgba(0,31,63,0.08));
+}
+.btn-gradient:hover {
+    filter: brightness(1.08);
+    color: #FFFFFF;
+    box-shadow: var(--shadow-md, 0 10px 24px rgba(0,31,63,0.10));
+    transform: translateY(-1px);
+}
+.btn-gradient:active {
+    filter: brightness(0.96);
+    transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════
+   FORM SYSTEM — labels, inputs, states, feedback
+   ═══════════════════════════════════════════════════ */
+
+/* Form field wrapper */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Label */
+.form-label {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--text-primary, #2D2D2D);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Required indicator accessible styling */
+.form-label .required-mark {
+    color: var(--error, #E53E3E);
+    font-size: 0.75rem;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+/* Label on dark backgrounds */
+.dark-bg .form-label {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Base input styles */
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-family, 'Poppins', sans-serif);
+    font-size: var(--text-base, 1rem);
+    color: var(--text-primary, #2D2D2D);
+    background-color: var(--surface-base, #FFFFFF);
+    border: 1.5px solid var(--border-default, #E2E8F0);
+    border-radius: var(--radius-md, 8px);
+    transition:
+        border-color var(--duration-fast, 150ms) var(--ease-default, ease),
+        box-shadow   var(--duration-fast, 150ms) var(--ease-default, ease),
+        background-color var(--duration-fast, 150ms) var(--ease-default, ease);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Dark-bg variant (inputs on deep-navy backgrounds) */
+.dark-bg .form-input,
+.dark-bg .form-select,
+.dark-bg .form-textarea {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+}
+.dark-bg .form-input::placeholder,
+.dark-bg .form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Focus */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--electric-blue, #007BFF);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    background-color: #FFFFFF;
+}
+.dark-bg .form-input:focus,
+.dark-bg .form-select:focus,
+.dark-bg .form-textarea:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--electric-blue, #007BFF);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* Invalid / error state */
+.form-input.is-invalid,
+.form-select.is-invalid,
+.form-textarea.is-invalid {
+    border-color: var(--error, #E53E3E);
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.12);
+}
+
+/* Valid state */
+.form-input.is-valid,
+.form-select.is-valid,
+.form-textarea.is-valid {
+    border-color: var(--success, #0CAF60);
+    box-shadow: 0 0 0 3px rgba(12, 175, 96, 0.12);
+}
+
+/* Hint / helper text */
+.form-hint {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--text-muted, #64748B);
+    margin-top: 0.25rem;
+}
+
+/* Error message */
+.form-error {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--error, #E53E3E);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+/* Checkbox / radio wrapper */
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+    width: 1.125rem;
+    height: 1.125rem;
+    border: 1.5px solid var(--border-strong, #CBD5E1);
+    border-radius: var(--radius-sm, 4px);
+    accent-color: var(--electric-blue, #007BFF);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.1875rem;
+}
+.form-check-label {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--text-secondary, #4A5568);
+    line-height: 1.5;
+}
+.dark-bg .form-check-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ═══════════════════════════════════════════════════
+   BADGE / TAG — used for "Client Testimonials",
+   section identifiers, status labels
+   ═══════════════════════════════════════════════════ */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.3125rem 0.875rem;
+    border-radius: var(--radius-full, 9999px);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+.badge-blue {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--electric-blue, #007BFF);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+.badge-navy {
+    background-color: rgba(0, 31, 63, 0.08);
+    color: var(--deep-navy, #001F3F);
+    border: 1px solid rgba(0, 31, 63, 0.12);
+}
+.badge-white {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* ═══════════════════════════════════════════════════
+   CARD — canonical card surface
+   ═══════════════════════════════════════════════════ */
+.card {
+    background-color: var(--surface-base, #FFFFFF);
+    border-radius: var(--radius-xl, 16px);
+    border: 1px solid var(--border-default, #E2E8F0);
+    box-shadow: var(--shadow-sm, 0 4px 8px rgba(0,31,63,0.08));
+    overflow: hidden;
+    transition:
+        box-shadow  var(--duration-base, 300ms) var(--ease-default, ease),
+        transform   var(--duration-base, 300ms) var(--ease-spring, ease);
+}
+.card:hover {
+    box-shadow: var(--shadow-md, 0 10px 24px rgba(0,31,63,0.10));
+    transform: translateY(-3px);
+}
+.card-body {
+    padding: 1.75rem;
+}
+
+
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }

@@ -48,37 +48,48 @@
             theme: {
                 extend: {
                     colors: {
-                        'deep-navy': '#001F3F',
-                        'electric-blue': '#007BFF',
-                        'charcoal': '#2D2D2D',
-                        'white': '#FFFFFF',
-                        'light-gray': '#F7F9FC',
-                        'navy-dark': '#001228',
-                        'success-green': '#0CAF60',
+                        'deep-navy':      '#001F3F',
+                        'electric-blue':  '#007BFF',
+                        'charcoal':       '#2D2D2D',
+                        'surface-subtle': '#F7F9FC',
+                        'surface-muted':  '#EEF2F8',
+                        'text-secondary': '#4A5568',
+                        'text-muted':     '#64748B',
+                        'light-gray':     '#F7F9FC',
+                        'navy-dark':      '#001228',
+                        'success-green':  '#0CAF60',
                         'warning-orange': '#FF9500',
+                        'error-red':      '#E53E3E',
                     },
                     fontFamily: {
-                        'sans': ['Poppins', 'sans-serif'],
+                        'sans':    ['Poppins', 'sans-serif'],
                         'poppins': ['Poppins', 'sans-serif'],
                     },
                     maxWidth: {
                         'container': '1300px',
                     },
                     boxShadow: {
-                        'card': '0 10px 40px -12px rgba(0,0,0,0.1)',
+                        'card':       '0 10px 40px -12px rgba(0,0,0,0.10)',
                         'card-hover': '0 20px 40px -12px rgba(0,0,0,0.15)',
-                        'nav': '0 4px 20px rgba(0,0,0,0.05)',
+                        'nav':        '0 4px 20px rgba(0,0,0,0.05)',
+                        'brand':      '0 10px 24px rgba(0,31,63,0.10)',
+                        'brand-hover':'0 20px 40px rgba(0,31,63,0.12)',
                     },
                     backgroundImage: {
-                        'gradient-tech': 'linear-gradient(135deg, #001F3F 0%, #007BFF 100%)',
-                        'gradient-light': 'linear-gradient(135deg, #F7F9FC 0%, #E9F3FF 100%)',
+                        'gradient-tech':   'linear-gradient(135deg, #001F3F 0%, #007BFF 100%)',
+                        'gradient-light':  'linear-gradient(135deg, #F7F9FC 0%, #E9F3FF 100%)',
+                        'gradient-navy':   'linear-gradient(135deg, #001F3F 0%, #001228 100%)',
+                        'gradient-subtle': 'linear-gradient(135deg, #F7F9FC 0%, #E9F3FF 100%)',
+                    },
+                    transitionTimingFunction: {
+                        'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                     },
                     height: {
                         '128': '32rem',
                     },
                     zIndex: {
                         '-10': '-10',
-                    }
+                    },
                 }
             }
         }
@@ -975,7 +986,7 @@
                     Client Testimonials
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">What Our Clients Say</h2>
-                <p class="text-white/80 text-lg">
+                <p class="text-white text-lg" style="opacity:0.9">
                     We're proud to partner with forward-thinking organizations to deliver solutions that drive measurable business outcomes.
                 </p>
             </div>
@@ -1019,18 +1030,18 @@
                                 </div>
                                 
                                 <!-- Quote -->
-                                <p class="text-white/90 mb-6 leading-relaxed">
+                                <p class="text-white mb-6 leading-relaxed">
                                     "ICECODING delivered a cutting-edge enterprise solution that transformed our operations. Their strategic approach and technical expertise exceeded our expectations."
                                 </p>
                                 
                                 <!-- Author -->
                                 <div class="flex items-center gap-4 mt-auto">
-                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                                         SJ
                                     </div>
                                     <div>
                                         <div class="font-bold text-white">Sarah Johnson</div>
-                                        <div class="text-white/70 text-sm">CIO, RetailPlus</div>
+                                        <div class="text-white text-sm" style="opacity:0.82">CIO, RetailPlus</div>
                                     </div>
                                 </div>
                             </div>
@@ -1054,18 +1065,18 @@
                                 </div>
                                 
                                 <!-- Quote -->
-                                <p class="text-white/90 mb-6 leading-relaxed">
+                                <p class="text-white mb-6 leading-relaxed">
                                     "Working with ICECODING has been a game-changer for our digital transformation initiatives. Their AI solutions have given us a competitive edge in our industry."
                                 </p>
                                 
                                 <!-- Author -->
                                 <div class="flex items-center gap-4 mt-auto">
-                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                                         MR
                                     </div>
                                     <div>
                                         <div class="font-bold text-white">Michael Rodriguez</div>
-                                        <div class="text-white/70 text-sm">CEO, GovTech</div>
+                                        <div class="text-white text-sm" style="opacity:0.82">CEO, GovTech</div>
                                     </div>
                                 </div>
                             </div>
@@ -1089,18 +1100,18 @@
                                 </div>
                                 
                                 <!-- Quote -->
-                                <p class="text-white/90 mb-6 leading-relaxed">
+                                <p class="text-white mb-6 leading-relaxed">
                                     "The team at ICECODING understands both technology and business strategy. They've helped us implement cloud solutions that reduced costs while improving scalability."
                                 </p>
                                 
                                 <!-- Author -->
                                 <div class="flex items-center gap-4 mt-auto">
-                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                                         LC
                                     </div>
                                     <div>
                                         <div class="font-bold text-white">Lisa Chen</div>
-                                        <div class="text-white/70 text-sm">CTO, StartupHub</div>
+                                        <div class="text-white text-sm" style="opacity:0.82">CTO, StartupHub</div>
                                     </div>
                                 </div>
                             </div>
@@ -1124,18 +1135,18 @@
                                 </div>
                                 
                                 <!-- Quote -->
-                                <p class="text-white/90 mb-6 leading-relaxed">
+                                <p class="text-white mb-6 leading-relaxed">
                                     "ICECODING's enterprise software solutions have dramatically improved our operational efficiency. Their team's attention to detail and commitment to excellence is unmatched."
                                 </p>
                                 
                                 <!-- Author -->
                                 <div class="flex items-center gap-4 mt-auto">
-                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                                         DP
                                     </div>
                                     <div>
                                         <div class="font-bold text-white">David Patel</div>
-                                        <div class="text-white/70 text-sm">COO, FinServe Global</div>
+                                        <div class="text-white text-sm" style="opacity:0.82">COO, FinServe Global</div>
                                     </div>
                                 </div>
                             </div>
@@ -1159,18 +1170,18 @@
                                 </div>
                                 
                                 <!-- Quote -->
-                                <p class="text-white/90 mb-6 leading-relaxed">
+                                <p class="text-white mb-6 leading-relaxed">
                                     "As a non-profit organization, we needed affordable yet powerful tech solutions. ICECODING delivered exactly what we needed while providing exceptional support throughout the process."
                                 </p>
                                 
                                 <!-- Author -->
                                 <div class="flex items-center gap-4 mt-auto">
-                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-12 h-12 bg-electric-blue rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                                         JW
                                     </div>
                                     <div>
                                         <div class="font-bold text-white">Jennifer Wong</div>
-                                        <div class="text-white/70 text-sm">Director, Global Education Fund</div>
+                                        <div class="text-white text-sm" style="opacity:0.82">Director, Global Education Fund</div>
                                     </div>
                                 </div>
                             </div>
@@ -1301,32 +1312,32 @@
                         </p>
                     </div>
                     
-                    <form class="space-y-6 bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <form id="contact-form" class="space-y-6 bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10" novalidate aria-label="Contact form">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-white font-medium mb-2">Full Name*</label>
-                                <input type="text" required placeholder="John Smith" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <label for="contact-name" class="block text-white font-medium mb-2">Full Name <span class="text-error-red" aria-hidden="true">*</span></label>
+                                <input type="text" id="contact-name" name="full_name" required aria-required="true" placeholder="John Smith" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
                             </div>
                             <div>
-                                <label class="block text-white font-medium mb-2">Company*</label>
-                                <input type="text" required placeholder="ACME Corp" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <label for="contact-company" class="block text-white font-medium mb-2">Company <span class="text-error-red" aria-hidden="true">*</span></label>
+                                <input type="text" id="contact-company" name="company" required aria-required="true" placeholder="ACME Corp" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
                             </div>
                         </div>
                         
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-white font-medium mb-2">Email Address*</label>
-                                <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <label for="contact-email" class="block text-white font-medium mb-2">Email Address <span class="text-error-red" aria-hidden="true">*</span></label>
+                                <input type="email" id="contact-email" name="email" required aria-required="true" placeholder="john@company.com" autocomplete="email" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
                             </div>
                             <div>
-                                <label class="block text-white font-medium mb-2">Phone Number</label>
-                                <input type="tel" placeholder="+1 (555) 123-4567" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                                <label for="contact-phone" class="block text-white font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 123-4567" autocomplete="tel" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
                             </div>
                         </div>
                         
                         <div>
-                            <label class="block text-white font-medium mb-2">Solution Interest*</label>
-                            <select required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
+                            <label for="contact-solution" class="block text-white font-medium mb-2">Solution Interest <span class="text-error-red" aria-hidden="true">*</span></label>
+                            <select id="contact-solution" name="solution" required aria-required="true" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
                                 <option value="">Select a solution</option>
                                 <option value="digital-transformation">Digital Transformation</option>
                                 <option value="enterprise-software">Enterprise Software Development</option>
@@ -1339,21 +1350,24 @@
                         </div>
                         
                         <div>
-                            <label class="block text-white font-medium mb-2">Project Details*</label>
-                            <textarea rows="4" required placeholder="Please share details about your project, goals, and timeline..." class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 resize-none"></textarea>
+                            <label for="contact-message" class="block text-white font-medium mb-2">Project Details <span class="text-error-red" aria-hidden="true">*</span></label>
+                            <textarea id="contact-message" name="message" rows="4" required aria-required="true" placeholder="Please share details about your project, goals, and timeline..." class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 resize-none"></textarea>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <input type="checkbox" id="privacy-policy" required class="mt-1">
-                            <label for="privacy-policy" class="text-sm text-white/70">
-                                I agree to the <a href="privacy.html" class="text-electric-blue hover:text-white transition-colors duration-300">Privacy Policy</a> and consent to being contacted regarding my request.
+                            <input type="checkbox" id="privacy-policy" name="privacy_consent" required aria-required="true" class="mt-1">
+                            <label for="privacy-policy" class="text-sm" style="color:rgba(255,255,255,0.88)">
+                                I agree to the <a href="privacy.html" class="text-electric-blue hover:text-white underline transition-colors duration-300">Privacy Policy</a> and consent to being contacted regarding my request. <span class="text-error-red" aria-hidden="true">*</span>
                             </label>
                         </div>
                         
-                        <button type="submit" class="w-full bg-gradient-tech text-white py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 transform">
-                            <i class="fa-sharp fa-solid icon-premium fa-paper-plane mr-2"></i>
+                        <button type="submit" class="w-full bg-gradient-tech text-white py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 transform" aria-label="Submit contact form">
+                            <i class="fa-sharp fa-solid icon-premium fa-paper-plane mr-2" aria-hidden="true"></i>
                             Schedule Consultation
                         </button>
+                        <p class="text-xs text-center" style="color:rgba(255,255,255,0.6)">
+                            Fields marked <span class="text-error-red" aria-hidden="true">*</span> are required.
+                        </p>
                     </form>
                 </div>
                 
