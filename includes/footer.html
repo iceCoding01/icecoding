@@ -79,7 +79,7 @@
             <!-- Copyright -->
             <div class="pt-6 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-white/60 text-sm">
-                    Â© 2025 ICECODING. All rights reserved.
+                    &copy; 2025 ICECODING. All rights reserved.
                 </p>
                 <div class="flex flex-wrap gap-6 text-sm mt-4 md:mt-0">
                     <a href="privacy.html" class="text-white/60 hover:text-electric-blue transition-colors duration-300">Privacy Policy</a>
@@ -89,89 +89,4 @@
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-electric-blue text-white rounded-full flex items-center justify-center shadow-lg opacity-0 translate-y-8 transition-all duration-300 z-50 hover:bg-deep-navy transform hover:scale-110" aria-label="Back to top">
-        <i class="fa-sharp fa-solid icon-premium fa-arrow-up"></i>
-    </button>
-
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="fixed inset-0 z-50 hidden">
-        <div class="flex items-center justify-center min-h-screen px-4">
-            <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" onclick="closeContactModal()"></div>
-            <div class="relative bg-white rounded-2xl max-w-2xl w-full mx-auto shadow-2xl">
-                <div class="p-8">
-                    <div class="flex items-center justify-between mb-8">
-                        <h3 class="text-3xl font-bold text-deep-navy">Get Started Today</h3>
-                        <button onclick="closeContactModal()" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors duration-300">
-                            <i class="fa-sharp fa-solid icon-premium fa-times text-charcoal"></i>
-                        </button>
-                    </div>
-                    
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-charcoal font-medium mb-2">First Name</label>
-                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
-                            </div>
-                            <div>
-                                <label class="block text-charcoal font-medium mb-2">Last Name</label>
-                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-charcoal font-medium mb-2">Email Address</label>
-                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-charcoal font-medium mb-2">Service Interest</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300">
-                                <option>Technology Education</option>
-                                <option>Software Development</option>
-                                <option>Technology Consulting</option>
-                                <option>Digital Transformation</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-charcoal font-medium mb-2">Project Details</label>
-                            <textarea rows="4" placeholder="Tell us about your project requirements..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20 transition-all duration-300 resize-none"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-electric-blue text-white py-4 rounded-lg font-semibold hover:bg-deep-navy transition-all duration-300 hover:shadow-lg">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openContactModal() {
-            document.getElementById('contact-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeContactModal() {
-            document.getElementById('contact-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Open contact modal when clicking Get Started buttons
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactButtons = document.querySelectorAll('a[href="#contact"]');
-            contactButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    openContactModal();
-                });
-            });
-        });
-    </script>
-</body>
-</html>
 
