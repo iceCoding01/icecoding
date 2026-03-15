@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/icon" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -266,20 +266,20 @@
                     const originalText = submitBtn.innerHTML;
                     
                     // Show loading state
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Subscribing...';
+                    submitBtn.innerHTML = '<i class="fa-sharp fa-solid icon-premium fa-spinner fa-spin mr-2"></i>Subscribing...';
                     submitBtn.disabled = true;
                     
                     // Simulate form submission (replace with actual form handler)
                     setTimeout(() => {
                         // Success state
-                        submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Subscribed!';
+                        submitBtn.innerHTML = '<i class="fa-sharp fa-solid icon-premium fa-check mr-2"></i>Subscribed!';
                         submitBtn.classList.add('bg-green-500', 'text-white');
                         
                         // Show success message
                         const successMessage = document.createElement('div');
                         successMessage.className = 'mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-white text-center';
                         successMessage.innerHTML = `
-                            <i class="fas fa-check-circle mr-2"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-check-circle mr-2"></i>
                             Thank you${firstName ? `, ${firstName}` : ''}! You've been subscribed to our newsletter.
                         `;
                         
@@ -411,14 +411,14 @@
                                 <p class="text-charcoal/70 text-sm mt-1">${description}</p>
                             </div>
                             <button id="close-modal" class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors duration-200">
-                                <i class="fas fa-times text-charcoal"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-times text-charcoal"></i>
                             </button>
                         </div>
                         <div class="aspect-video bg-gray-900 flex items-center justify-center">
                             <!-- Video player will be embedded here -->
                             <div class="text-center text-white">
                                 <div class="w-20 h-20 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-play text-3xl text-electric-blue"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-play text-3xl text-electric-blue"></i>
                                 </div>
                                 <p class="text-lg font-medium mb-2">Video Player Integration</p>
                                 <p class="text-sm text-white/70 max-w-md">
@@ -426,25 +426,25 @@
                                     Supports YouTube, Vimeo, or self-hosted videos.
                                 </p>
                                 <div class="mt-6 space-y-2 text-xs text-white/60">
-                                    <p>• Add your video URL to the data-video attribute</p>
-                                    <p>• Supports autoplay and custom controls</p>
-                                    <p>• Optimized for mobile and desktop</p>
+                                    <p>â€¢ Add your video URL to the data-video attribute</p>
+                                    <p>â€¢ Supports autoplay and custom controls</p>
+                                    <p>â€¢ Optimized for mobile and desktop</p>
                                 </div>
                             </div>
                         </div>
                         <div class="p-6 bg-gray-50 border-t border-gray-200">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center gap-4 text-sm text-charcoal/60">
-                                    <span><i class="fas fa-calendar mr-1"></i>Published: Jan 2025</span>
-                                    <span><i class="fas fa-eye mr-1"></i>Views: 2.5K</span>
-                                    <span><i class="fas fa-thumbs-up mr-1"></i>95% liked</span>
+                                    <span><i class="fa-sharp fa-solid icon-premium fa-calendar mr-1"></i>Published: Jan 2025</span>
+                                    <span><i class="fa-sharp fa-solid icon-premium fa-eye mr-1"></i>Views: 2.5K</span>
+                                    <span><i class="fa-sharp fa-solid icon-premium fa-thumbs-up mr-1"></i>95% liked</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <button class="px-4 py-2 bg-electric-blue text-white rounded-lg font-medium hover:bg-deep-navy transition-colors duration-200">
-                                        <i class="fas fa-share mr-2"></i>Share
+                                        <i class="fa-sharp fa-solid icon-premium fa-share mr-2"></i>Share
                                     </button>
                                     <button class="px-4 py-2 bg-gray-200 text-charcoal rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
-                                        <i class="fas fa-download mr-2"></i>Download
+                                        <i class="fa-sharp fa-solid icon-premium fa-download mr-2"></i>Download
                                     </button>
                                 </div>
                             </div>
@@ -505,7 +505,7 @@
                             <i class="${icon.className}"></i>
                             <span>Connect on ${platform}</span>
                             <button class="ml-2 opacity-70 hover:opacity-100">
-                                <i class="fas fa-times"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-times"></i>
                             </button>
                         </div>
                     `;
@@ -710,7 +710,7 @@
             <div class="text-center lg:text-left">
                 <!-- Badge -->
                 <div class="inline-flex items-center px-4 py-2 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-8">
-                    <i class="fas fa-medal mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-medal mr-2 text-lg"></i>
                     Leading Tech Innovation Since 2025
                 </div>
                 
@@ -726,11 +726,11 @@
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                     <a href="#services" class="inline-flex items-center justify-center px-8 py-4 bg-electric-blue text-white rounded-lg font-semibold transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
-                        <i class="fas fa-rocket mr-3 text-lg"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-rocket mr-3 text-lg"></i>
                         Explore Services
                     </a>
                     <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-deep-navy border-2 border-electric-blue rounded-lg font-semibold transition-all duration-300 hover:bg-electric-blue hover:text-white">
-                        <i class="fas fa-paper-plane mr-3 text-lg"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-paper-plane mr-3 text-lg"></i>
                         Start Project
                     </a>
                 </div>
@@ -791,7 +791,7 @@
         <div class="max-w-container mx-auto px-5">
             <div class="text-center mb-12">
                 <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
-                    <i class="fas fa-handshake mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-handshake mr-2 text-lg"></i>
                     Trusted by Industry Leaders
                 </div>
                 <h3 class="text-2xl md:text-3xl font-bold text-deep-navy mb-4">Powering Success Across Industries</h3>
@@ -806,7 +806,7 @@
                 <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-electric-blue/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-electric-blue/20 transition-colors duration-300">
-                            <i class="fas fa-building text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-building text-2xl text-electric-blue"></i>
                         </div>
                         <div class="text-xs font-medium text-charcoal/60">TechCorp</div>
                     </div>
@@ -815,7 +815,7 @@
                 <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-deep-navy/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-deep-navy/20 transition-colors duration-300">
-                            <i class="fas fa-store text-2xl text-deep-navy"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-store text-2xl text-deep-navy"></i>
                         </div>
                         <div class="text-xs font-medium text-charcoal/60">RetailPlus</div>
                     </div>
@@ -824,7 +824,7 @@
                 <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-electric-blue/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-electric-blue/20 transition-colors duration-300">
-                            <i class="fas fa-landmark text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-landmark text-2xl text-electric-blue"></i>
                         </div>
                         <div class="text-xs font-medium text-charcoal/60">GovTech</div>
                     </div>
@@ -833,7 +833,7 @@
                 <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-deep-navy/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-deep-navy/20 transition-colors duration-300">
-                            <i class="fas fa-hands-helping text-2xl text-deep-navy"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-hands-helping text-2xl text-deep-navy"></i>
                         </div>
                         <div class="text-xs font-medium text-charcoal/60">NonProfit+</div>
                     </div>
@@ -842,7 +842,7 @@
                 <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-electric-blue/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-electric-blue/20 transition-colors duration-300">
-                            <i class="fas fa-rocket text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-rocket text-2xl text-electric-blue"></i>
                         </div>
                         <div class="text-xs font-medium text-charcoal/60">StartupHub</div>
                     </div>
@@ -851,7 +851,7 @@
                 <div class="group flex items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200/50 transition-all duration-300 hover:shadow-md hover:border-electric-blue/30">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-deep-navy/10 rounded-lg flex items-center justify-center mb-2 group-hover:bg-deep-navy/20 transition-colors duration-300">
-                            <i class="fas fa-globe text-2xl text-deep-navy"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-globe text-2xl text-deep-navy"></i>
                         </div>
                         <div class="text-xs font-medium text-charcoal/60">GlobalTech</div>
                     </div>
@@ -862,7 +862,7 @@
             <div class="grid md:grid-cols-3 gap-8 mt-16 pt-12 border-t border-gray-200/50">
                 <div class="text-center">
                     <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
-                        <i class="fas fa-shield-check text-2xl text-electric-blue"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-shield-check text-2xl text-electric-blue"></i>
                     </div>
                     <h4 class="text-lg font-bold text-deep-navy mb-2">Enterprise Security</h4>
                     <p class="text-charcoal/70 text-sm">SOC 2 Type II compliant with enterprise-grade security standards</p>
@@ -870,7 +870,7 @@
                 
                 <div class="text-center">
                     <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy/10 rounded-2xl mb-4">
-                        <i class="fas fa-award text-2xl text-deep-navy"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-award text-2xl text-deep-navy"></i>
                     </div>
                     <h4 class="text-lg font-bold text-deep-navy mb-2">Industry Recognition</h4>
                     <p class="text-charcoal/70 text-sm">Certified technology partners and industry award recipients</p>
@@ -878,7 +878,7 @@
                 
                 <div class="text-center">
                     <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
-                        <i class="fas fa-clock text-2xl text-electric-blue"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-clock text-2xl text-electric-blue"></i>
                     </div>
                     <h4 class="text-lg font-bold text-deep-navy mb-2">Proven Track Record</h4>
                     <p class="text-charcoal/70 text-sm">5+ years delivering successful technology transformations</p>
@@ -893,7 +893,7 @@
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
-                    <i class="fas fa-building-columns mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-building-columns mr-2 text-lg"></i>
                     About Our Company
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-6">About ICECODING</h2>
@@ -934,7 +934,7 @@
                             <div class="bg-white border border-electric-blue/20 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
                                 <div class="mb-4">
                                     <div class="inline-flex items-center justify-center w-12 h-12 bg-electric-blue/10 rounded-xl mb-3">
-                                        <i class="fas fa-brain text-xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-brain text-xl text-electric-blue"></i>
                                     </div>
                                     <h5 class="text-lg font-bold text-deep-navy mb-2">Innovation</h5>
                                     <p class="text-charcoal/70 text-sm leading-relaxed">Pushing boundaries with creative solutions and cutting-edge technology</p>
@@ -944,7 +944,7 @@
                             <div class="bg-white border border-electric-blue/20 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
                                 <div class="mb-4">
                                     <div class="inline-flex items-center justify-center w-12 h-12 bg-electric-blue/10 rounded-xl mb-3">
-                                        <i class="fas fa-user-friends text-xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-user-friends text-xl text-electric-blue"></i>
                                     </div>
                                     <h5 class="text-lg font-bold text-deep-navy mb-2">Customer-Centricity</h5>
                                     <p class="text-charcoal/70 text-sm leading-relaxed">Your success is our priority in everything we do</p>
@@ -954,7 +954,7 @@
                             <div class="bg-white border border-electric-blue/20 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
                                 <div class="mb-4">
                                     <div class="inline-flex items-center justify-center w-12 h-12 bg-electric-blue/10 rounded-xl mb-3">
-                                        <i class="fas fa-shield-check text-xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-shield-check text-xl text-electric-blue"></i>
                                     </div>
                                     <h5 class="text-lg font-bold text-deep-navy mb-2">Integrity</h5>
                                     <p class="text-charcoal/70 text-sm leading-relaxed">Building honest, transparent relationships with our clients</p>
@@ -964,7 +964,7 @@
                             <div class="bg-white border border-electric-blue/20 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
                                 <div class="mb-4">
                                     <div class="inline-flex items-center justify-center w-12 h-12 bg-electric-blue/10 rounded-xl mb-3">
-                                        <i class="fas fa-trophy-star text-xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-trophy-star text-xl text-electric-blue"></i>
                                     </div>
                                     <h5 class="text-lg font-bold text-deep-navy mb-2">Excellence</h5>
                                     <p class="text-charcoal/70 text-sm leading-relaxed">Delivering quality and exceeding expectations consistently</p>
@@ -1012,7 +1012,7 @@
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <div class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white font-medium text-sm mb-6">
-                    <i class="fas fa-tools mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-tools mr-2 text-lg"></i>
                     Professional Services
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Services</h2>
@@ -1027,7 +1027,7 @@
                 <div class="bg-white/8 border border-white/20 rounded-2xl p-8 transition-all duration-300 hover:bg-white/12 hover:border-white/30">
                     <div class="mb-6">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/20 rounded-xl mb-4">
-                            <i class="fas fa-chalkboard-teacher text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-chalkboard-teacher text-2xl text-electric-blue"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-3">Technology Education</h3>
                         <p class="text-white/80 mb-6 leading-relaxed">
@@ -1063,7 +1063,7 @@
                 <div class="bg-white/8 border border-white/20 rounded-2xl p-8 transition-all duration-300 hover:bg-white/12 hover:border-white/30">
                     <div class="mb-6">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/20 rounded-xl mb-4">
-                            <i class="fas fa-laptop-code text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-laptop-code text-2xl text-electric-blue"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-3">Software Development</h3>
                         <p class="text-white/80 mb-6 leading-relaxed">
@@ -1099,7 +1099,7 @@
                 <div class="bg-white/8 border border-white/20 rounded-2xl p-8 transition-all duration-300 hover:bg-white/12 hover:border-white/30">
                     <div class="mb-6">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/20 rounded-xl mb-4">
-                            <i class="fas fa-chart-network text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-chart-network text-2xl text-electric-blue"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-3">Technology Consulting</h3>
                         <p class="text-white/80 mb-6 leading-relaxed">
@@ -1141,11 +1141,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-electric-blue text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-electric-blue">
-                            <i class="fas fa-calendar-check mr-2 text-lg"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-calendar-check mr-2 text-lg"></i>
                             Schedule Consultation
                         </a>
                         <a href="#" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 border border-white/30 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-deep-navy">
-                            <i class="fas fa-file-pdf mr-2 text-lg"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-file-pdf mr-2 text-lg"></i>
                             Download Service Guide
                         </a>
                     </div>
@@ -1160,7 +1160,7 @@
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
-                    <i class="fas fa-industry mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-industry mr-2 text-lg"></i>
                     Industry Solutions
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-6">Solutions for Every Business</h2>
@@ -1175,7 +1175,7 @@
                 <div class="bg-white border border-electric-blue/30 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl mb-4 transition-all duration-300 hover:scale-110">
-                            <i class="fas fa-rocket-launch text-2xl text-white"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-rocket-launch text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold text-deep-navy mb-3">SMEs & Startups</h3>
                         <p class="text-charcoal/80 text-sm mb-4 leading-relaxed">
@@ -1208,7 +1208,7 @@
                 <div class="bg-white border border-electric-blue/30 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl mb-4 transition-all duration-300 hover:scale-110">
-                            <i class="fas fa-landmark text-2xl text-white"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-landmark text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold text-deep-navy mb-3">Government Agencies</h3>
                         <p class="text-charcoal/80 text-sm mb-4 leading-relaxed">
@@ -1241,7 +1241,7 @@
                 <div class="bg-white border border-electric-blue/30 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl mb-4 transition-all duration-300 hover:scale-110">
-                            <i class="fas fa-hands-helping text-2xl text-white"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-hands-helping text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold text-deep-navy mb-3">Non-Profits & NGOs</h3>
                         <p class="text-charcoal/80 text-sm mb-4 leading-relaxed">
@@ -1274,7 +1274,7 @@
                 <div class="bg-white border border-electric-blue/30 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-xl mb-4 transition-all duration-300 hover:scale-110">
-                            <i class="fas fa-store text-2xl text-white"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-store text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold text-deep-navy mb-3">Retail & E-commerce</h3>
                         <p class="text-charcoal/80 text-sm mb-4 leading-relaxed">
@@ -1313,11 +1313,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-electric-blue text-white font-semibold rounded-lg transition-all duration-300 hover:bg-deep-navy">
-                            <i class="fas fa-user-tie mr-2 text-lg"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-user-tie mr-2 text-lg"></i>
                             Discuss Your Industry Needs
                         </a>
                         <a href="#" class="inline-flex items-center justify-center px-8 py-4 bg-white border border-electric-blue/30 text-electric-blue font-semibold rounded-lg transition-all duration-300 hover:bg-electric-blue hover:text-white">
-                            <i class="fas fa-chart-bar mr-2 text-lg"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-chart-bar mr-2 text-lg"></i>
                             View Case Studies
                         </a>
                     </div>
@@ -1329,7 +1329,7 @@
                 <!-- Section Header -->
                 <div class="text-center mb-20">
                     <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-8">
-                        <i class="fas fa-trophy-alt mr-2 text-lg"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-trophy-alt mr-2 text-lg"></i>
                         Client Success Stories
                     </div>
                     <h3 class="text-5xl md:text-6xl font-bold text-deep-navy mb-6">Transforming Businesses, One Solution at a Time</h3>
@@ -1348,7 +1348,7 @@
                         <!-- Icon -->
                         <div class="relative mb-6">
                             <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-2xl scale-110 transition-all duration-300 hover:scale-125">
-                                <i class="fas fa-chart-trending-up text-2xl text-white transition-colors duration-300"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-chart-trending-up text-2xl text-white transition-colors duration-300"></i>
                             </div>
                         </div>
                         
@@ -1371,7 +1371,7 @@
                         
                         <div class="relative mb-6">
                             <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy rounded-2xl scale-110 transition-all duration-300 hover:scale-125">
-                                <i class="fas fa-gear text-2xl text-white transition-colors duration-300"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-gear text-2xl text-white transition-colors duration-300"></i>
                             </div>
                         </div>
                         
@@ -1392,7 +1392,7 @@
                         
                         <div class="relative mb-6">
                             <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue rounded-2xl scale-110 transition-all duration-300 hover:scale-125">
-                                <i class="fas fa-user-graduate text-2xl text-white transition-colors duration-300"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-user-graduate text-2xl text-white transition-colors duration-300"></i>
                             </div>
                         </div>
                         
@@ -1413,7 +1413,7 @@
                         
                         <div class="relative mb-6">
                             <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy rounded-2xl scale-110 transition-all duration-300 hover:scale-125">
-                                <i class="fas fa-thumbs-up text-2xl text-white transition-colors duration-300"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-thumbs-up text-2xl text-white transition-colors duration-300"></i>
                             </div>
                         </div>
                         
@@ -1448,11 +1448,11 @@
                                         <div class="group bg-white border border-electric-blue/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:scale-105">
                                             <div class="flex items-center mb-6">
                                                 <div class="flex text-electric-blue text-lg">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star ml-1"></i>
-                                                    <i class="fas fa-star ml-1"></i>
-                                                    <i class="fas fa-star ml-1"></i>
-                                                    <i class="fas fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
                                                 </div>
                                             </div>
                                             <blockquote class="text-charcoal/80 mb-6 italic leading-relaxed">
@@ -1460,7 +1460,7 @@
                                             </blockquote>
                                             <div class="flex items-center">
                                                 <div class="w-12 h-12 bg-electric-blue/10 rounded-full flex items-center justify-center mr-4">
-                                                    <i class="fas fa-user-circle text-electric-blue text-xl"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-user-circle text-electric-blue text-xl"></i>
                                                 </div>
                                                 <div>
                                                     <h5 class="font-semibold text-deep-navy">Sarah Johnson</h5>
@@ -1473,11 +1473,11 @@
                                         <div class="group bg-white border border-electric-blue/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:scale-105">
                                             <div class="flex items-center mb-6">
                                                 <div class="flex text-electric-blue">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
                                                 </div>
                                             </div>
                                             <blockquote class="text-charcoal/80 mb-6 italic leading-relaxed">
@@ -1485,7 +1485,7 @@
                                             </blockquote>
                                             <div class="flex items-center">
                                                 <div class="w-12 h-12 bg-deep-navy/10 rounded-full flex items-center justify-center mr-4">
-                                                    <i class="fas fa-user text-deep-navy"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-user text-deep-navy"></i>
                                                 </div>
                                                 <div>
                                                     <h5 class="font-semibold text-deep-navy">Michael Chen</h5>
@@ -1498,11 +1498,11 @@
                                         <div class="group bg-white border border-electric-blue/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:scale-105">
                                             <div class="flex items-center mb-6">
                                                 <div class="flex text-electric-blue">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
                                                 </div>
                                             </div>
                                             <blockquote class="text-charcoal/80 mb-6 italic leading-relaxed">
@@ -1510,7 +1510,7 @@
                                             </blockquote>
                                             <div class="flex items-center">
                                                 <div class="w-12 h-12 bg-electric-blue/10 rounded-full flex items-center justify-center mr-4">
-                                                    <i class="fas fa-user text-electric-blue"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-user text-electric-blue"></i>
                                                 </div>
                                                 <div>
                                                     <h5 class="font-semibold text-deep-navy">Emma Rodriguez</h5>
@@ -1528,11 +1528,11 @@
                                         <div class="group bg-white border border-electric-blue/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:scale-105">
                                             <div class="flex items-center mb-6">
                                                 <div class="flex text-electric-blue text-lg">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star ml-1"></i>
-                                                    <i class="fas fa-star ml-1"></i>
-                                                    <i class="fas fa-star ml-1"></i>
-                                                    <i class="fas fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star ml-1"></i>
                                                 </div>
                                             </div>
                                             <blockquote class="text-charcoal/80 mb-6 italic leading-relaxed">
@@ -1540,7 +1540,7 @@
                                             </blockquote>
                                             <div class="flex items-center">
                                                 <div class="w-12 h-12 bg-electric-blue/10 rounded-full flex items-center justify-center mr-4">
-                                                    <i class="fas fa-user-circle text-electric-blue text-xl"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-user-circle text-electric-blue text-xl"></i>
                                                 </div>
                                                 <div>
                                                     <h5 class="font-semibold text-deep-navy">David Thompson</h5>
@@ -1553,11 +1553,11 @@
                                         <div class="group bg-white border border-electric-blue/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:scale-105">
                                             <div class="flex items-center mb-6">
                                                 <div class="flex text-electric-blue">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
                                                 </div>
                                             </div>
                                             <blockquote class="text-charcoal/80 mb-6 italic leading-relaxed">
@@ -1565,7 +1565,7 @@
                                             </blockquote>
                                             <div class="flex items-center">
                                                 <div class="w-12 h-12 bg-deep-navy/10 rounded-full flex items-center justify-center mr-4">
-                                                    <i class="fas fa-user text-deep-navy"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-user text-deep-navy"></i>
                                                 </div>
                                                 <div>
                                                     <h5 class="font-semibold text-deep-navy">Lisa Park</h5>
@@ -1578,11 +1578,11 @@
                                         <div class="group bg-white border border-electric-blue/10 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:scale-105">
                                             <div class="flex items-center mb-6">
                                                 <div class="flex text-electric-blue">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-star"></i>
                                                 </div>
                                             </div>
                                             <blockquote class="text-charcoal/80 mb-6 italic leading-relaxed">
@@ -1590,7 +1590,7 @@
                                             </blockquote>
                                             <div class="flex items-center">
                                                 <div class="w-12 h-12 bg-electric-blue/10 rounded-full flex items-center justify-center mr-4">
-                                                    <i class="fas fa-user text-electric-blue"></i>
+                                                    <i class="fa-sharp fa-solid icon-premium fa-user text-electric-blue"></i>
                                                 </div>
                                                 <div>
                                                     <h5 class="font-semibold text-deep-navy">Robert Kim</h5>
@@ -1606,7 +1606,7 @@
                         <!-- Carousel Navigation -->
                         <div class="flex items-center justify-center mt-8 gap-4">
                             <button class="testimonials-prev inline-flex items-center justify-center w-12 h-12 bg-electric-blue/10 hover:bg-electric-blue text-electric-blue hover:text-white rounded-full transition-all duration-300">
-                                <i class="fas fa-chevron-left"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-chevron-left"></i>
                             </button>
                             
                             <!-- Dots Indicator -->
@@ -1616,7 +1616,7 @@
                             </div>
                             
                             <button class="testimonials-next inline-flex items-center justify-center w-12 h-12 bg-electric-blue/10 hover:bg-electric-blue text-electric-blue hover:text-white rounded-full transition-all duration-300">
-                                <i class="fas fa-chevron-right"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-chevron-right"></i>
                             </button>
                         </div>
                     </div>
@@ -1629,7 +1629,7 @@
                         <div class="absolute inset-0 bg-gradient-to-br from-electric-blue to-deep-navy opacity-90"></div>
                         <div class="absolute top-4 right-4">
                             <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
-                                <i class="fas fa-store text-2xl"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-store text-2xl"></i>
                             </div>
                         </div>
                         
@@ -1653,7 +1653,7 @@
                                 </div>
                             </div>
                             <button class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-                                <i class="fas fa-external-link mr-2 text-lg"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-external-link mr-2 text-lg"></i>
                                 View Case Study
                             </button>
                         </div>
@@ -1664,7 +1664,7 @@
                         <div class="absolute inset-0 bg-gradient-to-br from-deep-navy to-charcoal opacity-90"></div>
                         <div class="absolute top-4 right-4">
                             <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
-                                <i class="fas fa-landmark text-2xl"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-landmark text-2xl"></i>
                             </div>
                         </div>
                         
@@ -1688,7 +1688,7 @@
                                 </div>
                             </div>
                             <button class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-                                <i class="fas fa-external-link mr-2 text-lg"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-external-link mr-2 text-lg"></i>
                                 View Case Study
                             </button>
                         </div>
@@ -1704,11 +1704,11 @@
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="#contact" class="inline-flex items-center px-8 py-4 bg-electric-blue text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-2xl hover:scale-105 transform">
-                                <i class="fas fa-rocket-launch mr-2 text-lg"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-rocket-launch mr-2 text-lg"></i>
                                 Start Your Journey
                             </a>
                             <a href="#solutions" class="inline-flex items-center px-8 py-4 bg-white text-electric-blue border-2 border-electric-blue rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-electric-blue hover:text-white hover:scale-105 transform">
-                                <i class="fas fa-eye-plus mr-2 text-lg"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-eye-plus mr-2 text-lg"></i>
                                 View All Solutions
                             </a>
                         </div>
@@ -2060,7 +2060,7 @@
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <div class="inline-flex items-center px-6 py-3 bg-electric-blue/10 border border-electric-blue/20 rounded-full text-electric-blue font-medium text-sm mb-6">
-                    <i class="fas fa-users mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-users mr-2 text-lg"></i>
                     Meet Our Team
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-deep-navy mb-6">The Minds Behind Innovation</h2>
@@ -2085,11 +2085,11 @@
                             <div class="relative mb-6">
                                 <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-electric-blue to-deep-navy p-1">
                                     <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                        <i class="fas fa-user text-4xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-user text-4xl text-electric-blue"></i>
                                     </div>
                                 </div>
                                 <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-electric-blue rounded-full flex items-center justify-center shadow-lg">
-                                    <i class="fas fa-crown text-white text-sm"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-crown text-white text-sm"></i>
                                 </div>
                             </div>
                             <h4 class="text-xl font-bold text-deep-navy mb-2">John Smith</h4>
@@ -2099,13 +2099,13 @@
                             </p>
                             <div class="flex justify-center gap-3">
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-linkedin text-sm"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin text-sm"></i>
                                 </a>
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-twitter text-sm"></i>
+                                    <i class="fa-brands icon-premium fa-twitter text-sm"></i>
                                 </a>
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fas fa-envelope text-sm"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-envelope text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -2117,11 +2117,11 @@
                             <div class="relative mb-6">
                                 <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-deep-navy to-electric-blue p-1">
                                     <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                        <i class="fas fa-code text-4xl text-deep-navy"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-code text-4xl text-deep-navy"></i>
                                     </div>
                                 </div>
                                 <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-deep-navy rounded-full flex items-center justify-center shadow-lg">
-                                    <i class="fas fa-code text-white text-sm"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-code text-white text-sm"></i>
                                 </div>
                             </div>
                             <h4 class="text-xl font-bold text-deep-navy mb-2">Sarah Johnson</h4>
@@ -2131,13 +2131,13 @@
                             </p>
                             <div class="flex justify-center gap-3">
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-linkedin text-sm"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin text-sm"></i>
                                 </a>
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-github text-sm"></i>
+                                    <i class="fa-brands icon-premium fa-github text-sm"></i>
                                 </a>
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fas fa-envelope text-sm"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-envelope text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -2149,11 +2149,11 @@
                             <div class="relative mb-6">
                                 <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-electric-blue via-deep-navy to-electric-blue p-1">
                                     <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                        <i class="fas fa-graduation-cap text-4xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-graduation-cap text-4xl text-electric-blue"></i>
                                     </div>
                                 </div>
                                 <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-electric-blue rounded-full flex items-center justify-center shadow-lg">
-                                    <i class="fas fa-graduation-cap text-white text-sm"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-graduation-cap text-white text-sm"></i>
                                 </div>
                             </div>
                             <h4 class="text-xl font-bold text-deep-navy mb-2">Dr. Michael Chen</h4>
@@ -2163,13 +2163,13 @@
                             </p>
                             <div class="flex justify-center gap-3">
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-linkedin text-sm"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin text-sm"></i>
                                 </a>
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fas fa-book text-sm"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-book text-sm"></i>
                                 </a>
                                 <a href="#" class="w-8 h-8 bg-electric-blue/10 rounded-lg flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fas fa-envelope text-sm"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-envelope text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -2192,7 +2192,7 @@
                         <div class="text-center">
                             <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-electric-blue to-deep-navy p-0.5 mb-4">
                                 <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                    <i class="fas fa-laptop-code text-2xl text-electric-blue"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-laptop-code text-2xl text-electric-blue"></i>
                                 </div>
                             </div>
                             <h4 class="text-lg font-bold text-deep-navy mb-1">Emily Rodriguez</h4>
@@ -2200,10 +2200,10 @@
                             <p class="text-charcoal/70 text-xs mb-4">React, Node.js, Cloud Architecture</p>
                             <div class="flex justify-center gap-2">
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-github text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-github text-xs"></i>
                                 </a>
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-linkedin text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin text-xs"></i>
                                 </a>
                             </div>
                         </div>
@@ -2214,7 +2214,7 @@
                         <div class="text-center">
                             <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-deep-navy to-electric-blue p-0.5 mb-4">
                                 <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                    <i class="fas fa-mobile-alt text-2xl text-deep-navy"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-mobile-alt text-2xl text-deep-navy"></i>
                                 </div>
                             </div>
                             <h4 class="text-lg font-bold text-deep-navy mb-1">David Kim</h4>
@@ -2222,10 +2222,10 @@
                             <p class="text-charcoal/70 text-xs mb-4">React Native, Flutter, iOS/Android</p>
                             <div class="flex justify-center gap-2">
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-github text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-github text-xs"></i>
                                 </a>
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-linkedin text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin text-xs"></i>
                                 </a>
                             </div>
                         </div>
@@ -2236,7 +2236,7 @@
                         <div class="text-center">
                             <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-electric-blue via-deep-navy to-electric-blue p-0.5 mb-4">
                                 <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                    <i class="fas fa-palette text-2xl text-electric-blue"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-palette text-2xl text-electric-blue"></i>
                                 </div>
                             </div>
                             <h4 class="text-lg font-bold text-deep-navy mb-1">Lisa Thompson</h4>
@@ -2244,10 +2244,10 @@
                             <p class="text-charcoal/70 text-xs mb-4">Design Systems, User Research</p>
                             <div class="flex justify-center gap-2">
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-dribbble text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-dribbble text-xs"></i>
                                 </a>
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-linkedin text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin text-xs"></i>
                                 </a>
                             </div>
                         </div>
@@ -2258,7 +2258,7 @@
                         <div class="text-center">
                             <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-deep-navy to-electric-blue p-0.5 mb-4">
                                 <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                    <i class="fas fa-server text-2xl text-deep-navy"></i>
+                                    <i class="fa-sharp fa-solid icon-premium fa-server text-2xl text-deep-navy"></i>
                                 </div>
                             </div>
                             <h4 class="text-lg font-bold text-deep-navy mb-1">Alex Martinez</h4>
@@ -2266,10 +2266,10 @@
                             <p class="text-charcoal/70 text-xs mb-4">AWS, Docker, Kubernetes, CI/CD</p>
                             <div class="flex justify-center gap-2">
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-github text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-github text-xs"></i>
                                 </a>
                                 <a href="#" class="w-6 h-6 bg-electric-blue/10 rounded-md flex items-center justify-center text-electric-blue hover:bg-electric-blue hover:text-white transition-all duration-300">
-                                    <i class="fab fa-linkedin text-xs"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin text-xs"></i>
                                 </a>
                             </div>
                         </div>
@@ -2293,14 +2293,14 @@
                             <div class="aspect-video bg-gradient-to-br from-electric-blue/20 to-deep-navy/20 flex items-center justify-center relative">
                                 <div class="text-center text-electric-blue">
                                     <div class="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <i class="fas fa-users text-2xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-users text-2xl text-electric-blue"></i>
                                     </div>
                                     <p class="text-sm font-medium">Company Culture Video</p>
                                     <p class="text-xs opacity-70">Our Team in Action</p>
                                 </div>
                                 <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                                     <button class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-                                        <i class="fas fa-play text-xl text-electric-blue ml-1"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-play text-xl text-electric-blue ml-1"></i>
                                     </button>
                                 </div>
                             </div>
@@ -2317,8 +2317,8 @@
                                 Discover the collaborative spirit and innovative culture that drives ICECODING's success
                             </p>
                             <div class="flex items-center justify-between text-xs text-charcoal/60">
-                                <span><i class="fas fa-eye mr-1"></i>2.5K views</span>
-                                <span><i class="fas fa-calendar mr-1"></i>Jan 2025</span>
+                                <span><i class="fa-sharp fa-solid icon-premium fa-eye mr-1"></i>2.5K views</span>
+                                <span><i class="fa-sharp fa-solid icon-premium fa-calendar mr-1"></i>Jan 2025</span>
                             </div>
                         </div>
                     </div>
@@ -2329,14 +2329,14 @@
                             <div class="aspect-video bg-gradient-to-br from-deep-navy/20 to-electric-blue/20 flex items-center justify-center relative">
                                 <div class="text-center text-deep-navy">
                                     <div class="w-16 h-16 bg-deep-navy/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <i class="fas fa-code text-2xl text-deep-navy"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-code text-2xl text-deep-navy"></i>
                                     </div>
                                     <p class="text-sm font-medium">Development Process</p>
                                     <p class="text-xs opacity-70">Behind the Scenes</p>
                                 </div>
                                 <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                                     <button class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-                                        <i class="fas fa-play text-xl text-electric-blue ml-1"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-play text-xl text-electric-blue ml-1"></i>
                                     </button>
                                 </div>
                             </div>
@@ -2353,8 +2353,8 @@
                                 Take a deep dive into our agile development methodology and quality assurance practices
                             </p>
                             <div class="flex items-center justify-between text-xs text-charcoal/60">
-                                <span><i class="fas fa-eye mr-1"></i>1.8K views</span>
-                                <span><i class="fas fa-calendar mr-1"></i>Dec 2024</span>
+                                <span><i class="fa-sharp fa-solid icon-premium fa-eye mr-1"></i>1.8K views</span>
+                                <span><i class="fa-sharp fa-solid icon-premium fa-calendar mr-1"></i>Dec 2024</span>
                             </div>
                         </div>
                     </div>
@@ -2365,14 +2365,14 @@
                             <div class="aspect-video bg-gradient-to-br from-electric-blue/20 via-deep-navy/20 to-electric-blue/20 flex items-center justify-center relative">
                                 <div class="text-center text-electric-blue">
                                     <div class="w-16 h-16 bg-electric-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <i class="fas fa-trophy text-2xl text-electric-blue"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-trophy text-2xl text-electric-blue"></i>
                                     </div>
                                     <p class="text-sm font-medium">Success Stories</p>
                                     <p class="text-xs opacity-70">Client Transformations</p>
                                 </div>
                                 <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                                     <button class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-                                        <i class="fas fa-play text-xl text-electric-blue ml-1"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-play text-xl text-electric-blue ml-1"></i>
                                     </button>
                                 </div>
                             </div>
@@ -2389,8 +2389,8 @@
                                 Hear directly from our clients about how ICECODING transformed their business operations
                             </p>
                             <div class="flex items-center justify-between text-xs text-charcoal/60">
-                                <span><i class="fas fa-eye mr-1"></i>3.2K views</span>
-                                <span><i class="fas fa-calendar mr-1"></i>Nov 2024</span>
+                                <span><i class="fa-sharp fa-solid icon-premium fa-eye mr-1"></i>3.2K views</span>
+                                <span><i class="fa-sharp fa-solid icon-premium fa-calendar mr-1"></i>Nov 2024</span>
                             </div>
                         </div>
                     </div>
@@ -2407,7 +2407,7 @@
                 <div class="grid md:grid-cols-4 gap-8">
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
-                            <i class="fas fa-users text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-users text-2xl text-electric-blue"></i>
                         </div>
                         <div class="text-3xl font-bold text-electric-blue mb-2">25+</div>
                         <div class="text-charcoal/70 font-medium">Team Members</div>
@@ -2415,7 +2415,7 @@
                     
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy/10 rounded-2xl mb-4">
-                            <i class="fas fa-graduation-cap text-2xl text-deep-navy"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-graduation-cap text-2xl text-deep-navy"></i>
                         </div>
                         <div class="text-3xl font-bold text-deep-navy mb-2">95%</div>
                         <div class="text-charcoal/70 font-medium">Advanced Degrees</div>
@@ -2423,7 +2423,7 @@
                     
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-blue/10 rounded-2xl mb-4">
-                            <i class="fas fa-globe text-2xl text-electric-blue"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-globe text-2xl text-electric-blue"></i>
                         </div>
                         <div class="text-3xl font-bold text-electric-blue mb-2">12</div>
                         <div class="text-charcoal/70 font-medium">Countries Represented</div>
@@ -2431,7 +2431,7 @@
                     
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-deep-navy/10 rounded-2xl mb-4">
-                            <i class="fas fa-award text-2xl text-deep-navy"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-award text-2xl text-deep-navy"></i>
                         </div>
                         <div class="text-3xl font-bold text-deep-navy mb-2">50+</div>
                         <div class="text-charcoal/70 font-medium">Certifications Held</div>
@@ -2446,11 +2446,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 bg-electric-blue text-white font-semibold rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-lg">
-                            <i class="fas fa-briefcase mr-2"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-briefcase mr-2"></i>
                             View Open Positions
                         </a>
                         <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 bg-white border-2 border-electric-blue text-electric-blue font-semibold rounded-lg transition-all duration-300 hover:bg-electric-blue hover:text-white">
-                            <i class="fas fa-paper-plane mr-2"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-paper-plane mr-2"></i>
                             Send Your Resume
                         </a>
                     </div>
@@ -2465,7 +2465,7 @@
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <div class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white font-medium text-sm mb-6">
-                    <i class="fas fa-headset mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-headset mr-2 text-lg"></i>
                     Contact Our Team
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
@@ -2531,7 +2531,7 @@
                             </div>
                             
                             <button type="submit" class="w-full px-8 py-4 bg-electric-blue text-white rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-electric-blue">
-                                <i class="fas fa-paper-plane mr-2 text-lg"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-paper-plane mr-2 text-lg"></i>
                                 Send Message
                             </button>
                         </form>
@@ -2544,7 +2544,7 @@
                     <div class="bg-white/8 border border-white/20 rounded-2xl p-8">
                         <div class="flex items-start space-x-4">
                             <div class="flex items-center justify-center w-12 h-12 bg-electric-blue/20 rounded-lg">
-                                <i class="fas fa-clock-four text-lg text-electric-blue"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-clock-four text-lg text-electric-blue"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold mb-2">Business Hours</h4>
@@ -2562,7 +2562,7 @@
                     <div class="bg-white/8 border border-white/20 rounded-2xl p-8">
                         <div class="flex items-start space-x-4">
                             <div class="flex items-center justify-center w-12 h-12 bg-electric-blue/20 rounded-lg">
-                                <i class="fas fa-envelope-open text-lg text-electric-blue"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-envelope-open text-lg text-electric-blue"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold mb-2">Email Us</h4>
@@ -2580,7 +2580,7 @@
                     <div class="bg-white/8 border border-white/20 rounded-2xl p-8">
                         <div class="flex items-start space-x-4">
                             <div class="flex items-center justify-center w-12 h-12 bg-electric-blue/20 rounded-lg">
-                                <i class="fas fa-phone-alt text-lg text-electric-blue"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-phone-alt text-lg text-electric-blue"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold mb-2">Call Us</h4>
@@ -2597,21 +2597,21 @@
                     <div class="bg-white/8 border border-white/20 rounded-2xl p-8">
                         <div class="flex items-start space-x-4">
                             <div class="flex items-center justify-center w-12 h-12 bg-electric-blue/20 rounded-lg">
-                                <i class="fas fa-share-nodes text-lg text-electric-blue"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-share-nodes text-lg text-electric-blue"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold mb-3">Connect With Us</h4>
                                 <div class="flex flex-col gap-3">
                                     <a href="#" class="flex items-center gap-3 text-white/70 hover:text-electric-blue transition-colors duration-300">
-                                        <i class="fab fa-linkedin-in text-lg w-5"></i>
+                                        <i class="fa-brands icon-premium fa-linkedin-in text-lg w-5"></i>
                                         <span>LinkedIn</span>
                                     </a>
                                     <a href="#" class="flex items-center gap-3 text-white/70 hover:text-electric-blue transition-colors duration-300">
-                                        <i class="fab fa-github-alt text-lg w-5"></i>
+                                        <i class="fa-brands icon-premium fa-github-alt text-lg w-5"></i>
                                         <span>GitHub</span>
                                     </a>
                                     <a href="#" class="flex items-center gap-3 text-white/70 hover:text-electric-blue transition-colors duration-300">
-                                        <i class="fab fa-x-twitter text-lg w-5"></i>
+                                        <i class="fa-brands icon-premium fa-x-twitter text-lg w-5"></i>
                                         <span>Twitter</span>
                                     </a>
                                 </div>
@@ -2631,7 +2631,7 @@
             <!-- Newsletter Header -->
             <div class="mb-12">
                 <div class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white font-medium text-sm mb-6">
-                    <i class="fas fa-envelope mr-2 text-lg"></i>
+                    <i class="fa-sharp fa-solid icon-premium fa-envelope mr-2 text-lg"></i>
                     Stay Ahead with Technology Insights
                 </div>
                 <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -2659,7 +2659,7 @@
                             type="submit" 
                             class="px-8 py-4 bg-white text-electric-blue font-semibold rounded-lg transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50"
                         >
-                            <i class="fas fa-paper-plane mr-2"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-paper-plane mr-2"></i>
                             Subscribe Now
                         </button>
                     </div>
@@ -2687,7 +2687,7 @@
 
                     <!-- Privacy Notice -->
                     <div class="text-sm text-white/80 leading-relaxed">
-                        <i class="fas fa-shield-check mr-2 text-white"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-shield-check mr-2 text-white"></i>
                         We respect your privacy. Unsubscribe at any time. No spam, only valuable tech insights.
                     </div>
                 </form>
@@ -2696,7 +2696,7 @@
                 <div class="grid md:grid-cols-3 gap-6 text-white">
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl mb-4">
-                            <i class="fas fa-lightbulb text-2xl"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-lightbulb text-2xl"></i>
                         </div>
                         <h4 class="text-lg font-bold mb-2">Weekly Insights</h4>
                         <p class="text-sm text-white/80">Latest technology trends and industry analysis</p>
@@ -2704,7 +2704,7 @@
                     
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl mb-4">
-                            <i class="fas fa-download text-2xl"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-download text-2xl"></i>
                         </div>
                         <h4 class="text-lg font-bold mb-2">Exclusive Resources</h4>
                         <p class="text-sm text-white/80">Free guides, templates, and case studies</p>
@@ -2712,7 +2712,7 @@
                     
                     <div class="text-center">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl mb-4">
-                            <i class="fas fa-users text-2xl"></i>
+                            <i class="fa-sharp fa-solid icon-premium fa-users text-2xl"></i>
                         </div>
                         <h4 class="text-lg font-bold mb-2">Community Access</h4>
                         <p class="text-sm text-white/80">Connect with tech professionals and innovators</p>
@@ -2772,16 +2772,16 @@
                             <!-- Social Links -->
                             <div class="flex gap-3">
                                 <a href="#" class="flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-lg transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue">
-                                    <i class="fab fa-linkedin-in text-sm text-white"></i>
+                                    <i class="fa-brands icon-premium fa-linkedin-in text-sm text-white"></i>
                                 </a>
                                 <a href="#" class="flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-lg transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue">
-                                    <i class="fab fa-x-twitter text-sm text-white"></i>
+                                    <i class="fa-brands icon-premium fa-x-twitter text-sm text-white"></i>
                                 </a>
                                 <a href="#" class="flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-lg transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue">
-                                    <i class="fab fa-github-alt text-sm text-white"></i>
+                                    <i class="fa-brands icon-premium fa-github-alt text-sm text-white"></i>
                                 </a>
                                 <a href="#" class="flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-lg transition-all duration-300 hover:bg-electric-blue hover:border-electric-blue">
-                                    <i class="fab fa-instagram text-sm text-white"></i>
+                                    <i class="fa-brands icon-premium fa-instagram text-sm text-white"></i>
                                 </a>
                             </div>
                         </div>
@@ -2846,7 +2846,7 @@
                             <div class="space-y-4">
                                 <div class="flex items-start gap-3">
                                     <div class="flex items-center justify-center w-8 h-8 bg-electric-blue/20 rounded-lg mt-0.5">
-                                        <i class="fas fa-envelope-open text-electric-blue text-sm"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-envelope-open text-electric-blue text-sm"></i>
                                     </div>
                                     <div>
                                         <p class="text-white/60 text-sm">Email</p>
@@ -2855,7 +2855,7 @@
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <div class="flex items-center justify-center w-8 h-8 bg-electric-blue/20 rounded-lg mt-0.5">
-                                        <i class="fas fa-phone-alt text-electric-blue text-sm"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-phone-alt text-electric-blue text-sm"></i>
                                     </div>
                                     <div>
                                         <p class="text-white/60 text-sm">Phone</p>
@@ -2864,7 +2864,7 @@
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <div class="flex items-center justify-center w-8 h-8 bg-electric-blue/20 rounded-lg mt-0.5">
-                                        <i class="fas fa-business-time text-electric-blue text-sm"></i>
+                                        <i class="fa-sharp fa-solid icon-premium fa-business-time text-electric-blue text-sm"></i>
                                     </div>
                                     <div>
                                         <p class="text-white/60 text-sm">Business Hours</p>
@@ -2891,7 +2891,7 @@
                         </div>
                         
                         <div class="flex items-center gap-4">
-                            <span class="text-white/50 text-sm">Built with ❤️ by ICECODING</span>
+                            <span class="text-white/50 text-sm">Built with â¤ï¸ by ICECODING</span>
                         </div>
                     </div>
                 </div>
@@ -3081,3 +3081,4 @@
     <script src="scripts/main.js"></script>
 </body>
 </html>
+
