@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const startTime = performance.now();
     
     // Core functionality
+    initPremiumIcons();
     initMobileMenu();
     initSmoothScrolling();
     initContactForm();
@@ -69,6 +70,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const endTime = performance.now();
     console.log(`Initialization took ${endTime - startTime} milliseconds`);
 });
+
+// Upgrade icon classes to modern sharp/brand variants for richer icon rendering
+function initPremiumIcons() {
+    const solidIcons = document.querySelectorAll('i.fas');
+    solidIcons.forEach((icon) => {
+        icon.classList.remove('fas');
+        icon.classList.add('fa-sharp', 'fa-solid', 'icon-premium');
+    });
+
+    const regularIcons = document.querySelectorAll('i.far');
+    regularIcons.forEach((icon) => {
+        icon.classList.remove('far');
+        icon.classList.add('fa-regular', 'icon-premium');
+    });
+
+    const brandIcons = document.querySelectorAll('i.fab');
+    brandIcons.forEach((icon) => {
+        icon.classList.remove('fab');
+        icon.classList.add('fa-brands', 'icon-premium');
+    });
+}
 
 // Mobile Menu Functionality
 function initMobileMenu() {

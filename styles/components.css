@@ -32,6 +32,35 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Premium icon rendering for richer visual quality */
+i.fa-solid,
+i.fa-regular,
+i.fa-brands,
+i.fa-sharp,
+i.fas,
+i.far,
+i.fab,
+i[class*=" fa-"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    filter: drop-shadow(0 6px 14px rgba(0, 31, 63, 0.18));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+a:hover i.fa-solid,
+a:hover i.fa-regular,
+a:hover i.fa-brands,
+button:hover i.fa-solid,
+button:hover i.fa-regular,
+button:hover i.fa-brands {
+    transform: translateY(-1px) scale(1.06);
+    filter: drop-shadow(0 10px 20px rgba(0, 123, 255, 0.25));
+}
+
 ::selection {
     background: rgba(0, 123, 255, 0.3);
     color: #001F3F;
