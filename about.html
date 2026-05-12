@@ -163,115 +163,107 @@
     </script>
 </head>
 <body class="font-poppins">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo Section -->
-                    <a href="index.html" class="flex items-center gap-3 group" aria-label="Go to ICECODING home page">
-                        <div class="relative">
-                            <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105" loading="eager" width="60" height="40">
-                        </div>
-                        <div class="hidden sm:flex flex-col">
-                            <span class="text-xl font-bold text-deep-navy leading-tight transition-colors duration-300 group-hover:text-electric-blue">ICECODING</span>
-                            <span class="text-xs text-electric-blue font-medium leading-tight">Innovative Minds, Smart Tech</span>
-                        </div>
-                    </a>
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="bg-white border-b border-gray-100 shadow-sm">
+            <div class="max-w-container mx-auto px-4 md:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo Section -->
+                        <a href="index.html" class="flex items-center gap-2 group" aria-label="Go to ICECODING home page">
+                            <div class="relative">
+                                <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-8 w-auto" loading="eager" width="60" height="40">
+                            </div>
+                            <div class="hidden sm:flex flex-col">
+                                <span class="text-lg font-600 text-deep-navy leading-none">ICECODING</span>
+                                <span class="text-xs text-text-muted">Innovation Partner</span>
+                            </div>
+                        </a>
 
-                <!-- Desktop Navigation -->
-                <ul class="hidden lg:flex items-center gap-2">
-                    <li>
-                        <a href="index.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Home</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html" class="relative px-4 py-2 text-electric-blue font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">About</span>
-                            <div class="absolute bottom-0 left-0 w-full h-0.5 bg-electric-blue transition-all duration-300"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="services.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Services</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="solutions.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Solutions</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="team.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Team</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="gallery.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <span class="relative">Gallery</span>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
-                        </a>
-                    </li>
-                    <li class="ml-4">
-                        <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-medium text-sm rounded-full transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none focus:ring-0 focus:border-0" style="outline: none !important; box-shadow: none !important;">
-                            <i class="fa-sharp fa-solid icon-premium fa-rocket mr-2 text-sm" aria-hidden="true"></i>
-                            Get Started
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100 group focus:outline-none" id="mobile-menu-button">
-                    <div class="space-y-1.5">
-                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
-                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
-                        <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center">
+                        <ul class="flex items-center gap-8">
+                            <li>
+                                <a href="index.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html" aria-current="page" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="solutions.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="team.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Team
+                                </a>
+                            </li>
+                            <li>
+                                <a href="gallery.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Gallery
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <div class="ml-12 flex items-center gap-3">
+                            <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-500 text-sm rounded-lg transition-all duration-300 hover:bg-deep-navy">
+                                Get Started
+                            </a>
+                        </div>
                     </div>
-                </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 hover:bg-gray-100" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                        <div class="space-y-1.5">
+                            <div class="w-5 h-0.5 bg-deep-navy"></div>
+                            <div class="w-5 h-0.5 bg-deep-navy"></div>
+                            <div class="w-5 h-0.5 bg-deep-navy"></div>
+                        </div>
+                    </button>
+                </div>
             </div>
 
             <!-- Mobile Navigation Menu -->
-            <div class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
-                <div class="px-6 py-6 space-y-2">
-                    <a href="index.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
-                        <span class="relative">Home</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-10"></div>
+            <div class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-md opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
+                <div class="px-4 py-4 space-y-1">
+                    <a href="index.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Home
                     </a>
-                    <a href="about.html" class="group relative inline-block px-4 py-3 text-electric-blue font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
-                        <span class="relative">About</span>
-                        <div class="absolute bottom-2 left-4 w-12 h-0.5 bg-electric-blue transition-all duration-300"></div>
+                    <a href="about.html" aria-current="page" class="block px-4 py-2.5 text-electric-blue font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        About
                     </a>
-                    <a href="services.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
-                        <span class="relative">Services</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-16"></div>
+                    <a href="services.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Services
                     </a>
-                    <a href="solutions.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
-                        <span class="relative">Solutions</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-18"></div>
+                    <a href="solutions.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Solutions
                     </a>
-                    <a href="team.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
-                        <span class="relative">Team</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    <a href="team.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Team
                     </a>
-                    <a href="gallery.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus:outline-none">
-                        <span class="relative">Gallery</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-14"></div>
+                    <a href="gallery.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Gallery
                     </a>
-                    <div class="pt-4 border-t border-gray-200/50">
-                        <a href="#contact" class="flex items-center justify-center px-6 py-3 bg-electric-blue text-white font-medium rounded-lg transition-all duration-300 hover:bg-deep-navy hover:shadow-md hover:-translate-y-0.5 transform focus:outline-none">
-                            <i class="fa-sharp fa-solid icon-premium fa-rocket mr-2 text-sm" aria-hidden="true"></i>
+                    <div class="pt-4 border-t border-gray-100 flex flex-col gap-2 mt-4">
+                        <a href="#contact" class="flex items-center justify-center px-6 py-2.5 bg-electric-blue text-white font-500 text-sm rounded-lg transition-all duration-300 hover:bg-deep-navy">
                             Get Started
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
+    <main id="main-content" role="main">
     <!-- Page Header -->
     <section class="relative pt-32 pb-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/40 overflow-hidden">
         <!-- Brand Pattern Background -->
