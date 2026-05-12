@@ -65,11 +65,11 @@
     --radius-full: 9999px;
 
     /* ─── Shadow Scale ─────────────────────────────── */
-    --shadow-xs: 0 1px 3px rgba(0, 31, 63, 0.06);
-    --shadow-sm: 0 4px 8px rgba(0, 31, 63, 0.08);
-    --shadow-md: 0 10px 24px rgba(0, 31, 63, 0.10);
-    --shadow-lg: 0 20px 40px rgba(0, 31, 63, 0.12);
-    --shadow-xl: 0 32px 64px rgba(0, 31, 63, 0.16);
+    --shadow-xs: 0 1px 2px rgba(0, 31, 63, 0.05);
+    --shadow-sm: 0 2px 4px rgba(0, 31, 63, 0.06);
+    --shadow-md: 0 4px 8px rgba(0, 31, 63, 0.08);
+    --shadow-lg: 0 8px 16px rgba(0, 31, 63, 0.10);
+    --shadow-xl: 0 12px 24px rgba(0, 31, 63, 0.12);
 
     /* ─── Transition Timing ────────────────────────── */
     --duration-fast:   150ms;
@@ -109,16 +109,17 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.2;
     color: var(--deep-navy);
+    letter-spacing: -0.5px;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 { font-size: 3.5rem; font-weight: 700; }
+h2 { font-size: 2.75rem; font-weight: 700; }
+h3 { font-size: 2rem; font-weight: 600; }
+h4 { font-size: 1.5rem; font-weight: 600; }
+h5 { font-size: 1.25rem; font-weight: 600; }
+h6 { font-size: 1rem; font-weight: 600; }
 
 p {
     font-size: 1.1rem;

@@ -58,20 +58,18 @@
     background-color: var(--electric-blue, #007BFF);
     color: #FFFFFF;
     border-color: var(--electric-blue, #007BFF);
-    box-shadow: var(--shadow-sm, 0 4px 8px rgba(0,31,63,0.08));
+    box-shadow: 0 2px 4px rgba(0, 31, 63, 0.06);
 }
 .btn-primary:hover {
-    background-color: #0069D9;
-    border-color: #0069D9;
-    color: #FFFFFF;
-    box-shadow: var(--shadow-md, 0 10px 24px rgba(0,31,63,0.10));
-    transform: translateY(-1px);
-}
-.btn-primary:active {
     background-color: #0056B3;
     border-color: #0056B3;
-    transform: translateY(0);
-    box-shadow: var(--shadow-xs, 0 1px 3px rgba(0,31,63,0.06));
+    color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 31, 63, 0.08);
+}
+.btn-primary:active {
+    background-color: #004085;
+    border-color: #004085;
+    box-shadow: 0 1px 2px rgba(0, 31, 63, 0.05);
 }
 
 /* ── Tier 2: Secondary — outlined deep-navy ── */
@@ -83,12 +81,10 @@
 .btn-secondary:hover {
     background-color: var(--deep-navy, #001F3F);
     color: #FFFFFF;
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md, 0 10px 24px rgba(0,31,63,0.10));
+    box-shadow: 0 4px 8px rgba(0, 31, 63, 0.08);
 }
 .btn-secondary:active {
-    transform: translateY(0);
-    box-shadow: none;
+    box-shadow: 0 1px 2px rgba(0, 31, 63, 0.05);
 }
 
 /* ── Tier 3: Tertiary — text-blue, tinted bg on hover ── */
@@ -98,14 +94,12 @@
     border-color: transparent;
 }
 .btn-tertiary:hover {
-    background-color: rgba(0, 123, 255, 0.08);
+    background-color: rgba(0, 123, 255, 0.06);
     border-color: rgba(0, 123, 255, 0.2);
     color: var(--electric-blue, #007BFF);
-    transform: translateY(-1px);
 }
 .btn-tertiary:active {
-    background-color: rgba(0, 123, 255, 0.12);
-    transform: translateY(0);
+    background-color: rgba(0, 123, 255, 0.10);
 }
 
 /* ── Tier 4: Ghost — transparent, white text (for dark backgrounds) ── */
@@ -115,14 +109,12 @@
     border-color: rgba(255, 255, 255, 0.25);
 }
 .btn-ghost:hover {
-    background-color: rgba(255, 255, 255, 0.16);
-    border-color: rgba(255, 255, 255, 0.45);
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
     color: #FFFFFF;
-    transform: translateY(-1px);
 }
 .btn-ghost:active {
     background-color: rgba(255, 255, 255, 0.06);
-    transform: translateY(0);
 }
 
 /* ── Size Modifiers ── */
@@ -142,17 +134,16 @@
     background: var(--gradient-primary, linear-gradient(135deg, #001F3F 0%, #007BFF 100%));
     color: #FFFFFF;
     border-color: transparent;
-    box-shadow: var(--shadow-sm, 0 4px 8px rgba(0,31,63,0.08));
+    box-shadow: 0 2px 4px rgba(0, 31, 63, 0.06);
 }
 .btn-gradient:hover {
-    filter: brightness(1.08);
+    filter: brightness(0.95);
     color: #FFFFFF;
-    box-shadow: var(--shadow-md, 0 10px 24px rgba(0,31,63,0.10));
-    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 31, 63, 0.08);
 }
 .btn-gradient:active {
-    filter: brightness(0.96);
-    transform: translateY(0);
+    filter: brightness(0.90);
+    box-shadow: 0 1px 2px rgba(0, 31, 63, 0.05);
 }
 
 /* ═══════════════════════════════════════════════════

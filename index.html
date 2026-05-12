@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -124,115 +124,96 @@
 <body class="font-poppins text-charcoal bg-white antialiased">
     <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
-        <nav class="bg-white/95 backdrop-blur-lg border-b border-gray-100/50 shadow-nav">
-            <div class="max-w-container mx-auto px-5 md:px-8">
-                <div class="flex justify-between items-center h-20">
+        <nav class="bg-white border-b border-gray-100 shadow-sm">
+            <div class="max-w-container mx-auto px-4 md:px-8">
+                <div class="flex justify-between items-center h-16">
                     <!-- Logo Section -->
-                        <a href="index.html" class="flex items-center gap-3 group" aria-label="Go to ICECODING home page">
+                        <a href="index.html" class="flex items-center gap-2 group" aria-label="Go to ICECODING home page">
                             <div class="relative">
-                                <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-10 w-auto transition-all duration-300 group-hover:scale-105" loading="eager" width="60" height="40">
+                                <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-8 w-auto" loading="eager" width="60" height="40">
                             </div>
                             <div class="hidden sm:flex flex-col">
-                                <span class="text-xl font-bold text-deep-navy leading-none tracking-tight transition-colors duration-300 group-hover:text-electric-blue">ICECODING</span>
-                                <span class="text-xs text-electric-blue font-medium leading-tight">Innovative Minds, Smart Tech</span>
+                                <span class="text-lg font-600 text-deep-navy leading-none">ICECODING</span>
+                                <span class="text-xs text-text-muted">Innovation Partner</span>
                             </div>
                         </a>
 
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center">
-                        <ul class="flex items-center gap-1">
+                        <ul class="flex items-center gap-8">
                             <li>
-                                <a href="index.html" aria-current="page" class="relative px-4 py-2 text-electric-blue font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
-                                    <span class="relative">Home</span>
-                                    <div class="absolute bottom-0 left-0 w-full h-0.5 bg-electric-blue transition-all duration-300"></div>
+                                <a href="index.html" aria-current="page" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Home
                                 </a>
                             </li>
                             <li>
-                                <a href="about.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
-                                    <span class="relative">About</span>
-                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                <a href="about.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    About
                                 </a>
                             </li>
                             <li>
-                                <a href="services.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
-                                    <span class="relative">Services</span>
-                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                <a href="services.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Services
                                 </a>
                             </li>
                             <li>
-                                <a href="solutions.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
-                                    <span class="relative">Solutions</span>
-                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                <a href="solutions.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Solutions
                                 </a>
                             </li>
                             <li>
-                                <a href="team.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
-                                    <span class="relative">Team</span>
-                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                <a href="team.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Team
                                 </a>
                             </li>
                             <li>
-                                <a href="gallery.html" class="relative px-4 py-2 text-charcoal font-medium text-sm transition-all duration-300 hover:text-electric-blue group focus-ring">
-                                    <span class="relative">Gallery</span>
-                                    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-full"></div>
+                                <a href="gallery.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                                    Gallery
                                 </a>
                             </li>
                         </ul>
                         
-                        <div class="ml-6 flex items-center gap-3">
-                           
-                            <a href="#contact" class="inline-flex items-center px-5 py-2 bg-gradient-tech text-white font-medium text-sm rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform focus-ring">
-                                <i class="fa-sharp fa-solid icon-premium fa-rocket mr-2 text-sm"></i>
+                        <div class="ml-12 flex items-center gap-3">
+                            <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-500 text-sm rounded-lg transition-all duration-300 hover:bg-deep-navy">
                                 Get Started
                             </a>
                         </div>
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100 group focus-ring" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                    <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 hover:bg-gray-100" id="mobile-menu-button" aria-label="Toggle mobile menu">
                         <div class="space-y-1.5">
-                            <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
-                            <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
-                            <div class="w-5 h-0.5 bg-deep-navy transition-all duration-300 group-hover:bg-electric-blue"></div>
+                            <div class="w-5 h-0.5 bg-deep-navy"></div>
+                            <div class="w-5 h-0.5 bg-deep-navy"></div>
+                            <div class="w-5 h-0.5 bg-deep-navy"></div>
                         </div>
                     </button>
                 </div>
             </div>
 
             <!-- Mobile Navigation Menu -->
-            <div class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
-                <div class="px-6 py-6 space-y-2">
-                    <a href="index.html" aria-current="page" class="group relative inline-block px-4 py-3 text-electric-blue font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
-                        <span class="relative">Home</span>
-                        <div class="absolute bottom-2 left-4 w-10 h-0.5 bg-electric-blue transition-all duration-300"></div>
+            <div class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-md opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
+                <div class="px-4 py-4 space-y-1">
+                    <a href="index.html" aria-current="page" class="block px-4 py-2.5 text-electric-blue font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Home
                     </a>
-                    <a href="about.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
-                        <span class="relative">About</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    <a href="about.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        About
                     </a>
-                    <a href="services.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
-                        <span class="relative">Services</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-16"></div>
+                    <a href="services.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Services
                     </a>
-                    <a href="solutions.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
-                        <span class="relative">Solutions</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-18"></div>
+                    <a href="solutions.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Solutions
                     </a>
-                    <a href="team.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
-                        <span class="relative">Team</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-12"></div>
+                    <a href="team.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Team
                     </a>
-                    <a href="gallery.html" class="group relative inline-block px-4 py-3 text-charcoal font-medium transition-all duration-300 hover:text-electric-blue focus-ring">
-                        <span class="relative">Gallery</span>
-                        <div class="absolute bottom-2 left-4 w-0 h-0.5 bg-electric-blue transition-all duration-300 group-hover:w-14"></div>
+                    <a href="gallery.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
+                        Gallery
                     </a>
-                    <div class="pt-4 border-t border-gray-200/50 flex flex-col gap-3">
-                        <a href="#contact" class="flex items-center justify-center px-6 py-2.5 bg-electric-blue/10 text-electric-blue font-medium rounded-lg transition-all duration-300 hover:bg-electric-blue/20 focus-ring">
-                            <i class="fa-sharp fa-solid icon-premium fa-headset mr-2 text-sm"></i>
-                            Support
-                        </a>
-                        <a href="#contact" class="flex items-center justify-center px-6 py-2.5 bg-gradient-tech text-white font-medium rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform focus-ring">
-                            <i class="fa-sharp fa-solid icon-premium fa-rocket mr-2 text-sm"></i>
+                    <div class="pt-4 border-t border-gray-100 flex flex-col gap-2 mt-4">
+                        <a href="#contact" class="flex items-center justify-center px-6 py-2.5 bg-electric-blue text-white font-500 text-sm rounded-lg transition-all duration-300 hover:bg-deep-navy">
                             Get Started
                         </a>
                     </div>
@@ -243,89 +224,74 @@
 
     <main id="main-content" role="main">
     <!-- Hero Section -->
-    <section id="hero" class="pt-32 pb-20 md:pb-32 md:pt-40 relative overflow-hidden">
-        <!-- Background Elements -->
+    <section id="hero" class="pt-28 pb-20 md:pb-32 md:pt-32 relative overflow-hidden bg-white">
+        <!-- Minimal Background Elements -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute right-0 top-1/4 w-1/2 h-1/2 bg-gradient-to-br from-electric-blue/5 to-deep-navy/5 rounded-[40%] filter blur-3xl"></div>
-            <div class="absolute left-0 bottom-1/4 w-1/3 h-1/3 bg-gradient-to-tl from-electric-blue/5 to-deep-navy/5 rounded-[40%] filter blur-3xl"></div>
-            <div class="absolute left-1/4 top-1/4 w-12 h-12 border-2 border-electric-blue/10 rounded-full"></div>
-            <div class="absolute right-1/3 bottom-1/4 w-20 h-20 border border-deep-navy/10 rounded-full"></div>
-            <div class="hidden md:block absolute left-1/2 top-1/3 w-4 h-20 bg-gradient-to-b from-electric-blue/10 to-transparent rounded-full"></div>
+            <div class="absolute right-0 top-0 w-96 h-96 bg-electric-blue/3 rounded-full filter blur-3xl"></div>
+            <div class="absolute left-0 bottom-0 w-80 h-80 bg-deep-navy/3 rounded-full filter blur-3xl"></div>
         </div>
         
-        <div class="relative container mx-auto px-5 z-10">
-            <div class="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+        <div class="relative container mx-auto px-4 z-10">
+            <div class="grid md:grid-cols-2 gap-16 md:gap-20 lg:gap-24 items-center">
                 <!-- Hero Content -->
                 <div class="text-center md:text-left">
-                    <!-- Tag Badge 
-                    <div class="inline-flex items-center mb-8 px-4 py-2 bg-gradient-light border border-electric-blue/10 rounded-full">
-                        <div class="w-2 h-2 rounded-full bg-success-green animate-pulse mr-2"></div>
-                        <span class="text-deep-navy/80 font-medium text-sm">Innovation Partner Since 2025</span>
-                    </div>
-                    -->
                     <!-- Main Heading -->
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
-                        <span class="text-deep-navy block">Accelerate Your</span>
-                        <span class="gradient-text block">Digital Transformation</span>
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl font-700 mb-8 leading-tight text-deep-navy">
+                        Accelerate Your<br><span class="text-electric-blue">Digital Future</span>
                     </h1>
                     
                     <!-- Subheading -->
-                    <p class="text-lg md:text-xl mb-8 text-charcoal/80 leading-relaxed">
-                        We partner with forward-thinking organizations to deliver <span class="font-semibold text-electric-blue">enterprise-grade technology solutions</span> that drive measurable business outcomes.
+                    <p class="text-lg md:text-xl mb-12 text-text-secondary leading-relaxed max-w-xl">
+                        Enterprise-grade technology solutions that drive transformation. Partner with us to innovate faster, scale confidently, and achieve measurable business outcomes.
                     </p>
                     
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
-                        <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-tech text-white rounded-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transform focus-ring">
-                            <i class="fa-sharp fa-solid icon-premium fa-rocket mr-3 text-lg"></i>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="services.html" class="inline-flex items-center justify-center px-8 py-3.5 bg-electric-blue text-white rounded-lg font-600 text-base shadow-sm transition-all duration-300 hover:bg-deep-navy hover:shadow-md">
                             Explore Solutions
                         </a>
-                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-deep-navy border-2 border-electric-blue rounded-lg font-semibold transition-all duration-300 hover:bg-electric-blue hover:text-white hover:shadow-lg focus-ring">
-                            <i class="fa-sharp fa-solid icon-premium fa-calendar-check mr-3 text-lg"></i>
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-deep-navy border-2 border-deep-navy rounded-lg font-600 text-base transition-all duration-300 hover:bg-deep-navy hover:text-white">
                             Schedule Consultation
                         </a>
                     </div>
-                    
-                    <!-- Trust Indicators -->
-                    
                 </div>
                 
                 <!-- Hero Image -->
                 <div class="relative">
-                    <div class="relative z-10 bg-white p-4 sm:p-6 md:p-8 border border-gray-100 rounded-2xl shadow-card overflow-hidden">
+                    <div class="relative z-10 bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
                         <!-- Hero Image Carousel -->
                         <div class="hero-carousel relative rounded-xl overflow-hidden">
                             <!-- Carousel Track -->
                             <div class="hero-carousel-track flex transition-all duration-700 ease-in-out" id="heroCarouselTrack">
                                 <!-- Slide 1 -->
                                 <div class="hero-slide w-full flex-shrink-0 relative">
-                                    <img src="assets/images/brand_on_laptop.png" alt="ICECODING Enterprise Technology Solutions" class="w-full h-[400px] object-cover shadow-sm" loading="eager" width="600" height="400">
-                                    <div class="absolute inset-0 bg-gradient-to-tr from-deep-navy/70 to-transparent flex items-end">
+                                    <img src="assets/images/brand_on_laptop.png" alt="ICECODING Enterprise Technology Solutions" class="w-full h-[400px] object-cover" loading="eager" width="600" height="400">
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-deep-navy/60 to-transparent flex items-end">
                                         <div class="p-6 text-white">
-                                            <h3 class="text-2xl font-bold mb-2">Elevate Your Business</h3>
-                                            <p class="text-white/90">Cutting-edge solutions for modern enterprises</p>
+                                            <h3 class="text-2xl font-600 mb-2">Elevate Your Business</h3>
+                                            <p class="text-white/90 text-sm">Enterprise solutions for modern tech companies</p>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <!-- Slide 2 -->
                                 <div class="hero-slide w-full flex-shrink-0 relative">
-                                    <img src="assets/images/billboard.png" alt="Digital Transformation Strategy" class="w-full h-[400px] object-cover shadow-sm" loading="lazy" decoding="async" width="600" height="400">
-                                    <div class="absolute inset-0 bg-gradient-to-tr from-deep-navy/70 to-transparent flex items-end">
+                                    <img src="assets/images/billboard.png" alt="Digital Transformation Strategy" class="w-full h-[400px] object-cover" loading="lazy" decoding="async" width="600" height="400">
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-deep-navy/60 to-transparent flex items-end">
                                         <div class="p-6 text-white">
-                                            <h3 class="text-2xl font-bold mb-2">Transform Your Legacy</h3>
-                                            <p class="text-white/90">Modernize systems for the digital age</p>
+                                            <h3 class="text-2xl font-600 mb-2">Transform Your Legacy</h3>
+                                            <p class="text-white/90 text-sm">Modernize systems for the digital age</p>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <!-- Slide 3 -->
                                 <div class="hero-slide w-full flex-shrink-0 relative">
-                                    <img src="assets/images/Outdoor-Advertising.png" alt="Enterprise AI Solutions" class="w-full h-[400px] object-cover shadow-sm" loading="lazy" decoding="async" width="600" height="400">
-                                    <div class="absolute inset-0 bg-gradient-to-tr from-deep-navy/70 to-transparent flex items-end">
+                                    <img src="assets/images/Outdoor-Advertising.png" alt="Enterprise AI Solutions" class="w-full h-[400px] object-cover" loading="lazy" decoding="async" width="600" height="400">
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-deep-navy/60 to-transparent flex items-end">
                                         <div class="p-6 text-white">
-                                            <h3 class="text-2xl font-bold mb-2">Data-Driven Decisions</h3>
-                                            <p class="text-white/90">Unlock the power of your enterprise data</p>
+                                            <h3 class="text-2xl font-600 mb-2">Data-Driven Success</h3>
+                                            <p class="text-white/90 text-sm">Unlock the power of your enterprise data</p>
                                         </div>
                                     </div>
                                 </div>
@@ -333,39 +299,24 @@
                             
                             <!-- Carousel Navigation -->
                             <div class="absolute bottom-4 right-4 flex gap-2">
-                                <button class="hero-nav-dot w-3 h-3 rounded-full bg-white opacity-50 transition-opacity duration-300 hover:opacity-100 focus:outline-none" data-index="0" aria-label="Go to hero slide 1"></button>
-                                <button class="hero-nav-dot w-3 h-3 rounded-full bg-white opacity-50 transition-opacity duration-300 hover:opacity-100 focus:outline-none" data-index="1" aria-label="Go to hero slide 2"></button>
-                                <button class="hero-nav-dot w-3 h-3 rounded-full bg-white opacity-50 transition-opacity duration-300 hover:opacity-100 focus:outline-none" data-index="2" aria-label="Go to hero slide 3"></button>
+                                <button class="hero-nav-dot w-3 h-3 rounded-full bg-white opacity-60 transition-opacity duration-300 hover:opacity-100 focus:outline-none" data-index="0" aria-label="Go to hero slide 1"></button>
+                                <button class="hero-nav-dot w-3 h-3 rounded-full bg-white opacity-60 transition-opacity duration-300 hover:opacity-100 focus:outline-none" data-index="1" aria-label="Go to hero slide 2"></button>
+                                <button class="hero-nav-dot w-3 h-3 rounded-full bg-white opacity-60 transition-opacity duration-300 hover:opacity-100 focus:outline-none" data-index="2" aria-label="Go to hero slide 3"></button>
                             </div>
                         </div>
-                        
-                        <!-- Client Logos Strip -->
-                     
                     </div>
-                    
-                    <!-- Background Design Element -->
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-electric-blue/10 to-deep-navy/10 rounded-full blur-3xl -z-10"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- What We Do Section -->
-    <section class="py-20 bg-light-gray relative">
-        <!-- Background Accents -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -right-40 -top-40 w-80 h-80 bg-electric-blue/5 rounded-full"></div>
-            <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-deep-navy/5 rounded-full"></div>
-        </div>
-        
-        <div class="container mx-auto px-5 relative z-10">
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
             <!-- Section Header -->
-            <div class="text-center mb-16 max-w-3xl mx-auto">
-               
-                
-                <h2 class="text-3xl md:text-4xl font-bold text-deep-navy mb-6">Transformative Technology Solutions</h2>
-                
-                <p class="text-lg text-charcoal/70">
+            <div class="text-center mb-20 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-700 text-deep-navy mb-6">Transformative Technology Solutions</h2>
+                <p class="text-lg text-text-secondary leading-relaxed">
                     We deliver enterprise-grade solutions that help organizations innovate faster, operate more efficiently, and scale with confidence.
                 </p>
             </div>
@@ -373,19 +324,16 @@
             <!-- Service Cards -->
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service 1: Digital Transformation -->
-                <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 group border border-gray-100 relative overflow-hidden">
-                    <!-- Card Background Accent -->
-                    <div class="absolute right-0 bottom-0 w-32 h-32 bg-electric-blue/5 rounded-tl-[80px] -z-10 transition-all duration-500 group-hover:bg-electric-blue/10"></div>
-                    
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group">
                     <!-- Icon -->
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric-blue/10 to-electric-blue/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-lg bg-electric-blue/10 flex items-center justify-center mb-6 group-hover:bg-electric-blue/15 transition-colors duration-300">
                         <i class="fa-sharp fa-solid icon-premium fa-chart-network text-2xl text-electric-blue"></i>
                     </div>
                     
                     <!-- Content -->
-                    <h3 class="text-xl font-bold text-deep-navy mb-4 group-hover:text-electric-blue transition-colors duration-300">Digital Transformation</h3>
+                    <h3 class="text-xl font-600 text-deep-navy mb-4">Digital Transformation</h3>
                     
-                    <p class="text-charcoal/70 mb-6">
+                    <p class="text-text-secondary mb-6 leading-relaxed">
                         Strategic roadmapping and implementation services to modernize legacy systems and enable new business capabilities.
                     </p>
                     
@@ -393,44 +341,41 @@
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Legacy System Modernization</span>
+                            <span class="text-sm text-text-secondary">Legacy System Modernization</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Cloud Migration & Strategy</span>
+                            <span class="text-sm text-text-secondary">Cloud Migration & Strategy</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Digital Process Automation</span>
+                            <span class="text-sm text-text-secondary">Digital Process Automation</span>
                         </li>
                     </ul>
                     
-                    <a href="services.html#transformation" class="inline-flex items-center text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300 mt-auto">
+                    <a href="services.html#transformation" class="inline-flex items-center text-electric-blue font-600 hover:text-deep-navy transition-colors duration-300 text-sm group/link">
                         Learn More
-                        <i class="fa-sharp fa-solid icon-premium fa-arrow-right ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover/link:translate-x-1"></i>
                     </a>
                 </div>
                 
                 <!-- Service 2: Enterprise Software -->
-                <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 group border border-gray-100 relative overflow-hidden">
-                    <!-- Card Background Accent -->
-                    <div class="absolute right-0 bottom-0 w-32 h-32 bg-electric-blue/5 rounded-tl-[80px] -z-10 transition-all duration-500 group-hover:bg-electric-blue/10"></div>
-                    
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group">
                     <!-- Icon -->
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric-blue/10 to-electric-blue/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-lg bg-electric-blue/10 flex items-center justify-center mb-6 group-hover:bg-electric-blue/15 transition-colors duration-300">
                         <i class="fa-sharp fa-solid icon-premium fa-laptop-code text-2xl text-electric-blue"></i>
                     </div>
                     
                     <!-- Content -->
-                    <h3 class="text-xl font-bold text-deep-navy mb-4 group-hover:text-electric-blue transition-colors duration-300">Enterprise Software</h3>
+                    <h3 class="text-xl font-600 text-deep-navy mb-4">Enterprise Software</h3>
                     
-                    <p class="text-charcoal/70 mb-6">
+                    <p class="text-text-secondary mb-6 leading-relaxed">
                         Custom enterprise software development that aligns with your business strategy and delivers measurable outcomes.
                     </p>
                     
@@ -438,44 +383,41 @@
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Scalable Architecture Design</span>
+                            <span class="text-sm text-text-secondary">Scalable Architecture Design</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">API Development & Integration</span>
+                            <span class="text-sm text-text-secondary">API Development & Integration</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Enterprise Mobile Solutions</span>
+                            <span class="text-sm text-text-secondary">Enterprise Mobile Solutions</span>
                         </li>
                     </ul>
                     
-                    <a href="services.html#development" class="inline-flex items-center text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300 mt-auto">
+                    <a href="services.html#development" class="inline-flex items-center text-electric-blue font-600 hover:text-deep-navy transition-colors duration-300 text-sm group/link">
                         Learn More
-                        <i class="fa-sharp fa-solid icon-premium fa-arrow-right ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover/link:translate-x-1"></i>
                     </a>
                 </div>
                 
                 <!-- Service 3: AI & Data Solutions -->
-                <div class="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 group border border-gray-100 relative overflow-hidden">
-                    <!-- Card Background Accent -->
-                    <div class="absolute right-0 bottom-0 w-32 h-32 bg-electric-blue/5 rounded-tl-[80px] -z-10 transition-all duration-500 group-hover:bg-electric-blue/10"></div>
-                    
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group">
                     <!-- Icon -->
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric-blue/10 to-electric-blue/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-lg bg-electric-blue/10 flex items-center justify-center mb-6 group-hover:bg-electric-blue/15 transition-colors duration-300">
                         <i class="fa-sharp fa-solid icon-premium fa-brain text-2xl text-electric-blue"></i>
                     </div>
                     
                     <!-- Content -->
-                    <h3 class="text-xl font-bold text-deep-navy mb-4 group-hover:text-electric-blue transition-colors duration-300">AI & Data Solutions</h3>
+                    <h3 class="text-xl font-600 text-deep-navy mb-4">AI & Data Solutions</h3>
                     
-                    <p class="text-charcoal/70 mb-6">
+                    <p class="text-text-secondary mb-6 leading-relaxed">
                         Advanced analytics and AI integration to unlock the value of your data and drive predictive decision-making.
                     </p>
                     
@@ -483,36 +425,36 @@
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Predictive Analytics</span>
+                            <span class="text-sm text-text-secondary">Predictive Analytics</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Machine Learning Integration</span>
+                            <span class="text-sm text-text-secondary">Machine Learning Integration</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="flex-shrink-0 mt-0.5">
-                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green"></i>
+                                <i class="fa-sharp fa-solid icon-premium fa-check-circle text-success-green text-sm"></i>
                             </div>
-                            <span class="text-sm text-charcoal/80">Big Data Architecture</span>
+                            <span class="text-sm text-text-secondary">Big Data Architecture</span>
                         </li>
                     </ul>
                     
-                    <a href="services.html#ai" class="inline-flex items-center text-electric-blue font-semibold hover:text-deep-navy transition-colors duration-300 mt-auto">
+                    <a href="services.html#ai" class="inline-flex items-center text-electric-blue font-600 hover:text-deep-navy transition-colors duration-300 text-sm group/link">
                         Learn More
-                        <i class="fa-sharp fa-solid icon-premium fa-arrow-right ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                        <i class="fa-sharp fa-solid icon-premium fa-arrow-right ml-2 text-xs transition-transform duration-300 group-hover/link:translate-x-1"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Bottom CTA -->
             <div class="text-center mt-16">
-                <a href="services.html" class="inline-flex items-center px-8 py-4 bg-white border-2 border-electric-blue text-electric-blue rounded-lg font-semibold transition-all duration-300 hover:bg-electric-blue hover:text-white hover:shadow-lg">
-                    View All Enterprise Solutions
-                    <i class="fa-sharp fa-solid icon-premium fa-long-arrow-alt-right ml-2"></i>
+                <a href="services.html" class="inline-flex items-center px-8 py-3.5 bg-white border-2 border-electric-blue text-electric-blue rounded-lg font-600 transition-all duration-300 hover:bg-electric-blue hover:text-white">
+                    View All Solutions
+                    <i class="fa-sharp fa-solid icon-premium fa-long-arrow-alt-right ml-2 text-sm"></i>
                 </a>
             </div>
         </div>
