@@ -54,6 +54,291 @@
     </script>
 
     <style>
+        /* Prevent Layout Shift from Scrollbar */
+        html {
+            scrollbar-gutter: stable;
+            scroll-behavior: smooth;
+        }
+
+        /* Premium Google-inspired Gallery Styles */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Gallery Item Animations */
+        .gallery-item {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.15s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.25s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.35s; }
+
+        /* Premium Card Styling */
+        .gallery-card {
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.5) 100%);
+            border: 1px solid rgba(0, 123, 255, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-card:hover {
+            border-color: rgba(0, 123, 255, 0.2);
+            box-shadow: 0 12px 32px rgba(0, 123, 255, 0.15), 0 0 0 1px rgba(0, 123, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 1);
+            transform: translateY(-8px);
+        }
+
+        /* Image Container with Play Button */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+        }
+
+        .image-container img {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-card:hover .image-container img {
+            transform: scale(1.08);
+        }
+
+        /* Video Play Button */
+        .play-button {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 31, 63, 0) !important;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .video-card:hover .play-button {
+            opacity: 1;
+            background: rgba(0, 31, 63, 0.4) !important;
+        }
+
+        .play-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 8px 24px rgba(0, 123, 255, 0.3);
+            transform: scale(0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .video-card:hover .play-icon {
+            transform: scale(1);
+            box-shadow: 0 12px 32px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Card Content */
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: #001F3F;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .card-content p {
+            margin: 0;
+            color: #5f6368;
+            font-size: 0.925rem;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+        }
+
+        /* Album Filter Tabs */
+        .album-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+        }
+
+        .album-tab {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid rgba(0, 123, 255, 0.2);
+            border-radius: 24px;
+            background: white;
+            color: #5f6368;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .album-tab:hover {
+            border-color: rgba(0, 123, 255, 0.5);
+            color: #007BFF;
+        }
+
+        .album-tab.active {
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Section Heading Animation */
+        .section-heading {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        /* Project Card Enhancement */
+        .project-card {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Tech Tags Animation */
+        .tech-tag {
+            display: inline-block;
+            animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        .tech-tag:nth-child(1) { animation-delay: 0.1s; }
+        .tech-tag:nth-child(2) { animation-delay: 0.15s; }
+        .tech-tag:nth-child(3) { animation-delay: 0.2s; }
+        .tech-tag:nth-child(4) { animation-delay: 0.25s; }
+
+        /* Enhanced Tech Tags */
+        .tech-tag {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 123, 255, 0.05) 100%);
+            color: #007BFF;
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tech-tag:hover {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.15) 0%, rgba(0, 123, 255, 0.08) 100%);
+            border-color: rgba(0, 123, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+        }
+
+        /* Album Badge */
+        .album-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 123, 255, 0.05) 100%);
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #007BFF;
+            animation: slideInLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        .album-badge i {
+            font-size: 0.85rem;
+        }
+
+        /* Gradient Background Enhancement */
+        .section-header {
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #007BFF, transparent);
+            border-radius: 2px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .gallery-card {
+                border-radius: 12px;
+            }
+
+            .play-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+
+            .card-content {
+                padding: 1.25rem;
+            }
+
+            .album-tabs {
+                gap: 0.75rem;
+            }
+
+            .album-tab {
+                padding: 0.65rem 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body class="font-poppins">
@@ -197,77 +482,97 @@
     </section>
 
     <!-- Brand & Marketing Gallery Section -->
-    <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-200">
+    <section class="py-20 md:py-28 bg-gradient-to-br from-white via-gray-50 to-white border-b border-gray-200">
         <div class="max-w-container mx-auto px-4 md:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-4">Brand & Marketing</h2>
-                <p class="text-lg text-gray-600">Our visual identity and marketing materials</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-700 text-deep-navy mb-4 section-heading">
+                    <i class="fas fa-palette text-electric-blue mr-3"></i>Brand & Marketing
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto section-heading" style="animation-delay: 0.1s;">Our visual identity and marketing materials</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Brand on Laptop -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-video">
-                        <img src="assets/images/brand_on_laptop.png" alt="Brand showcase on laptop display" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="300">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-video">
+                        <img src="assets/images/brand_on_laptop.png" alt="Brand showcase on laptop display" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-600 text-deep-navy mb-1">Brand Showcase</h3>
-                        <p class="text-sm text-gray-600">Professional brand presentation on digital platform</p>
+                    <div class="card-content">
+                        <h3>Brand Showcase</h3>
+                        <p>Professional brand presentation on digital platform</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-image"></i> Brand</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Outdoor Advertising -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-video">
-                        <img src="assets/images/Outdoor-Advertising.png" alt="Outdoor advertising campaign materials" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="300">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-video">
+                        <img src="assets/images/Outdoor-Advertising.png" alt="Outdoor advertising campaign materials" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-600 text-deep-navy mb-1">Outdoor Campaign</h3>
-                        <p class="text-sm text-gray-600">Large-scale advertising materials and visibility</p>
+                    <div class="card-content">
+                        <h3>Outdoor Campaign</h3>
+                        <p>Large-scale advertising materials and visibility</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-bullhorn"></i> Marketing</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Billboard -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-video">
-                        <img src="assets/images/billboard.png" alt="Billboard advertising display" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="300">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-video">
+                        <img src="assets/images/billboard.png" alt="Billboard advertising display" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-600 text-deep-navy mb-1">Billboard Design</h3>
-                        <p class="text-sm text-gray-600">High-impact public display advertising</p>
+                    <div class="card-content">
+                        <h3>Billboard Design</h3>
+                        <p>High-impact public display advertising</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-rectangle-landscape"></i> Display</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Brand Pattern -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-video">
-                        <img src="assets/images/brand_pattern.png" alt="Brand pattern and design system" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="300">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-video">
+                        <img src="assets/images/brand_pattern.png" alt="Brand pattern and design system" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-600 text-deep-navy mb-1">Design System</h3>
-                        <p class="text-sm text-gray-600">Consistent brand patterns and visual guidelines</p>
+                    <div class="card-content">
+                        <h3>Design System</h3>
+                        <p>Consistent brand patterns and visual guidelines</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-shapes"></i> Pattern</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Souvenirs -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-video">
-                        <img src="assets/images/souvenirs.png" alt="Brand merchandise and souvenirs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="300">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-video">
+                        <img src="assets/images/souvenirs.png" alt="Brand merchandise and souvenirs" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="300">
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-600 text-deep-navy mb-1">Brand Merchandise</h3>
-                        <p class="text-sm text-gray-600">Branded products and promotional items</p>
+                    <div class="card-content">
+                        <h3>Brand Merchandise</h3>
+                        <p>Branded products and promotional items</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-gift"></i> Merch</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Logo & Branding -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-video bg-deep-navy/5 flex items-center justify-center">
-                        <img src="assets/images/logo_name_slogan.png" alt="ICECODING logo with name and slogan" class="w-3/4 h-auto group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="300" height="200">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-video bg-deep-navy/5 flex items-center justify-center">
+                        <img src="assets/images/logo_name_slogan.png" alt="ICECODING logo with name and slogan" class="w-3/4 h-auto" loading="lazy" decoding="async" width="300" height="200">
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-600 text-deep-navy mb-1">Logo & Identity</h3>
-                        <p class="text-sm text-gray-600">Core brand identity and messaging</p>
+                    <div class="card-content">
+                        <h3>Logo & Identity</h3>
+                        <p>Core brand identity and messaging</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-star"></i> Identity</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,17 +582,19 @@
     <!-- Team Gallery Section -->
     <section class="py-20 md:py-28 bg-white border-b border-gray-200">
         <div class="max-w-container mx-auto px-4 md:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-4">Our Team</h2>
-                <p class="text-lg text-gray-600">The talented people behind ICECODING's success</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-700 text-deep-navy mb-4 section-heading">
+                    <i class="fas fa-users text-electric-blue mr-3"></i>Our Team
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto section-heading" style="animation-delay: 0.1s;">The talented people behind ICECODING's success</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Team Photo 1 -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-square">
-                        <img src="assets/images/two_team_members_smiling.jpg" alt="Two team members collaborating and smiling" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="400">
-                        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-square">
+                        <img src="assets/images/two_team_members_smiling.jpg" alt="Two team members collaborating and smiling" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="400">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100 flex items-end p-6">
                             <div class="text-white">
                                 <h3 class="font-600 text-lg mb-1">Team Collaboration</h3>
                                 <p class="text-sm text-white/90">Working together towards innovation</p>
@@ -297,10 +604,10 @@
                 </div>
 
                 <!-- Team Photo 2 -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-square">
-                        <img src="assets/images/gentlemantalkingwith_themike.jpg" alt="Professional team member presenting with microphone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="400">
-                        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-square">
+                        <img src="assets/images/gentlemantalkingwith_themike.jpg" alt="Professional team member presenting with microphone" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="400">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100 flex items-end p-6">
                             <div class="text-white">
                                 <h3 class="font-600 text-lg mb-1">Knowledge Sharing</h3>
                                 <p class="text-sm text-white/90">Expert insights and technical talks</p>
@@ -310,10 +617,10 @@
                 </div>
 
                 <!-- Team Photo 3 -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-md border border-electric-blue/10 transition-all duration-300 hover:shadow-xl hover:border-electric-blue/30">
-                    <div class="relative overflow-hidden aspect-square">
-                        <img src="assets/images/gentlemansmiling.jpg" alt="Professional team member smiling" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="400" height="400">
-                        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                <div class="gallery-item gallery-card">
+                    <div class="image-container aspect-square">
+                        <img src="assets/images/gentlemansmiling.jpg" alt="Professional team member smiling" class="w-full h-full object-cover" loading="lazy" decoding="async" width="400" height="400">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deep-navy/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100 flex items-end p-6">
                             <div class="text-white">
                                 <h3 class="font-600 text-lg mb-1">Professional Excellence</h3>
                                 <p class="text-sm text-white/90">Dedicated to quality and innovation</p>
@@ -325,74 +632,240 @@
         </div>
     </section>
 
-    <!-- Project Gallery Section -->
-    <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-200">
+    <!-- Video Albums Section -->
+    <section class="py-20 md:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 border-b border-gray-200">
         <div class="max-w-container mx-auto px-4 md:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-4">Our Recent Work</h2>
-                <p class="text-lg text-gray-600">Showcasing projects that demonstrate our expertise and innovation</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-700 text-deep-navy mb-4 section-heading">
+                    <i class="fas fa-video text-electric-blue mr-3"></i>Video Content
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto section-heading" style="animation-delay: 0.1s;">Behind-the-scenes & product demonstrations</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1: Office Tour -->
+                <div class="gallery-item video-card gallery-card">
+                    <div class="image-container aspect-video bg-gradient-to-br from-electric-blue/10 to-deep-navy/10">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-deep-navy/5 to-electric-blue/5">
+                            <i class="fas fa-building text-4xl text-electric-blue/30"></i>
+                        </div>
+                        <div class="play-button">
+                            <div class="play-icon"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Office & Culture Tour</h3>
+                        <p>A walkthrough of our workspace and team environment</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-video"></i> 4:32</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2: Project Showcase -->
+                <div class="gallery-item video-card gallery-card">
+                    <div class="image-container aspect-video bg-gradient-to-br from-electric-blue/10 to-deep-navy/10">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-deep-navy/5 to-electric-blue/5">
+                            <i class="fas fa-code text-4xl text-electric-blue/30"></i>
+                        </div>
+                        <div class="play-button">
+                            <div class="play-icon"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Development Process</h3>
+                        <p>From concept to deployment - our methodology explained</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-video"></i> 6:15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3: Client Testimonial -->
+                <div class="gallery-item video-card gallery-card">
+                    <div class="image-container aspect-video bg-gradient-to-br from-electric-blue/10 to-deep-navy/10">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-deep-navy/5 to-electric-blue/5">
+                            <i class="fas fa-quote-left text-4xl text-electric-blue/30"></i>
+                        </div>
+                        <div class="play-button">
+                            <div class="play-icon"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Client Success Story</h3>
+                        <p>How we transformed a client's digital presence</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-video"></i> 5:48</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation & UI Showcase Section -->
+    <section class="py-20 md:py-28 bg-white border-b border-gray-200">
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-700 text-deep-navy mb-4 section-heading">
+                    <i class="fas fa-magic text-electric-blue mr-3"></i>Animations & Effects
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto section-heading" style="animation-delay: 0.1s;">Interactive UI components and smooth transitions</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Animation 1: Microinteractions -->
+                <div class="gallery-item gallery-card cursor-pointer group">
+                    <div class="image-container aspect-video bg-gradient-to-br from-electric-blue/5 via-white to-deep-navy/5 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative">
+                                <div class="w-16 h-16 rounded-full border-4 border-electric-blue/20 border-t-electric-blue animate-spin"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-sparkles text-2xl text-electric-blue"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="play-button">
+                            <div class="play-icon"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Button Interactions</h3>
+                        <p>Smooth hover effects and micro-animations for buttons</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-film"></i> Animation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animation 2: Page Transitions -->
+                <div class="gallery-item gallery-card cursor-pointer group">
+                    <div class="image-container aspect-video bg-gradient-to-br from-electric-blue/5 via-white to-deep-navy/5 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="space-y-3">
+                                <div class="h-3 w-20 bg-electric-blue/30 rounded animate-pulse"></div>
+                                <div class="h-3 w-16 bg-electric-blue/20 rounded animate-pulse" style="animation-delay: 0.2s;"></div>
+                                <div class="h-3 w-24 bg-electric-blue/10 rounded animate-pulse" style="animation-delay: 0.4s;"></div>
+                            </div>
+                        </div>
+                        <div class="play-button">
+                            <div class="play-icon"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Loading States</h3>
+                        <p>Elegant loading animations and skeleton screens</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-film"></i> Animation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animation 3: Scroll Effects -->
+                <div class="gallery-item gallery-card cursor-pointer group">
+                    <div class="image-container aspect-video bg-gradient-to-br from-electric-blue/5 via-white to-deep-navy/5 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="flex gap-2">
+                                <div class="w-2 h-12 bg-electric-blue rounded-full" style="animation: slideInUp 1.2s ease-in-out infinite;"></div>
+                                <div class="w-2 h-12 bg-electric-blue/70 rounded-full" style="animation: slideInUp 1.2s ease-in-out infinite; animation-delay: 0.2s;"></div>
+                                <div class="w-2 h-12 bg-electric-blue/40 rounded-full" style="animation: slideInUp 1.2s ease-in-out infinite; animation-delay: 0.4s;"></div>
+                            </div>
+                        </div>
+                        <div class="play-button">
+                            <div class="play-icon"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Scroll Animations</h3>
+                        <p>Fade-in and parallax effects triggered on scroll</p>
+                        <div class="mt-3">
+                            <span class="album-badge"><i class="fas fa-film"></i> Animation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section class="py-20 md:py-28 bg-gradient-to-br from-white via-gray-50 to-white border-b border-gray-200">
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-700 text-deep-navy mb-4 section-heading">
+                    <i class="fas fa-briefcase text-electric-blue mr-3"></i>Our Recent Work
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto section-heading" style="animation-delay: 0.1s;">Showcasing projects that demonstrate our expertise and innovation</p>
             </div>
             
-            <div class="space-y-12">
+            <div class="space-y-20">
                 <!-- Project 1 -->
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="group relative bg-white rounded-lg overflow-hidden shadow-lg">
+                <div class="project-card grid md:grid-cols-2 gap-12 items-center">
+                    <div class="gallery-card">
                         <div class="aspect-video relative overflow-hidden">
-                            <img src="assets/images/brand_on_laptop.png" alt="E-commerce platform showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <img src="assets/images/brand_on_laptop.png" alt="E-commerce platform showcase" class="w-full h-full object-cover" loading="lazy" decoding="async" width="500" height="350">
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-600 text-deep-navy mb-3">Modern E-commerce Solution</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        <h3 class="text-3xl font-700 text-deep-navy mb-4">Modern E-commerce Solution</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
                             A full-stack platform built with React and Node.js for a retail client needing seamless user experience with advanced analytics. The system handles high transaction volumes and integrates with their existing ERP infrastructure.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">React</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Node.js</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">PostgreSQL</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">AWS</span>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>React</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>Node.js</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>PostgreSQL</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>AWS</span>
                         </div>
+                        <a href="index.html#contact" class="inline-flex items-center px-6 py-3 bg-electric-blue text-white font-600 rounded-lg transition-all duration-300 hover:bg-deep-navy">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="group relative bg-white rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
+                <div class="project-card grid md:grid-cols-2 gap-12 items-center">
+                    <div class="gallery-card order-2 md:order-1">
                         <div class="aspect-video relative overflow-hidden">
-                            <img src="assets/images/Outdoor-Advertising.png" alt="Mobile application showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <img src="assets/images/Outdoor-Advertising.png" alt="Mobile application showcase" class="w-full h-full object-cover" loading="lazy" decoding="async" width="500" height="350">
                         </div>
                     </div>
                     <div class="order-1 md:order-2">
-                        <h3 class="text-2xl font-600 text-deep-navy mb-3">Cross-Platform Mobile Application</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        <h3 class="text-3xl font-700 text-deep-navy mb-4">Cross-Platform Mobile Application</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
                             Built with React Native to deliver native performance across iOS and Android. The app brings a government agency's field operations into the modern era with real-time data synchronization and offline-first capabilities.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">React Native</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Firebase</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Redux</span>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>React Native</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>Firebase</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>Redux</span>
                         </div>
+                        <a href="index.html#contact" class="inline-flex items-center px-6 py-3 bg-electric-blue text-white font-600 rounded-lg transition-all duration-300 hover:bg-deep-navy">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="group relative bg-white rounded-lg overflow-hidden shadow-lg">
+                <div class="project-card grid md:grid-cols-2 gap-12 items-center">
+                    <div class="gallery-card">
                         <div class="aspect-video relative overflow-hidden">
-                            <img src="assets/images/billboard.png" alt="Education platform showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <img src="assets/images/billboard.png" alt="Education platform showcase" class="w-full h-full object-cover" loading="lazy" decoding="async" width="500" height="350">
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-600 text-deep-navy mb-3">Technology Education Platform</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        <h3 class="text-3xl font-700 text-deep-navy mb-4">Technology Education Platform</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
                             An interactive learning platform for non-profits teaching digital skills to underserved communities. Features adaptive learning paths, real-time progress tracking, and accessible design for diverse learners.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Next.js</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">TypeScript</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">MongoDB</span>
-                            <span class="inline-block px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Redis</span>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>Next.js</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>TypeScript</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>MongoDB</span>
+                            <span class="tech-tag"><i class="fas fa-check-circle mr-2"></i>Redis</span>
                         </div>
+                        <a href="index.html#contact" class="inline-flex items-center px-6 py-3 bg-electric-blue text-white font-600 rounded-lg transition-all duration-300 hover:bg-deep-navy">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -417,9 +890,38 @@
     <!-- Footer -->
     <div id="site-footer"></div>
 
-    <style>
-    </style>
     <script src="scripts/includes.js"></script>
+    <script>
+        // Video play button interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButtons = document.querySelectorAll('.video-card');
+            playButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Placeholder for video modal/interaction
+                    console.log('Video playback initiated');
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isVisible = mobileMenu.classList.contains('opacity-100');
+                    
+                    if (isVisible) {
+                        mobileMenu.classList.remove('opacity-100', 'visible');
+                        mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+                    } else {
+                        mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
+                        mobileMenu.classList.add('opacity-100', 'visible');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 

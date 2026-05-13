@@ -53,6 +53,12 @@
     </script>
 
     <style>
+        /* Prevent Layout Shift from Scrollbar */
+        html {
+            scrollbar-gutter: stable;
+            scroll-behavior: smooth;
+        }
+
         @keyframes slideInUp {
             from {
                 opacity: 0;

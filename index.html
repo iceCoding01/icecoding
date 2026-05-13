@@ -120,6 +120,255 @@
             gtag('config', window.ICECODING_GA_ID);
         }
     </script>
+
+    <!-- Premium Contact Section Styles -->
+    <style>
+        /* Prevent Layout Shift from Scrollbar */
+        html {
+            scrollbar-gutter: stable;
+            scroll-behavior: smooth;
+        }
+
+        /* Contact Section Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(0, 123, 255, 0);
+            }
+        }
+
+        /* Contact Form Enhancement */
+        #contact-form {
+            animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #contact-form input,
+        #contact-form select,
+        #contact-form textarea {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #contact-form input:focus,
+        #contact-form select:focus,
+        #contact-form textarea:focus {
+            background: rgba(255, 255, 255, 0.12) !important;
+            border-color: rgba(0, 123, 255, 0.6) !important;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1), inset 0 1px 2px rgba(0, 123, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        #contact-form input::placeholder,
+        #contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Premium Form Label */
+        #contact-form label {
+            font-size: 0.925rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Form Group Animation */
+        #contact-form > div {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        #contact-form > div:nth-child(1) { animation-delay: 0.1s; }
+        #contact-form > div:nth-child(2) { animation-delay: 0.15s; }
+        #contact-form > div:nth-child(3) { animation-delay: 0.2s; }
+        #contact-form > div:nth-child(4) { animation-delay: 0.25s; }
+        #contact-form > div:nth-child(5) { animation-delay: 0.3s; }
+        #contact-form > div:nth-child(6) { animation-delay: 0.35s; }
+        #contact-form > div:nth-child(7) { animation-delay: 0.4s; }
+
+        /* Premium Submit Button */
+        #contact-form button[type="submit"] {
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%) !important;
+            font-size: 1rem;
+            letter-spacing: 0.4px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact-form button[type="submit"]:hover {
+            box-shadow: 0 8px 30px rgba(0, 123, 255, 0.4), 0 0 20px rgba(0, 123, 255, 0.2);
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%) !important;
+        }
+
+        #contact-form button[type="submit"]:active {
+            transform: translateY(-1px);
+        }
+
+        /* Contact Info Cards Animation */
+        .contact-info-card {
+            animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-info-card:hover {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-color: rgba(0, 123, 255, 0.2) !important;
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 123, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info-card:nth-child(1) { animation-delay: 0.1s; }
+        .contact-info-card:nth-child(2) { animation-delay: 0.2s; }
+        .contact-info-card:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Icon Styling */
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.3) 0%, rgba(0, 123, 255, 0.1) 100%);
+            border: 1.5px solid rgba(0, 123, 255, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #007BFF;
+        }
+
+        .contact-info-card:hover .contact-icon {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.4) 0%, rgba(0, 123, 255, 0.2) 100%);
+            border-color: rgba(0, 123, 255, 0.6);
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+        }
+
+        /* Help Text Styling */
+        #contact-solution-help {
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 400;
+        }
+
+        /* Checkbox Styling */
+        #contact-form input[type="checkbox"] {
+            accent-color: #007BFF;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* Contact Section Header Animation */
+        #contact .mb-10 {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #contact .mb-10 > div {
+            animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s backwards;
+        }
+
+        #contact .mb-10 h2 {
+            animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s backwards;
+        }
+
+        #contact .mb-10 p {
+            animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+        }
+
+        /* Contact Badge Animation */
+        #contact .inline-flex.px-4 {
+            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.05s backwards;
+        }
+
+        /* Premium Section Background */
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            #contact-form button[type="submit"]:hover {
+                transform: translateY(-2px);
+            }
+
+            .contact-info-card:hover {
+                transform: translateY(-4px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #contact-form {
+                animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .contact-info-card {
+                animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            #contact-form input,
+            #contact-form select,
+            #contact-form textarea {
+                padding: 0.875rem 1rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="font-poppins text-charcoal bg-white antialiased">
     <!-- Navigation Bar -->
@@ -876,48 +1125,48 @@
                 
                 <!-- Right: Contact Info -->
                 <div>
-                    <div class="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 mb-8">
-                        <h3 class="text-2xl font-bold mb-6">Enterprise Contact</h3>
+                    <div class="contact-info-card mb-8">
+                        <h3 class="text-2xl font-bold mb-8">Enterprise Contact</h3>
                         <div class="space-y-6">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-electric-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-sharp fa-solid icon-premium fa-building text-electric-blue"></i>
+                                <div class="contact-icon flex-shrink-0">
+                                    <i class="fa-sharp fa-solid icon-premium fa-building text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1">Global Headquarters</h4>
-                                    <p class="text-white/80">Remote & On-site Delivery Model<br>Serving clients across multiple regions<br>Head office details available on request</p>
+                                    <h4 class="font-semibold mb-1 text-white">Global Headquarters</h4>
+                                    <p class="text-white/80 text-sm">Remote & On-site Delivery Model<br>Serving clients across multiple regions<br>Head office details available on request</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-electric-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-sharp fa-solid icon-premium fa-phone text-electric-blue"></i>
+                                <div class="contact-icon flex-shrink-0">
+                                    <i class="fa-sharp fa-solid icon-premium fa-phone text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1">Consultations</h4>
-                                    <p class="text-white/80">
+                                    <h4 class="font-semibold mb-1 text-white">Consultations</h4>
+                                    <p class="text-white/80 text-sm">
                                         <a href="#contact" class="hover:text-electric-blue transition-colors duration-300">Book a consultation via the contact form</a>
                                     </p>
-                                    <p class="text-white/80">
+                                    <p class="text-white/80 text-sm">
                                         <a href="mailto:support@icecoding.com" class="hover:text-electric-blue transition-colors duration-300">support@icecoding.com</a> 
-                                        <span class="text-white/60 text-sm">(Support)</span>
+                                        <span class="text-white/60 text-xs">(Support)</span>
                                     </p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-electric-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-sharp fa-solid icon-premium fa-envelope text-electric-blue"></i>
+                                <div class="contact-icon flex-shrink-0">
+                                    <i class="fa-sharp fa-solid icon-premium fa-envelope text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1">Email</h4>
-                                    <p class="text-white/80">
+                                    <h4 class="font-semibold mb-1 text-white">Email</h4>
+                                    <p class="text-white/80 text-sm">
                                         <a href="mailto:enterprise@icecoding.com" class="hover:text-electric-blue transition-colors duration-300">enterprise@icecoding.com</a> 
-                                        <span class="text-white/60 text-sm">(Enterprise)</span>
+                                        <span class="text-white/60 text-xs">(Enterprise)</span>
                                     </p>
-                                    <p class="text-white/80">
+                                    <p class="text-white/80 text-sm">
                                         <a href="mailto:support@icecoding.com" class="hover:text-electric-blue transition-colors duration-300">support@icecoding.com</a> 
-                                        <span class="text-white/60 text-sm">(Support)</span>
+                                        <span class="text-white/60 text-xs">(Support)</span>
                                     </p>
                                 </div>
                             </div>
@@ -926,38 +1175,38 @@
                     
                     <!-- Hours & Support -->
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/10">
+                        <div class="contact-info-card p-6">
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-electric-blue/20 rounded-lg flex items-center justify-center">
-                                    <i class="fa-sharp fa-solid icon-premium fa-clock text-electric-blue"></i>
+                                <div class="contact-icon">
+                                    <i class="fa-sharp fa-solid icon-premium fa-clock text-sm"></i>
                                 </div>
-                                <h4 class="font-semibold">Business Hours</h4>
+                                <h4 class="font-semibold text-white">Business Hours</h4>
                             </div>
                             <ul class="space-y-2 text-white/80 text-sm">
                                 <li class="flex justify-between">
                                     <span>Monday - Friday:</span>
-                                    <span>8:00 AM - 6:00 PM PST</span>
+                                    <span class="font-medium">8:00 AM - 6:00 PM PST</span>
                                 </li>
                                 <li class="flex justify-between">
                                     <span>Saturday:</span>
-                                    <span>10:00 AM - 2:00 PM PST</span>
+                                    <span class="font-medium">10:00 AM - 2:00 PM PST</span>
                                 </li>
                                 <li class="flex justify-between">
                                     <span>Sunday:</span>
-                                    <span>Closed</span>
+                                    <span class="font-medium">Closed</span>
                                 </li>
                             </ul>
                         </div>
                         
-                        <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/10">
+                        <div class="contact-info-card p-6">
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-electric-blue/20 rounded-lg flex items-center justify-center">
-                                    <i class="fa-sharp fa-solid icon-premium fa-headset text-electric-blue"></i>
+                                <div class="contact-icon">
+                                    <i class="fa-sharp fa-solid icon-premium fa-headset text-sm"></i>
                                 </div>
-                                <h4 class="font-semibold">Support</h4>
+                                <h4 class="font-semibold text-white">Support</h4>
                             </div>
                             <p class="text-white/80 text-sm mb-4">Enterprise clients receive 24/7 priority support with a dedicated account manager.</p>
-                            <a href="mailto:support@icecoding.com?subject=Client%20Portal%20Access" class="inline-flex items-center text-electric-blue hover:text-white transition-colors duration-300 text-sm">
+                            <a href="mailto:support@icecoding.com?subject=Client%20Portal%20Access" class="inline-flex items-center text-electric-blue hover:text-white transition-colors duration-300 text-sm font-medium">
                                 Client Portal Login
                                 <i class="fa-sharp fa-solid icon-premium fa-arrow-right ml-2 text-xs"></i>
                             </a>
@@ -981,6 +1230,102 @@
     <!-- Scripts -->
     <script src="scripts/main.js"></script>
     <script src="scripts/includes.js"></script>
+    
+    <!-- Premium Contact Form Enhancements -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (!contactForm) return;
+
+            // Form field interactions
+            const formInputs = contactForm.querySelectorAll('input, select, textarea');
+            
+            formInputs.forEach(input => {
+                // Focus effects
+                input.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'translateY(-1px)';
+                });
+
+                input.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'translateY(0)';
+                });
+
+                // Input validation with visual feedback
+                input.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        this.style.borderColor = 'rgba(0, 123, 255, 0.4)';
+                    }
+                });
+
+                input.addEventListener('invalid', function() {
+                    this.style.borderColor = 'rgba(255, 77, 77, 0.4)';
+                });
+            });
+
+            // Form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // Disable button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner mr-2 animate-spin"></i>Sending...';
+                
+                // Simulate submission (replace with actual form submission)
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Sent Successfully!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        contactForm.reset();
+                        
+                        // Reset input styles
+                        formInputs.forEach(input => {
+                            input.style.borderColor = '';
+                        });
+                    }, 2000);
+                }, 1500);
+            });
+
+            // Smooth scroll to contact form
+            const contactLinks = document.querySelectorAll('a[href="#contact"]');
+            contactLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#contact') {
+                        e.preventDefault();
+                        const contactSection = document.getElementById('contact');
+                        if (contactSection) {
+                            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            // Focus on first input after scroll
+                            setTimeout(() => {
+                                contactForm.querySelector('input:first-of-type')?.focus();
+                            }, 800);
+                        }
+                    }
+                });
+            });
+
+            // Intersection Observer for animations
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.contact-info-card').forEach(card => {
+                    observer.observe(card);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
