@@ -69,6 +69,188 @@
         a:focus {
             outline: 2px solid #007BFF;
         }
+
+        /* Premium Timeline Styles - Google-inspired UX */
+        .timeline-container {
+            position: relative;
+        }
+
+        /* Desktop vertical line */
+        @media (min-width: 768px) {
+            .timeline-container::before {
+                content: '';
+                position: absolute;
+                left: 29px;
+                top: 80px;
+                bottom: 20px;
+                width: 2px;
+                background: linear-gradient(180deg, rgba(0, 123, 255, 0.4) 0%, rgba(0, 31, 63, 0.4) 100%);
+            }
+        }
+
+        /* Mobile vertical line */
+        @media (max-width: 767px) {
+            .timeline-container::before {
+                content: '';
+                position: absolute;
+                left: 14px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(180deg, rgba(0, 123, 255, 0.3) 0%, rgba(0, 31, 63, 0.3) 100%);
+            }
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 2.5rem;
+            display: flex;
+            gap: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .timeline-step:nth-child(1) { animation-delay: 0.15s; }
+        .timeline-step:nth-child(2) { animation-delay: 0.3s; }
+        .timeline-step:nth-child(3) { animation-delay: 0.45s; }
+        .timeline-step:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Circular marker with premium styling */
+        .timeline-marker {
+            position: absolute;
+            left: -65px;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2), 0 4px 16px rgba(0, 123, 255, 0.1);
+            z-index: 10;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+
+        .timeline-step:hover .timeline-marker {
+            transform: scale(1.15) translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 123, 255, 0.35), 0 0 0 8px rgba(0, 123, 255, 0.08);
+        }
+
+        /* Content card with premium styling */
+        .timeline-content {
+            flex: 1;
+            padding: 1.75rem 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(249, 250, 251, 0.5) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+            border-left: 3px solid #007BFF;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(4px);
+        }
+
+        .timeline-step:hover .timeline-content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+            border-color: rgba(0, 123, 255, 0.2);
+            border-left-color: #0056b3;
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transform: translateX(4px);
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 0.75rem 0;
+            color: #001F3F;
+            font-size: 1.125rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            color: #5f6368;
+            font-size: 0.975rem;
+            line-height: 1.6;
+            letter-spacing: 0.2px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 767px) {
+            .timeline-container {
+                padding-left: 50px;
+            }
+
+            .timeline-step {
+                margin-bottom: 2rem;
+                gap: 1.5rem;
+            }
+
+            .timeline-marker {
+                left: -57px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                border: 2px solid white;
+                box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+            }
+
+            .timeline-step:hover .timeline-marker {
+                transform: scale(1.12) translateY(-2px);
+                box-shadow: 0 6px 18px rgba(0, 123, 255, 0.3);
+            }
+
+            .timeline-content {
+                padding: 1.5rem 1.25rem;
+                border-radius: 10px;
+                font-size: 0.95rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1rem;
+            }
+
+            .timeline-step:hover .timeline-content {
+                transform: translateX(2px);
+            }
+        }
+
+        /* Subtle dots accent on the line */
+        @media (min-width: 768px) {
+            .timeline-step::before {
+                content: '';
+                position: absolute;
+                left: 25px;
+                top: 60px;
+                width: 8px;
+                height: 8px;
+                background: rgba(0, 123, 255, 0.2);
+                border-radius: 50%;
+                border: 2px solid rgba(0, 123, 255, 0.3);
+                transition: all 0.3s ease;
+                z-index: 5;
+            }
+
+            .timeline-step:hover::before {
+                background: rgba(0, 123, 255, 0.5);
+                border-color: #007BFF;
+                box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+            }
+        }
     </style>
     
     <!-- Google Analytics 4 -->
@@ -216,37 +398,52 @@
     </section>
 
     <!-- How We Work Section -->
-    <section class="py-20 md:py-28 bg-white">
+    <section class="py-20 md:py-28 bg-gradient-to-br from-gray-50 to-white border-b border-gray-200">
         <div class="max-w-4xl mx-auto px-4 md:px-6">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">How we work</h2>
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-4">How we work</h2>
+                <p class="text-lg text-gray-600 max-w-2xl">Our proven process ensures every project delivers real value</p>
+            </div>
             
-            <div class="space-y-12 max-w-2xl">
-                <div>
-                    <h3 class="text-lg font-600 text-deep-navy mb-2">1. Listen and understand</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        We spend time learning your business, your constraints, and your goals. We ask hard questions because surface-level understanding leads to surface-level solutions.
-                    </p>
+            <div class="timeline-container max-w-2xl">
+                <div class="timeline-step">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-600 mb-2">Listen and understand</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            We spend time learning your business, your constraints, and your goals. We ask hard questions because surface-level understanding leads to surface-level solutions.
+                        </p>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-lg font-600 text-deep-navy mb-2">2. Design thoughtfully</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        We use proven practices and modern technology, but we never sacrifice clarity for cleverness. Your team should understand and own what we build.
-                    </p>
+                <div class="timeline-step">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-600 mb-2">Design thoughtfully</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            We use proven practices and modern technology, but we never sacrifice clarity for cleverness. Your team should understand and own what we build.
+                        </p>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-lg font-600 text-deep-navy mb-2">3. Deliver reliably</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        We build with discipline, test rigorously, and communicate transparently. We deliver systems that are secure, scalable, and maintainable from day one.
-                    </p>
+                <div class="timeline-step">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-600 mb-2">Deliver reliably</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            We build with discipline, test rigorously, and communicate transparently. We deliver systems that are secure, scalable, and maintainable from day one.
+                        </p>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-lg font-600 text-deep-navy mb-2">4. Support continuously</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Delivery is the beginning, not the end. We provide thorough documentation, train your team, and offer ongoing support as your needs evolve.
-                    </p>
+                <div class="timeline-step">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-600 mb-2">Support continuously</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Delivery is the beginning, not the end. We provide thorough documentation, train your team, and offer ongoing support as your needs evolve.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
