@@ -52,6 +52,127 @@
             }
         }
     </script>
+
+    <style>
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+            }
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+
+        .solution-card {
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-play-btn {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+
+        .icon-badge {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #007BFF 0%, #001F3F 100%);
+        }
+    </style>
 </head>
 <body class="font-poppins">
     <!-- Navigation Bar -->
@@ -167,72 +288,249 @@
     </section>
 
     <!-- Solutions Sections -->
-    <section class="py-20 md:py-28 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">SMEs and startups</h2>
-            <div class="space-y-8 max-w-2xl">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Growing companies face unique challenges: limited budgets, rapid scaling needs, and the pressure to move fast. We help startups and SMEs build technology that works for their stage of growth.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Whether you need an MVP to validate an idea, a scalable platform to support growth, or consulting to chart your technology roadmap, we build solutions that give you a real advantage.
-                </p>
+    <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="icon-badge">
+                            <i class="fa-solid fa-rocket text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-700 text-deep-navy">SMEs and startups</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Growing companies face unique challenges: limited budgets, rapid scaling needs, and the pressure to move fast. We help startups and SMEs build technology that works for their stage of growth.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Whether you need an MVP to validate an idea, a scalable platform to support growth, or consulting to chart your technology roadmap, we build solutions that give you a real advantage.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">MVP Development</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Scalability</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Fast Delivery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-in-right">
+                    <div class="solution-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="assets/images/brand_on_laptop.png" alt="Startup technology solution" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
+                                <div class="video-play-btn animate-pulse-glow">
+                                    <i class="fas fa-play text-electric-blue text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-electric-blue text-white text-xs font-medium rounded-full">Success Story</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-20 md:py-28 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">Government agencies</h2>
-            <div class="space-y-8 max-w-2xl">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Government organizations need technology that is secure, compliant, and built to last. We understand the regulatory landscape and the need for systems that serve the public with integrity.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We build digital infrastructure that modernizes citizen services, streamlines internal operations, and meets strict security and compliance requirements. Every project is designed with transparency and long-term maintainability in mind.
-                </p>
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-right order-2 md:order-1">
+                    <div class="solution-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="assets/images/Outdoor-Advertising.png" alt="Government digital infrastructure" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
+                                <div class="video-play-btn animate-pulse-glow">
+                                    <i class="fas fa-play text-electric-blue text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-deep-navy text-white text-xs font-medium rounded-full">Enterprise Solution</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-in-left order-1 md:order-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="icon-badge bg-gradient-to-br from-deep-navy to-electric-blue">
+                            <i class="fa-solid fa-shield text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-700 text-deep-navy">Government agencies</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Government organizations need technology that is secure, compliant, and built to last. We understand the regulatory landscape and the need for systems that serve the public with integrity.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            We build digital infrastructure that modernizes citizen services, streamlines internal operations, and meets strict security and compliance requirements. Every project is designed with transparency and long-term maintainability in mind.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs font-medium rounded-full">Compliance</span>
+                            <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs font-medium rounded-full">Security</span>
+                            <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs font-medium rounded-full">Scalable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="icon-badge bg-gradient-to-br from-electric-blue via-deep-navy to-electric-blue">
+                            <i class="fa-solid fa-heart text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-700 text-deep-navy">Non-profits and NGOs</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Non-profits do more with less. We respect that every dollar matters, which is why we focus on technology that maximizes your impact without unnecessary complexity or cost.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            We build tools that help you manage operations efficiently, engage donors, measure impact, and connect with your community. Technology should enable your mission, not distract from it.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Cost-Effective</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Impact Focus</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Community Driven</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-in-right">
+                    <div class="solution-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="assets/images/billboard.png" alt="Non-profit technology solution" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
+                                <div class="video-play-btn animate-pulse-glow">
+                                    <i class="fas fa-play text-electric-blue text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-electric-blue text-white text-xs font-medium rounded-full">Mission Driven</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-20 md:py-28 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">Non-profits and NGOs</h2>
-            <div class="space-y-8 max-w-2xl">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Non-profits do more with less. We respect that every dollar matters, which is why we focus on technology that maximizes your impact without unnecessary complexity or cost.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We build tools that help you manage operations efficiently, engage donors, measure impact, and connect with your community. Technology should enable your mission, not distract from it.
-                </p>
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-right order-2 md:order-1">
+                    <div class="solution-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="assets/images/souvenirs.png" alt="E-commerce retail solution" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
+                                <div class="video-play-btn animate-pulse-glow">
+                                    <i class="fas fa-play text-electric-blue text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-electric-blue text-white text-xs font-medium rounded-full">High Performance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-in-left order-1 md:order-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="icon-badge bg-gradient-to-br from-electric-blue to-deep-navy">
+                            <i class="fa-solid fa-shopping-cart text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-700 text-deep-navy">Retail & e-commerce</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Retail moves fast. Your technology needs to keep up with customer expectations, seasonal shifts, and competitive pressure. We build e-commerce platforms and systems that enhance customer experience and drive revenue.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            From platform architecture to payment integration to inventory management, we handle the complexity so you can focus on your business. We know that in retail, uptime and performance matter.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">E-commerce</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Uptime</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Performance</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">Retail and e-commerce</h2>
-            <div class="space-y-8 max-w-2xl">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Retail moves fast. Your technology needs to keep up with customer expectations, seasonal shifts, and competitive pressure. We build e-commerce platforms and systems that enhance customer experience and drive revenue.
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 animate-slide-in-up">
+                <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-4">Why industries choose ICECODING</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    We bring together deep technical expertise with genuine understanding of your business challenges
                 </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    From platform architecture to payment integration to inventory management, we handle the complexity so you can focus on your business. We know that in retail, uptime and performance matter.
-                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="solution-card group bg-white rounded-lg p-6 shadow-md border border-electric-blue/10 hover:shadow-lg hover:border-electric-blue/30 animate-slide-in-up" style="animation-delay: 0.1s;">
+                    <div class="mb-4 animate-float">
+                        <div class="w-14 h-14 rounded-lg bg-electric-blue/10 flex items-center justify-center mb-3">
+                            <i class="fas fa-bolt text-electric-blue text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">Fast Deployment</h3>
+                    <p class="text-sm text-gray-600">Get to market quickly with agile development practices and rapid iteration</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="solution-card group bg-white rounded-lg p-6 shadow-md border border-electric-blue/10 hover:shadow-lg hover:border-electric-blue/30 animate-slide-in-up" style="animation-delay: 0.2s;">
+                    <div class="mb-4 animate-float" style="animation-delay: 0.3s;">
+                        <div class="w-14 h-14 rounded-lg bg-deep-navy/10 flex items-center justify-center mb-3">
+                            <i class="fas fa-lock text-deep-navy text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">Enterprise Security</h3>
+                    <p class="text-sm text-gray-600">Bank-level security and compliance standards built into every solution</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="solution-card group bg-white rounded-lg p-6 shadow-md border border-electric-blue/10 hover:shadow-lg hover:border-electric-blue/30 animate-slide-in-up" style="animation-delay: 0.3s;">
+                    <div class="mb-4 animate-float" style="animation-delay: 0.6s;">
+                        <div class="w-14 h-14 rounded-lg bg-electric-blue/10 flex items-center justify-center mb-3">
+                            <i class="fas fa-chart-line text-electric-blue text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">Scalable Growth</h3>
+                    <p class="text-sm text-gray-600">Architecture designed to grow with your business needs without compromise</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="solution-card group bg-white rounded-lg p-6 shadow-md border border-electric-blue/10 hover:shadow-lg hover:border-electric-blue/30 animate-slide-in-up" style="animation-delay: 0.4s;">
+                    <div class="mb-4 animate-float" style="animation-delay: 0.9s;">
+                        <div class="w-14 h-14 rounded-lg bg-deep-navy/10 flex items-center justify-center mb-3">
+                            <i class="fas fa-handshake text-deep-navy text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">True Partnership</h3>
+                    <p class="text-sm text-gray-600">We invest in your success with dedicated support and continuous optimization</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 md:py-28 bg-white">
-        <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-6">
+    <section class="py-20 md:py-28 bg-gradient-to-br from-deep-navy to-electric-blue text-white">
+        <div class="max-w-4xl mx-auto px-4 md:px-8 text-center animate-slide-in-up">
+            <h2 class="text-3xl md:text-5xl font-700 mb-6 animate-fade-in">
                 Let's talk about your industry
             </h2>
-            <p class="text-xl text-gray-600 mb-8">
-                Every industry has unique challenges. We'd like to understand yours.
+            <p class="text-xl text-white/90 mb-8 animate-fade-in" style="animation-delay: 0.2s;">
+                Every industry has unique challenges. We'd like to understand yours and build the perfect solution.
             </p>
-            <a href="index.html#contact" class="inline-flex items-center px-8 py-3 bg-electric-blue text-white font-600 rounded-lg transition-all duration-300 hover:bg-deep-navy">
+            <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-white text-deep-navy font-600 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in" style="animation-delay: 0.4s;">
+                <i class="fas fa-arrow-right mr-2"></i>
                 Start a conversation
             </a>
         </div>
@@ -262,6 +560,35 @@
                     }
                 });
             }
+
+            // Video play button interactions
+            const playButtons = document.querySelectorAll('.video-play-btn');
+            playButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Video player would open here - showcasing this solution in action');
+                });
+            });
+
+            // Add scroll animation observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for scroll animations
+            document.querySelectorAll('.solution-card').forEach(card => {
+                observer.observe(card);
+            });
         });
     </script>
     <script src="scripts/includes.js"></script>
