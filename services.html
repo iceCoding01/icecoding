@@ -51,6 +51,141 @@
             }
         }
     </script>
+
+    <style>
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+            }
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-play-btn {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+
+        .service-badge {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #007BFF 0%, #001F3F 100%);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: #007BFF;
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.1);
+        }
+    </style>
 </head>
 <body class="font-poppins">
     <!-- Navigation Bar -->
@@ -166,58 +301,206 @@
     </section>
 
     <!-- Services Sections -->
-    <section class="py-20 md:py-28 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">Technology education</h2>
-            <div class="space-y-8 max-w-2xl">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We design educational programs that equip teams with practical skills and strategic knowledge. Rather than teaching technology for its own sake, we focus on building capabilities that drive real business outcomes.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Our approach combines hands-on learning with mentorship, allowing teams to absorb both the technical fundamentals and the decision-making patterns that experienced engineers use every day. Programs are customized to your context and delivered either remotely or on-site.
-                </p>
+    <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="service-badge">
+                            <i class="fas fa-chalkboard-user text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-700 text-deep-navy">Technology education</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            We design educational programs that equip teams with practical skills and strategic knowledge. Rather than teaching technology for its own sake, we focus on building capabilities that drive real business outcomes.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Our approach combines hands-on learning with mentorship, allowing teams to absorb both the technical fundamentals and the decision-making patterns that experienced engineers use every day. Programs are customized to your context and delivered either remotely or on-site.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Hands-On</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Mentorship</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Customized</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-in-right">
+                    <div class="service-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="assets/images/brand_on_laptop.png" alt="Technology education program" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
+                                <div class="video-play-btn animate-pulse-glow">
+                                    <i class="fas fa-play text-electric-blue text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-electric-blue text-white text-xs font-medium rounded-full">Learning</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-20 md:py-28 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">Software development</h2>
-            <div class="space-y-8 max-w-2xl">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We build custom software that scales with your business. From enterprise web applications to mobile apps to cloud-native systems, we combine modern technologies with proven practices to deliver solutions that are secure, maintainable, and built to last.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Every project includes thorough documentation, knowledge transfer, and ongoing support. We don't just hand off code—we ensure your team understands and can own what we've built.
-                </p>
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-right order-2 md:order-1">
+                    <div class="service-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="assets/images/Outdoor-Advertising.png" alt="Custom software development" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
+                                <div class="video-play-btn animate-pulse-glow">
+                                    <i class="fas fa-play text-electric-blue text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-deep-navy text-white text-xs font-medium rounded-full">Development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-in-left order-1 md:order-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="service-badge bg-gradient-to-br from-deep-navy to-electric-blue">
+                            <i class="fas fa-code text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-700 text-deep-navy">Software development</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            We build custom software that scales with your business. From enterprise web applications to mobile apps to cloud-native systems, we combine modern technologies with proven practices to deliver solutions that are secure, maintainable, and built to last.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Every project includes thorough documentation, knowledge transfer, and ongoing support. We don't just hand off code—we ensure your team understands and can own what we've built.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs font-medium rounded-full">Custom Build</span>
+                            <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs font-medium rounded-full">Scalable</span>
+                            <span class="px-3 py-1 bg-deep-navy/10 text-deep-navy text-xs font-medium rounded-full">Support</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="service-badge bg-gradient-to-br from-electric-blue via-deep-navy to-electric-blue">
+                            <i class="fas fa-lightbulb text-3xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-700 text-deep-navy">Technology consulting</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            When you need strategic guidance, we help. Whether it's evaluating your technology stack, planning a digital transformation, or solving a critical technical challenge, we bring deep experience and honest perspective to the table.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            We work collaboratively with your team to understand your constraints, clarify your options, and chart a realistic path forward. Our goal is to leave you with better understanding and a clearer strategy.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Strategic</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Collaborative</span>
+                            <span class="px-3 py-1 bg-electric-blue/10 text-electric-blue text-xs font-medium rounded-full">Expert</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-in-right">
+                    <div class="service-card relative bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="assets/images/billboard.png" alt="Technology consulting services" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="500" height="350">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
+                                <div class="video-play-btn animate-pulse-glow">
+                                    <i class="fas fa-play text-electric-blue text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-3 py-1 bg-electric-blue text-white text-xs font-medium rounded-full">Consulting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- What Makes Us Different -->
     <section class="py-20 md:py-28 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-12">Technology consulting</h2>
-            <div class="space-y-8 max-w-2xl">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    When you need strategic guidance, we help. Whether it's evaluating your technology stack, planning a digital transformation, or solving a critical technical challenge, we bring deep experience and honest perspective to the table.
+        <div class="max-w-container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 animate-slide-in-up">
+                <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-4">What makes us different</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    We combine technical excellence with genuine partnership to deliver transformative results
                 </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We work collaboratively with your team to understand your constraints, clarify your options, and chart a realistic path forward. Our goal is to leave you with better understanding and a clearer strategy.
-                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Quality -->
+                <div class="stat-card animate-slide-in-up" style="animation-delay: 0.1s;">
+                    <div class="mb-4 animate-float">
+                        <div class="w-12 h-12 rounded-lg bg-electric-blue/10 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-check-circle text-electric-blue text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">Quality First</h3>
+                    <p class="text-sm text-gray-600">Production-ready code with comprehensive testing and documentation</p>
+                </div>
+
+                <!-- Transparency -->
+                <div class="stat-card animate-slide-in-up" style="animation-delay: 0.2s;">
+                    <div class="mb-4 animate-float" style="animation-delay: 0.3s;">
+                        <div class="w-12 h-12 rounded-lg bg-deep-navy/10 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-eye text-deep-navy text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">Transparent</h3>
+                    <p class="text-sm text-gray-600">Clear communication and honest assessment throughout every project</p>
+                </div>
+
+                <!-- Ownership -->
+                <div class="stat-card animate-slide-in-up" style="animation-delay: 0.3s;">
+                    <div class="mb-4 animate-float" style="animation-delay: 0.6s;">
+                        <div class="w-12 h-12 rounded-lg bg-electric-blue/10 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-users text-electric-blue text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">Partnership</h3>
+                    <p class="text-sm text-gray-600">We invest in your success with dedicated support and knowledge transfer</p>
+                </div>
+
+                <!-- Results -->
+                <div class="stat-card animate-slide-in-up" style="animation-delay: 0.4s;">
+                    <div class="mb-4 animate-float" style="animation-delay: 0.9s;">
+                        <div class="w-12 h-12 rounded-lg bg-deep-navy/10 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-chart-line text-deep-navy text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-600 text-deep-navy mb-2">Results Driven</h3>
+                    <p class="text-sm text-gray-600">Every solution is measured by impact on your business outcomes</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 md:py-28 bg-white">
-        <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-700 text-deep-navy mb-6">
+    <section class="py-20 md:py-28 bg-gradient-to-br from-deep-navy to-electric-blue text-white">
+        <div class="max-w-4xl mx-auto px-4 md:px-8 text-center animate-slide-in-up">
+            <h2 class="text-3xl md:text-5xl font-700 mb-6 animate-fade-in">
                 Let's discuss your needs
             </h2>
-            <p class="text-xl text-gray-600 mb-8">
-                We're always interested in learning about teams working on hard problems.
+            <p class="text-xl text-white/90 mb-8 animate-fade-in" style="animation-delay: 0.2s;">
+                We're always interested in learning about teams working on hard problems and building solutions together.
             </p>
-            <a href="index.html#contact" class="inline-flex items-center px-8 py-3 bg-electric-blue text-white font-600 rounded-lg transition-all duration-300 hover:bg-deep-navy">
+            <a href="index.html#contact" class="inline-flex items-center px-8 py-4 bg-white text-deep-navy font-600 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl animate-fade-in" style="animation-delay: 0.4s;">
+                <i class="fas fa-arrow-right mr-2"></i>
                 Start a conversation
             </a>
         </div>
@@ -245,6 +528,35 @@
                     }
                 });
             }
+
+            // Video play button interactions
+            const playButtons = document.querySelectorAll('.video-play-btn');
+            playButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Video player would open here - showcasing this service in action');
+                });
+            });
+
+            // Add scroll animation observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for scroll animations
+            document.querySelectorAll('.service-card, .stat-card').forEach(card => {
+                observer.observe(card);
+            });
         });
     </script>
     <script src="scripts/includes.js"></script>
