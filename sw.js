@@ -12,6 +12,7 @@ const STATIC_ASSETS = [
     '/styles/performance.css',
     '/styles/tailwind.css',
     '/scripts/main.js',
+    '/scripts/includes.js',
     '/assets/images/logo.png',
     '/assets/images/brand pattern.png',
     'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap',
@@ -21,10 +22,10 @@ const STATIC_ASSETS = [
 
 // Cache strategies
 const CACHE_STRATEGIES = {
-    // Cache First (for static assets)
-    cacheFirst: ['css', 'js', 'woff2', 'woff', 'ttf', 'eot'],
-    // Network First (for HTML and dynamic content)
-    networkFirst: ['html', 'json', 'xml'],
+    // Cache First (for static asset types that change rarely)
+    cacheFirst: ['css', 'woff2', 'woff', 'ttf', 'eot'],
+    // Network First (for HTML, JS, and dynamic content)
+    networkFirst: ['html', 'js', 'json', 'xml'],
     // Stale While Revalidate (for images)
     staleWhileRevalidate: ['png', 'jpg', 'jpeg', 'svg', 'gif', 'webp']
 };

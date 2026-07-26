@@ -46,6 +46,8 @@ function initLazyLoading() {
 }
 
 // Enhanced DOM ready with performance monitoring
+let mobileMenuInitialized = false;
+
 document.addEventListener('DOMContentLoaded', function() {
     const startTime = performance.now();
     
@@ -71,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(`Initialization took ${endTime - startTime} milliseconds`);
 });
 
+window.addEventListener('includesLoaded', initMobileMenu);
+
 // Upgrade icon classes to modern sharp/brand variants for richer icon rendering
 function initPremiumIcons() {
     const solidIcons = document.querySelectorAll('i.fas');
@@ -94,22 +98,25 @@ function initPremiumIcons() {
 
 // Mobile Menu Functionality
 function initMobileMenu() {
+    if (mobileMenuInitialized) {
+        return;
+    }
+
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
     
     if (mobileMenuButton && mobileMenu) {
+        mobileMenuInitialized = true;
         let isMenuOpen = false;
         
         mobileMenuButton.addEventListener('click', function() {
             isMenuOpen = !isMenuOpen;
             
             if (isMenuOpen) {
-                // Show menu
                 mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
                 mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
                 
-                // Transform hamburger to X
                 const lines = mobileMenuButton.querySelectorAll('div > div');
                 if (lines.length >= 3) {
                     lines[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
@@ -117,14 +124,11 @@ function initMobileMenu() {
                     lines[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
                 }
                 
-                // Prevent body scroll
                 document.body.style.overflow = 'hidden';
             } else {
-                // Hide menu
                 mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
                 mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
                 
-                // Reset hamburger
                 const lines = mobileMenuButton.querySelectorAll('div > div');
                 if (lines.length >= 3) {
                     lines[0].style.transform = '';
@@ -132,12 +136,10 @@ function initMobileMenu() {
                     lines[2].style.transform = '';
                 }
                 
-                // Restore body scroll
                 document.body.style.overflow = '';
             }
         });
         
-        // Close menu when clicking on nav links
         if (mobileMenuLinks) {
             mobileMenuLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -145,7 +147,6 @@ function initMobileMenu() {
                     mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
                     mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
                     
-                    // Reset hamburger
                     const lines = mobileMenuButton.querySelectorAll('div > div');
                     if (lines.length >= 3) {
                         lines[0].style.transform = '';
@@ -153,20 +154,17 @@ function initMobileMenu() {
                         lines[2].style.transform = '';
                     }
                     
-                    // Restore body scroll
                     document.body.style.overflow = '';
                 });
             });
         }
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (isMenuOpen && !mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
                 isMenuOpen = false;
                 mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
                 mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
                 
-                // Reset hamburger
                 const lines = mobileMenuButton.querySelectorAll('div > div');
                 if (lines.length >= 3) {
                     lines[0].style.transform = '';
@@ -174,19 +172,16 @@ function initMobileMenu() {
                     lines[2].style.transform = '';
                 }
                 
-                // Restore body scroll
                 document.body.style.overflow = '';
             }
         });
         
-        // Close menu on escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && isMenuOpen) {
                 isMenuOpen = false;
                 mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
                 mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
                 
-                // Reset hamburger
                 const lines = mobileMenuButton.querySelectorAll('div > div');
                 if (lines.length >= 3) {
                     lines[0].style.transform = '';
@@ -194,7 +189,6 @@ function initMobileMenu() {
                     lines[2].style.transform = '';
                 }
                 
-                // Restore body scroll
                 document.body.style.overflow = '';
             }
         });
