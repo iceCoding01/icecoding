@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" role="img" aria-label="Illustration representing solutions">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#007BFF"/>
+      <stop offset="100%" stop-color="#001F3F"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="none"/>
+  <g transform="translate(40,20)" fill="none" stroke="url(#g1)" stroke-width="12" stroke-linecap="round">
+    <path d="M20 160 C120 20, 260 220, 360 60" opacity="0.18" />
+    <path d="M40 140 C140 40, 280 200, 380 80" opacity="0.28" />
+    <circle cx="460" cy="60" r="34" fill="#007BFF" opacity="0.95" />
+    <rect x="480" y="26" width="84" height="68" rx="10" fill="#001F3F" opacity="0.9"/>
+  </g>
+  <g transform="translate(40,20)">
+    <g transform="translate(0,0)">
+      <text x="0" y="40" font-family="Poppins, Arial, sans-serif" font-size="22" font-weight="600" fill="#001F3F">Smart solutions</text>
+      <text x="0" y="70" font-family="Poppins, Arial, sans-serif" font-size="14" fill="#4A5568">Custom-built for your industry</text>
+    </g>
+  </g>
+</svg>
