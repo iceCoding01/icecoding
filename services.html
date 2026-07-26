@@ -1,81 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - ICECODING | Technology Education, Software Development & Consulting</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional technology services including enterprise programming bootcamps, custom software development, and strategic technology consulting. Transform your business with ICECODING's expert solutions.">
-    <meta name="keywords" content="technology education, software development, tech consulting, programming bootcamps, enterprise solutions, digital transformation, web development, mobile apps">
-    <meta name="author" content="ICECODING">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.icecoding.com/services.html">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Professional Technology Services - ICECODING">
-    <meta property="og:description" content="Comprehensive technology solutions delivered with enterprise-grade quality and professional excellence.">
-    <meta property="og:image" content="https://www.icecoding.com/assets/images/brand_on_laptop.png">
-    <meta property="og:url" content="https://www.icecoding.com/services.html">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'deep-navy': '#001F3F',
-                        'electric-blue': '#007BFF',
-                        'charcoal': '#2D2D2D',
-                        'white': '#FFFFFF',
-                    },
-                    fontFamily: {
-                        'sans': ['Poppins', 'sans-serif'],
-                        'poppins': ['Poppins', 'sans-serif'],
-                    },
-                    maxWidth: {
-                        'container': '1200px',
-                    }
-                }
-            }
-        }
-    </script>
+        // Page-specific interactions (video play buttons, observers)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video play button interactions
+            const playButtons = document.querySelectorAll('.video-play-btn');
+            playButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    <script>
+                        // Page-specific interactions (video play buttons, observers)
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Video play button interactions
+                            const playButtons = document.querySelectorAll('.video-play-btn');
+                            playButtons.forEach(btn => {
+                                btn.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    alert('Video player would open here - showcasing this service in action');
+                                });
+                            });
 
-    <style>
-        /* Prevent Layout Shift from Scrollbar */
-        html {
-            scrollbar-gutter: stable;
-            scroll-behavior: smooth;
-        }
+                            // Add scroll animation observer
+                            const observerOptions = {
+                                threshold: 0.1,
+                                rootMargin: '0px 0px -100px 0px'
+                            };
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
+                            const observer = new IntersectionObserver(function(entries) {
+                                entries.forEach(entry => {
+                                    if (entry.isIntersecting) {
+                                        entry.target.classList.add('animate-slide-in-up');
+                                        observer.unobserve(entry.target);
+                                    }
+                                });
+                            }, observerOptions);
+
+                            // Observe elements for scroll animations
+                            document.querySelectorAll('.service-card').forEach(card => {
+                                observer.observe(card);
+                            });
+                        });
+                    </script>
+                    <script src="scripts/includes.js"></script>
             }
         }
 
@@ -194,105 +160,7 @@
     </style>
 </head>
 <body class="font-poppins">
-    <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
-        <nav class="bg-white border-b border-gray-100 shadow-sm">
-            <div class="max-w-container mx-auto px-4 md:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <!-- Logo Section -->
-                        <a href="index.html" class="flex items-center gap-2 group" aria-label="Go to ICECODING home page">
-                            <div class="relative">
-                                <img src="assets/images/logo.png" alt="ICECODING Logo" class="h-8 w-auto" loading="eager" width="60" height="40">
-                            </div>
-                            <div class="hidden sm:flex flex-col">
-                                <span class="text-lg font-600 text-deep-navy leading-none">ICECODING</span>
-                                <span class="text-xs text-text-muted">Innovation Partner</span>
-                            </div>
-                        </a>
-
-                    <!-- Desktop Navigation -->
-                    <div class="hidden lg:flex items-center">
-                        <ul class="flex items-center gap-8">
-                            <li>
-                                <a href="index.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="about.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                                    About
-                                </a>
-                            </li>
-                            <li>
-                                <a href="services.html" aria-current="page" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                                    Services
-                                </a>
-                            </li>
-                            <li>
-                                <a href="solutions.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                                    Solutions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="team.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                                    Team
-                                </a>
-                            </li>
-                            <li>
-                                <a href="gallery.html" class="text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                                    Gallery
-                                </a>
-                            </li>
-                        </ul>
-                        
-                        <div class="ml-12 flex items-center gap-3">
-                            <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-electric-blue text-white font-500 text-sm rounded-lg transition-all duration-300 hover:bg-deep-navy">
-                                Get Started
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Menu Button -->
-                    <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 hover:bg-gray-100" id="mobile-menu-button" aria-label="Toggle mobile menu">
-                        <div class="space-y-1.5">
-                            <div class="w-5 h-0.5 bg-deep-navy"></div>
-                            <div class="w-5 h-0.5 bg-deep-navy"></div>
-                            <div class="w-5 h-0.5 bg-deep-navy"></div>
-                        </div>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Navigation Menu -->
-            <div class="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-md opacity-0 invisible transform translate-y-[-10px] transition-all duration-300" id="mobile-menu">
-                <div class="px-4 py-4 space-y-1">
-                    <a href="index.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                        Home
-                    </a>
-                    <a href="about.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                        About
-                    </a>
-                    <a href="services.html" aria-current="page" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                        Services
-                    </a>
-                    <a href="solutions.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                        Solutions
-                    </a>
-                    <a href="team.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                        Team
-                    </a>
-                    <a href="gallery.html" class="block px-4 py-2.5 text-charcoal font-500 text-sm transition-colors duration-300 hover:text-electric-blue">
-                        Gallery
-                    </a>
-                    <div class="pt-4 border-t border-gray-100 flex flex-col gap-2 mt-4">
-                        <a href="#contact" class="flex items-center justify-center px-6 py-2.5 bg-electric-blue text-white font-500 text-sm rounded-lg transition-all duration-300 hover:bg-deep-navy">
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="site-header"></div>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 md:pb-32 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
@@ -575,25 +443,8 @@
     <div id="site-footer"></div>
 
     <script>
-        // Mobile menu functionality
+        // Page-specific interactions (video play buttons, observers)
         document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    const isVisible = mobileMenu.classList.contains('opacity-100');
-                    
-                    if (isVisible) {
-                        mobileMenu.classList.remove('opacity-100', 'visible');
-                        mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
-                    } else {
-                        mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
-                        mobileMenu.classList.add('opacity-100', 'visible');
-                    }
-                });
-            }
-
             // Video play button interactions
             const playButtons = document.querySelectorAll('.video-play-btn');
             playButtons.forEach(btn => {
