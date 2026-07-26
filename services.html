@@ -1,50 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - ICECODING | Technology & Development Services</title>
+    <meta name="description" content="ICECODING services include custom software development, digital transformation, and technology consulting for ambitious teams.">
+    <meta name="keywords" content="ICECODING services, software development, technology consulting, digital transformation">
+    <meta name="author" content="ICECODING">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Page-specific interactions (video play buttons, observers)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Video play button interactions
-            const playButtons = document.querySelectorAll('.video-play-btn');
-            playButtons.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    <script>
-                        // Page-specific interactions (video play buttons, observers)
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Video play button interactions
-                            const playButtons = document.querySelectorAll('.video-play-btn');
-                            playButtons.forEach(btn => {
-                                btn.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    alert('Video player would open here - showcasing this service in action');
-                                });
-                            });
-
-                            // Add scroll animation observer
-                            const observerOptions = {
-                                threshold: 0.1,
-                                rootMargin: '0px 0px -100px 0px'
-                            };
-
-                            const observer = new IntersectionObserver(function(entries) {
-                                entries.forEach(entry => {
-                                    if (entry.isIntersecting) {
-                                        entry.target.classList.add('animate-slide-in-up');
-                                        observer.unobserve(entry.target);
-                                    }
-                                });
-                            }, observerOptions);
-
-                            // Observe elements for scroll animations
-                            document.querySelectorAll('.service-card').forEach(card => {
-                                observer.observe(card);
-                            });
-                        });
-                    </script>
-                    <script src="scripts/includes.js"></script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-navy': '#001F3F',
+                        'electric-blue': '#007BFF',
+                        'charcoal': '#2D2D2D',
+                        'white': '#FFFFFF'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    maxWidth: {
+                        'container': '1200px'
+                    }
+                }
             }
-        }
-
+        };
+    </script>
+    <style>
         @keyframes slideInLeft {
             from {
                 opacity: 0;
