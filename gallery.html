@@ -443,14 +443,52 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-40 pb-20 md:pb-32 bg-white">
-        <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
-            <h1 class="text-5xl md:text-6xl font-700 text-deep-navy mb-6">
-                Visual Portfolio
-            </h1>
-            <p class="text-xl text-gray-600 leading-relaxed">
-                Explore our projects, team culture, and the work that drives our mission to build transformative technology solutions.
-            </p>
+    <section class="pt-32 pb-20 md:pb-32 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <div class="absolute right-0 top-0 w-96 h-96 bg-electric-blue rounded-full filter blur-3xl"></div>
+            <div class="absolute left-0 bottom-0 w-80 h-80 bg-deep-navy rounded-full filter blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl font-700 text-deep-navy mb-6">
+                        Visual Portfolio
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Explore our projects, team culture, and the work that drives our mission to build transformative technology solutions.
+                    </p>
+                </div>
+
+                <!-- Gallery Illustration (distinct) -->
+                <div class="hidden md:flex items-center justify-center">
+                    <svg class="w-96 h-auto" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="100%" height="100%" fill="none"/>
+                        <!-- Polaroid tiles -->
+                        <g transform="translate(20,30)">
+                            <rect x="0" y="0" width="120" height="92" rx="8" fill="#fff" stroke="#E6EEF9"/>
+                            <rect x="12" y="10" width="96" height="64" rx="6" fill="#E9F3FF"/>
+                            <rect x="140" y="10" width="120" height="92" rx="8" fill="#fff" stroke="#E6EEF9" transform="rotate(-8 200 56)"/>
+                            <rect x="152" y="22" width="96" height="64" rx="6" fill="#F3F6FB" transform="rotate(-8 200 56)"/>
+                            <rect x="280" y="40" width="120" height="92" rx="8" fill="#fff" stroke="#E6EEF9" transform="rotate(6 340 86)"/>
+                            <rect x="292" y="52" width="96" height="64" rx="6" fill="#FEF3E8" transform="rotate(6 340 86)"/>
+                        </g>
+
+                        <!-- Camera icon -->
+                        <g transform="translate(60,160)">
+                            <rect x="0" y="0" width="80" height="50" rx="8" fill="#001F3F" opacity="0.08"/>
+                            <rect x="8" y="6" width="64" height="38" rx="6" fill="#fff"/>
+                            <circle cx="40" cy="25" r="10" fill="#007BFF"/>
+                        </g>
+
+                        <!-- Floating badges -->
+                        <g transform="translate(300,190) rotate(-6)">
+                            <rect x="0" y="0" width="90" height="36" rx="8" fill="#007BFF"/>
+                            <text x="45" y="24" font-size="12" fill="#fff" text-anchor="middle" font-family="Poppins, Arial">Portfolio</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
         </div>
     </section>
 
